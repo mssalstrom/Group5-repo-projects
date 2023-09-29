@@ -20,5 +20,5 @@ def initialize_driver(browser_type):
 
 
 # Uses the WebDriver instance to navigate to the provided URL.
-def navigate_to_url(driver, url):
+def navigate_to_url(url):
     driver.get(url)
