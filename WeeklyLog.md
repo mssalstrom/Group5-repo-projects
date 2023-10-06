@@ -1,52 +1,62 @@
-# **Weekly log: Sprint 1**#
-**Completed Task:** 
+# **Weekly log: Sprint 1**
+## **Completed Task:** 
 
 
 
 
-## **Ongoing Task:**## 
-
-
-
-
-
-## **Issues:**## 
+## **Ongoing Task:**
 
 
 
 
 
-## **Next Steps:**## 
+## **Issues:**
+
+
+
+
+
+## **Next Steps:**
 
 
 
 
 
 
-# **Weekly log: Sprint 2**#
-## **Completed Task:**## 
->Completed Introductions
->Decided on Weekly schedule
+# **Weekly log: Sprint 2**
+## **Completed Task:**
+>Completed introductions
+>
+>Decided on weekly schedule
+>
 >Completed peer evaluations
+>
 >Defined contributor roles
 
-## **Ongoing Task:**## 
+## **Ongoing Task:**
 >Task Delegation for individual roles
 
 
 
 
-## **Issues:**## 
+## **Issues:**
 
 
 
 
 
-## **Next Steps:**## 
->Developers: 
->>Web application 
+## **Next Steps:**
+>### Developers:
+>
+>>Web application
+>
 >>Selenium Lab
->Testers
+>
+>### Testers:
+>
 >>Work with Developers to create test for Web application
->Document Writers
+>
+>### Document Writers:
+>
 >>Work with Developers to create document for selenium lab
+>
