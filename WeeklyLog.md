@@ -1,47 +1,18 @@
 # **Weekly log: Sprint 1**
 ## **Completed Task:** 
-
-
-
-
-## **Ongoing Task:**
-
-
-
-
-
-## **Issues:**
-
-
-
-
-
-## **Next Steps:**
-
-
-
-
-
-
-# **Weekly log: Sprint 2**
-## **Completed Task:**
 >Completed introductions
 >
 >Decided on weekly schedule
 >
 >Completed peer evaluations
->
+
+# **Weekly log: Sprint 2**
+## **Completed Task:**
+
 >Defined contributor roles
 
 ## **Ongoing Task:**
 >Task Delegation for individual roles
-
-
-
-
-## **Issues:**
-
-
 
 
 
