@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="71d48c90-f5fb-4d09-bf63-89114abe3b92" name="Changes" comment="" />
+    <list default="true" id="71d48c90-f5fb-4d09-bf63-89114abe3b92" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.idea/Flask Practice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/.idea/Group5-repo-projects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/delete.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/user_files/fishUntitled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/page_not_found.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/page_not_found.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/your_url.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/your_url.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +34,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Matt/Desktop/School/Flask App"
+    "last_opened_file_path": "C:/Users/Matt/Downloads"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

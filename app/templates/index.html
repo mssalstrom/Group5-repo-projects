@@ -26,9 +26,15 @@
     <label for="code">Shortened Name</label>
     <input type="text" name="code" value="" required>
     <br>
-    <input type="submit" value="Shorten URL">
+    <input type="submit" value="Save Image">
+    <br>
+    <br>
+    <input title="refresh" type="reset" name="refresh" value="Refresh Codes">
 
 </form>
+
+<br>
+
 
 {% if codes %}
 <h2>Codes you have created</h2>
@@ -36,8 +42,13 @@
     {% for code in codes %}
 <a href="{{ url_for('redirect_to_url', code=code) }}"> <!-- Creates link for existing code values-->
     <li>{{ code }}</li>
-    {% endfor %}
     </a>
+    {% endfor %}
 </ul>
 {% endif %}
+
+
+
+
+
 {% endblock %}
