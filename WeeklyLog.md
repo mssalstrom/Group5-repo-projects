@@ -12,22 +12,22 @@
 >Defined contributor roles
 
 ## **Ongoing Task:**
->Task Delegation for individual roles
-
-
+>Determining extent of testing required
 
 ## **Next Steps:**
 >### Developers:
 >
->>Web application
+>>Determining complexity of web application including styling
 >
 >>Selenium Lab
 >
 >### Testers:
 >
->>Work with Developers to create test for Web application
+>>Creating Test Cases
 >
 >### Document Writers:
 >
->>Work with Developers to create document for selenium lab
+>>Adding instructions for accessing web application to read me
+>
+>>Work with Developers to create document for Selenium lab
 >

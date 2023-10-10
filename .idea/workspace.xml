@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71d48c90-f5fb-4d09-bf63-89114abe3b92" name="Changes" comment="">
+
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.idea/Flask Practice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/.idea/Group5-repo-projects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/delete.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/user_files/fishUntitled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/page_not_found.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/page_not_found.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/your_url.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/your_url.html" afterDir="false" />
+
       <change afterPath="$PROJECT_DIR$/app/static/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +41,16 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+
+    "last_opened_file_path": "C:/Users/Matt/Downloads"
+=======
     "last_opened_file_path": "C:/Education_USA/Dmytro_Wake_Tech/2023/Fall/CSC 256 QA/Group project/Group5-repo-projects"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
       "CSS"
     ]
+
   }
 }]]></component>
   <component name="RunManager">
