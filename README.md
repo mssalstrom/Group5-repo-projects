@@ -45,6 +45,7 @@ flowchart TD;
 
 
 # Setup
+Create a new python file named "seleniumLab.py" preferably in a virtual environment. 
 
 ### Installing Flask: 
 >In python terminal
