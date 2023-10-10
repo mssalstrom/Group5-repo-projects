@@ -1,4 +1,4 @@
-# Title
+
 
 ``` mermaid
 flowchart TD;
@@ -26,30 +26,87 @@ flowchart TD;
 
 <!-- TABLE OF CONTENTS -->
 
-Table of Contents:
-- [About the Project](#about)
+# Table of Contents:
+- [Introduction](#Introduction)
 - [Setup](#setup)
 
 
 <!-- ABOUT THE PROJECT -->
-## About
-Group 5 project info
+# Introduction
+### Purpose 
+> This document provides detailed instructions for testing a provided web application using selenium. Selenium is a library and suite of tools used to build test for web applications.
 
-## Setup
-<p align="left">
-<br />
-<a><img src ="https://avatars.githubusercontent.com/u/983927?s=48&v=4"></a>
-<br />
-</p>
+### Tools Used: 
+- Python
+- Selenium
+- Flask
 
-### Windows
 
-### CMD
+
+# Setup
+
+### Installing Flask: 
+>In python terminal
 
 ```cmd
-pip install -r requirements.txt
+pip install flask
+```
+### Test Flask installation: 
+launch repl
+```cmd
+python
+```
+```cmd
+import flask
+```
+```cmd
+exit()
+```
+* Expected outcome: there should be no errors following the import command if flask has been installed correctly
+
+### Installing Selenium: 
+>In python terminal
+
+On Windows: 
+```cmd
+python -m pip install selenium
+```
+On Mac 
+```cmd
+pip3 install selenium
+```
+### Test Selenium installation: 
+launch repl
+```cmd
+python
+```
+```cmd
+import selenium
+```
+```cmd
+exit()
+```
+* Expected outcome: there should be no errors following the import command if selenium has been installed correctly
+# Using Selenium 
+
+#### Navigating to link: 
+import web driver
+```cmd
+from selenium import webdriver
+```
+#### create webdriver object
+```cmd
+driver = webdriver.Edge()
 ```
 
+
+### lauching link: 
+```cmd
+driver.get(link or path)
+```
+
+
+**Expected outcome: browser should navigate to link
 
 <!-- MARKDOWN LINKS & IMAGES  -->
 
