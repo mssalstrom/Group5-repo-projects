@@ -29,6 +29,7 @@ flowchart TD;
 # Table of Contents:
 - [Introduction](#Introduction)
 - [Setup](#setup)
+- [Lab](#Lab)
 
 
 <!-- ABOUT THE PROJECT -->
@@ -87,7 +88,7 @@ import selenium
 exit()
 ```
 * Expected outcome: there should be no errors following the import command if selenium has been installed correctly
-# Using Selenium 
+# Lab 
 
 #### Navigating to link: 
 import web driver
