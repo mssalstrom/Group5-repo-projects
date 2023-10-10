@@ -102,7 +102,7 @@ driver = webdriver.Edge()
 ```
 
 
-#### lauching link: 
+#### launching link: 
 ```cmd
 driver.get(link or path)
 ```
