@@ -90,7 +90,7 @@ exit()
 * Expected outcome: there should be no errors following the import command if selenium has been installed correctly
 # Lab 
 
-#### Navigating to link: 
+### Using Selenium to test link navigation:  
 import web driver
 ```cmd
 from selenium import webdriver
