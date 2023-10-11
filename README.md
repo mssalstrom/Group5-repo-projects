@@ -42,6 +42,18 @@ flowchart TD;
 - Selenium
 - Flask
 
+### Contributer Roles
+- Dmytro Holovnia - Developer
+- Matthew Salstrom - Developer
+- Max Tart - Developer
+- Dylan Arone - Tester
+- Ian Kepplinger - Tester
+- Ever Morales Alverez Tester
+- Denitri Douglas - Document Writer
+- Keven Hernandez Gaspar - Document Writer
+- Eric Dixon - Document Writer
+    
+
 
 
 # Setup
@@ -49,7 +61,9 @@ Create a new python file named "seleniumLab.py" preferably in a virtual environm
 
 ### Installing Flask: 
 >In python terminal
-
+```cmd
+pip install -r requirements.txt
+```
 ```cmd
 pip install flask
 ```
