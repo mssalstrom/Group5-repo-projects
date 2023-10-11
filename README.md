@@ -37,12 +37,7 @@ flowchart TD;
 ### Purpose 
 > This document provides detailed instructions for testing a provided web application using selenium. Selenium is a library and suite of tools used to build test for web applications.
 
-### Tools Used: 
-- Python
-- Selenium
-- Flask
-
-### Contributer Roles
+### Contributers 
 - Dmytro Holovnia - Developer
 - Matthew Salstrom - Developer
 - Max Tart - Developer
@@ -53,8 +48,10 @@ flowchart TD;
 - Keven Hernandez Gaspar - Document Writer
 - Eric Dixon - Document Writer
     
-
-
+### Tools Used: 
+- Python
+- Selenium
+- Flask
 
 # Setup
 Create a new python file named "seleniumLab.py" preferably in a virtual environment. 
