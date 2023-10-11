@@ -6,6 +6,7 @@ from werkzeug.utils import secure_filename  # Protects upload files
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.secret_key = 'sdflkj29034laksdfj'  # Securely send messages between  DOM and user
+save_file_path = os.path.join(app.root_path, "static", "user_files")
 
 
 @app.route('/')
@@ -21,7 +22,7 @@ def your_url():
             with open('urls.json') as urls_file:
                 urls = json.load(urls_file)
 
-        if request.form['code'] in urls.keys():   # If value exists in json file, redirect to home page.
+        if request.form.get('code') in urls.keys():   # If value exists in json file, redirect to home page.
             flash('That short name already exists. Please select another name.')
             return redirect(url_for('index'))
 
@@ -30,14 +31,14 @@ def your_url():
         else:
             file = request.files['file']
             full_name = request.form['code'] + secure_filename(file.filename)
-            file.save('C:/Users/Matt/Desktop/School/CSC-256/Group5-repo-projects/app/static/user_files/' + full_name)
+            file.save(os.path.join(save_file_path, full_name))
             urls[request.form['code']] = {'file': full_name}
 
         with open('urls.json', 'w') as url_file:  # Opens the urls json file
             json.dump(urls, url_file)
             session[request.form['code']] = True  # Saves code attribute as cookie
 
-        if request.form['reset'] == 'Refresh Codes':
+        if 'reset' in request.form:
             app.permanent_session_lifetime = 0
             return redirect(url_for('index'))
         return render_template('your_url.html', code=request.form['code'])  # Gets data from the shortened name field
