@@ -1,15 +1,33 @@
 # **Weekly log: Sprint 1**
 ## **Completed Task:** 
->Completed introductions
+- Completed introductions
 >
->Decided on weekly schedule
+- Decided on weekly schedule
 >
->Completed peer evaluations
+- Completed peer evaluations
+>
+- Assigned contributor roles
+>>Dmytro Holovnia - Developer
+>>
+>>Matthew Salstrom - Developer
+>>
+>> Max Tart - Developer
+>>
+>> Dylan Arone - Tester
+>>
+>> Ian Kepplinger - Tester
+>>
+>> Ever Morales Alverez Tester
+>>
+>> Denitri Douglas - Document Writer
+>>
+>> Keven Hernandez Gaspar - Document Writer
+>>
+>> Eric Dixon - Document Writer
 
 # **Weekly log: Sprint 2**
 ## **Completed Task:**
-
->Defined contributor roles
+>Functioning web application to begin creating test cases
 
 ## **Ongoing Task:**
 >Determining extent of testing required
@@ -19,15 +37,11 @@
 >
 >>Determining complexity of web application including styling
 >
->>Selenium Lab
->
 >### Testers:
 >
 >>Creating Test Cases
 >
 >### Document Writers:
 >
->>Adding instructions for accessing web application to read me
->
->>Work with Developers to create document for Selenium lab
->
+>> Creating Selenium Lab assignment and updating Readme.md
+
