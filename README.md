@@ -249,7 +249,7 @@ time.sleep(10)
 ```
 
 ### UnitTest
-Selenin's strength is the ability to automate test. Below is an exmple of a UnitTest using the selenium library
+Selenin's strength is the ability to automate test. Below is an exmaple of a UnitTest using the selenium library
 - Create a file named UnitTest.py in the test directory
  - Import necessary libraries
 ```cmd
