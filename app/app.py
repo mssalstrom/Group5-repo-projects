@@ -75,3 +75,4 @@ def session_api():
 # this code is added to run from the pycharm
 if __name__ == '__main__':
     app.run()
+    debug=True

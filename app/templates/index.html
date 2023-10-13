@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
     {% extends 'base.html' %}
 
     {% block title %}URL Shortener{% endblock %}
     {% block main %}
 
-<body>
-    <h1>URL Shortener</h1>
+    <header>
+        <h1>URL Shortener</h1>
+        <img src="app\static\wtccbanner.png">
+    </header>
+    
 
     <form action="your_url" method="post">
         <label for="url">Website URL</label>
@@ -16,7 +26,7 @@
         <label for="url">Shortened Name</label>
         <input type="text" name="code" value="" required>
         <br>
-        <input type="submit" value="Shorten URL" class="form_button" id="shortenSubmit">
+        <input type="submit" value="Shorten URL">
 
     </form>
 
@@ -24,14 +34,20 @@
 
     <form action="your_url" method="post" enctype="multipart/form-data">
         <label for="file">File</label>
-        <input type="file" name="file" value="" id="fileInput" required>
+        <input type="file" name="file" value="" required>
         <br>
         <label for="code">Shortened Name</label>
-        <input type="text" name="code" value="" id="codeName" required>
+        <input type="text" name="code" value="" required>
         <br>
-        <input type="submit" value="Shorten URL" class="form_button" id="saveImage">
+        <input type="submit" value="Save Image">
+        <br>
+        <br>
+        <input title="refresh" type="reset" name="refresh" value="Refresh Codes">
 
     </form>
+
+    <br>
+
 
     {% if codes %}
     <h2>Codes you have created</h2>
@@ -39,12 +55,17 @@
         {% for code in codes %}
         <a href="{{ url_for('redirect_to_url', code=code) }}"> <!-- Creates link for existing code values-->
             <li>{{ code }}</li>
-            {% endfor %}
         </a>
+        {% endfor %}
     </ul>
     {% endif %}
+
+
+
+
+
     {% endblock %}
+    =======
 </body>
 
 </html>
-
