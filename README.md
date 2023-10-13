@@ -18,6 +18,8 @@
 - [Introduction](#Introduction)
 - [Setup](#setup)
 - [Lab](#Lab)
+- [Basics](#Basics)
+- [UnitTest](#UnitTest)
 
 
 <!-- ABOUT THE PROJECT -->
@@ -102,7 +104,8 @@ Below are a series of test in the selenium suite of tools that can be used to au
 
 -Create a new python file named "seleniumLab.py" in the test directory. 
 
-### 1. Using Selenium to test link navigation:  
+### Basics
+1. Using Selenium to test link navigation:  
 - Import libraries
 ```cmd
 import os
@@ -140,7 +143,7 @@ driver.get(local_url)
 
 **Expected outcome: browser should navigate to link
 
-### 2. Using Selenium to find elements:  
+2. Using Selenium to find elements:  
 
 ```cmd
 url_element = driver.find_element(By.NAME, "url")
@@ -151,7 +154,7 @@ code_element = driver.find_element(By.NAME, "code")
 ```cmd
 submit_button = driver.find_element(By.ID, "shortenSubmit")
 ```
-### 3. Using Selenium to test website functionality:  
+3. Using Selenium to test website functionality:  
 
 - Clear preexisitng text and type python.org into url shortener
 ```cmd
@@ -252,6 +255,30 @@ codeNameElement.send_keys("Shortname")
 ```cmd
 time.sleep(10)
 ```
+
+### UnitTest
+- Create a file named UnitTest.py in the test directory
+ - Import necessary libraries
+```cmd
+import unittest
+```
+```cmd
+from selenium import webdriver
+```
+```cmd
+from selenium.webdriver.common.keys import Keys
+```
+```cmd
+from selenium.webdriver.common.by import By
+```
+- Create a class that inherits the TestCase class
+
+```cmd
+class PythonOrgSearch(unittest.TestCase):
+```
+
+
+
 <!-- MARKDOWN LINKS & IMAGES  -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/mssalstrom/Group5-repo-projects
