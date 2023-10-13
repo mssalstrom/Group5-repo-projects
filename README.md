@@ -280,7 +280,7 @@ class urlShortener(unittest.TestCase):
 ```cmd
         driver.get("localhost:5000")
 ```
-- assert to confirm site title
+- Assertion to confirm site title
 ```cmd
         self.assertIn("urlShortener", driver.title)
 ```
