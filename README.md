@@ -45,7 +45,7 @@
 
 # Setup
 
-- In your python IDE of choice open the app project
+- In your python IDE open the app project
 - Open the file app.py
   
 >In python terminal
