@@ -109,17 +109,9 @@ Below are a series of test in the selenium suite of tools that can be used to au
 - Import libraries
 ```cmd
 import os
-```
-```cmd
 import time
-```
-```cmd
 from selenium import webdriver
-```
-```cmd
 from selenium.webdriver.common.keys import Keys
-```
-```cmd
 from selenium.webdriver.common.by import By
 ```
 
@@ -257,26 +249,70 @@ time.sleep(10)
 ```
 
 ### UnitTest
+Selenin's strength is the ability to automate test. Below is an exmple of a UnitTest using the selenium library
 - Create a file named UnitTest.py in the test directory
  - Import necessary libraries
 ```cmd
 import unittest
-```
-```cmd
 from selenium import webdriver
-```
-```cmd
 from selenium.webdriver.common.keys import Keys
-```
-```cmd
 from selenium.webdriver.common.by import By
 ```
 - Create a class that inherits the TestCase class
 
 ```cmd
-class PythonOrgSearch(unittest.TestCase):
+class urlShortener(unittest.TestCase):
 ```
+- Initialize the webdriver
+```cmd
+    def setUp(self):
+        self.driver = webdriver.Edge()
+```
+- Declare the test case method
+```cmd
+    def test_urlShortener(self):
+```
+- Set the driver
+```cmd
+        driver = self.driver
+```
+- Navigate to web application
+```cmd
+        driver.get("localhost:5000")
+```
+-assert to confirm site title
+```cmd
+        self.assertIn("urlShortener", driver.title)
+```
+- locate elements in page
+```cmd
+        url_element = driver.find_element(By.NAME, "url")
+        code_element = driver.find_element(By.NAME, "code")
+        submit_button = driver.find_element(By.ID, "shortenSubmit")
 
+```
+- Send data
+```cmd
+        url_element.clear()
+        url_element.send_keys("https://python.org")
+        submit_button.click()
+
+        
+```
+- Wait to verify page
+```cmd
+        time.sleep(10)   
+```
+- Close driver
+```cmd
+    def tearDown(self):
+        self.driver.close()
+```
+- Execute test
+```cmd
+if __name__ == "__main__":
+    unittest.main()
+```
 
 
 <!-- MARKDOWN LINKS & IMAGES  -->
