@@ -18,7 +18,10 @@ body {
 
 h1 {
     color: #ffffff;
-    font-size: 18px;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    margin-left: 4%;
 }
 
 header {
