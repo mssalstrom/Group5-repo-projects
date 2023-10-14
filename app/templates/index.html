@@ -8,12 +8,16 @@
     {% block title %}URL Shortener{% endblock %}
     {% block main %}
 
+
     <header>
         <h1>URL Shortener</h1>
         <img src="/static/wtccbanner.png" id="wtccHeaderImage">
     </header>
 
 
+
+<body>
+    <h1>URL Shortener</h1>
     <form action="your_url" method="post">
         <label for="url">Website URL</label>
         <input type="url" name="url" value="" required>
@@ -22,10 +26,9 @@
         <input type="text" name="code" value="" required>
         <br>
         <input type="submit" value="Shorten URL">
+        <input type="submit" value="Shorten URL" class="form_button" id="shortenSubmit">
 
     </form>
-
-
 
     <form action="your_url" method="post" enctype="multipart/form-data">
         <label for="file">File</label>
@@ -36,8 +39,12 @@
         <br>
         <input type="submit" value="Save Image">
         <br>
+
         <br>
         <input title="refresh" type="reset" name="refresh" value="Refresh Codes">
+
+
+        <input type="submit" value="Shorten Filename" class="form_button" id="saveImage">
 
     </form>
 
@@ -46,6 +53,7 @@
 
     {% if codes %}
     <h2>Codes you have created</h2>
+    <div style="height:auto;, width: auto; overflow: visible;">
     <ul>
         {% for code in codes %}
         <a href="{{ url_for('redirect_to_url', code=code) }}"> <!-- Creates link for existing code values-->
@@ -59,8 +67,26 @@
 
 
 
+
     {% endblock %}
-    =======
+
 </body>
 
 </html>
+
+
+    </div>
+
+
+    <div>
+    <form method="post" name="reset">
+        <input type="submit" value="Refresh Codes" class="form_button" id="resetList">
+    </form>
+    </div>
+
+
+
+   </body>
+</html>
+{% endblock %}
+
