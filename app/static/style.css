@@ -4,26 +4,46 @@ body {
     font-size: 14px;
     background-color: #f2f2f2;
     margin: 15;
-    padding: 0;
+    padding: 80;
 }
 
 .container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: rgb(7, 84, 148);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    color: #333;
-    font-size: 18px;
+    color: #ffffff;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    margin-left: 4%;
+}
+
+header {
+    background-color: rgb(7, 84, 148);
+    padding: 1.5%;
+    position: relative;
+}
+
+#wtccHeaderImage {
+    width: 160px;
+    height: 80px;
+    position: absolute; 
+    top: 50%; 
+    right: 30px; 
+    transform: translateY(-50%);
 }
 
 /* Form styling */
 form {
-    margin-top: 15px;
+    margin-top: 5%;
+    margin-left: 2rem;
+    margin-right: 55%;
 }
 
 label {
@@ -57,7 +77,7 @@ input[type="file"] {
 }
 
 input[type="submit"] {
-    background-color: #007bff;
+    background-color: rgb(7, 84, 148);
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -65,6 +85,10 @@ input[type="submit"] {
     cursor: pointer;
     transition: background-color 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+input[type="submit"]:hover {
+    background-color: #007bff;
 }
 
 
@@ -96,3 +120,4 @@ a:hover {
 p {
     font-size: 12px;
 }
+

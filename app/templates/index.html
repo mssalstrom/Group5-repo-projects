@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+<body>
     {% extends 'base.html' %}
 
     {% block title %}URL Shortener{% endblock %}
     {% block main %}
+
+
+    <header>
+        <h1>URL Shortener</h1>
+        <img src="/static/wtccbanner.png" id="wtccHeaderImage">
+    </header>
+
+
 
 <body>
     <h1>URL Shortener</h1>
@@ -15,18 +25,31 @@
         <label for="url">Shortened Name</label>
         <input type="text" name="code" value="" required>
         <br>
+        <input type="submit" value="Shorten URL">
         <input type="submit" value="Shorten URL" class="form_button" id="shortenSubmit">
+
     </form>
 
     <form action="your_url" method="post" enctype="multipart/form-data">
         <label for="file">File</label>
-        <input type="file" name="file" value="" id="fileInput" required>
+        <input type="file" name="file" value="" required>
         <br>
         <label for="code">Shortened Name</label>
-        <input type="text" name="code" value="" id="codeName" required>
+        <input type="text" name="code" value="" required>
         <br>
+        <input type="submit" value="Save Image">
+        <br>
+
+        <br>
+        <input title="refresh" type="reset" name="refresh" value="Refresh Codes">
+
+
         <input type="submit" value="Shorten Filename" class="form_button" id="saveImage">
+
     </form>
+
+    <br>
+
 
     {% if codes %}
     <h2>Codes you have created</h2>
@@ -35,10 +58,22 @@
         {% for code in codes %}
         <a href="{{ url_for('redirect_to_url', code=code) }}"> <!-- Creates link for existing code values-->
             <li>{{ code }}</li>
-            {% endfor %}
         </a>
+        {% endfor %}
     </ul>
     {% endif %}
+
+
+
+
+
+
+    {% endblock %}
+
+</body>
+
+</html>
+
 
     </div>
 
@@ -54,3 +89,4 @@
    </body>
 </html>
 {% endblock %}
+
