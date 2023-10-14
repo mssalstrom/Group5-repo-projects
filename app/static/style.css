@@ -17,13 +17,18 @@ body {
 }
 
 h1 {
-    color: #333;
-    font-size: 18px;
+    margin: 10px 0;
+    padding-left: 80px;
+    font: 700 40px 'Caveat', cursive;
+    color: rgba(0, 0, 0, 0.8); /* Adds 80% opacity (20% transparency) */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
 }
 
 /* Form styling */
 form {
     margin-top: 15px;
+    margin-left: 2rem;
+    margin-right: 100px;
 }
 
 label {
@@ -95,4 +100,20 @@ a:hover {
 }
 p {
     font-size: 12px;
+}
+
+header {
+    background-color: rgb(7, 84, 148);
+    padding: 1.5%;
+    position: relative;
+}
+
+#wtccHeaderImage {
+    width: 160px;
+    height: 80px;
+    position: absolute; 
+    margin-right: 100px;
+    top: 50%; 
+    right: 30px; 
+    transform: translateY(-50%);
 }
