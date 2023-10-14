@@ -1,8 +1,9 @@
+
 {% extends 'base.html' %}
 
 {% block title %}URL Shortener{% endblock %}
 {% block main %}
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 
 <h1>URL Shortener</h1>
 
@@ -26,9 +27,15 @@
     <label for="code">Shortened Name</label>
     <input type="text" name="code" value="" required>
     <br>
-    <input type="submit" value="Shorten URL">
+    <input type="submit" value="Save Image">
+    <br>
+    <br>
+    <input title="refresh" type="reset" name="refresh" value="Refresh Codes">
 
 </form>
+
+<br>
+
 
 {% if codes %}
 <h2>Codes you have created</h2>
@@ -36,8 +43,71 @@
     {% for code in codes %}
 <a href="{{ url_for('redirect_to_url', code=code) }}"> <!-- Creates link for existing code values-->
     <li>{{ code }}</li>
-    {% endfor %}
     </a>
+    {% endfor %}
 </ul>
 {% endif %}
+
+
+
+
+
 {% endblock %}
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% extends 'base.html' %}
+
+    {% block title %}URL Shortener{% endblock %}
+    {% block main %}
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <h1>URL Shortener</h1>
+
+    <form action="your_url" method="post">
+        <label for="url">Website URL</label>
+        <input type="url" name="url" value="" required>
+        <br>
+        <label for="url">Shortened Name</label>
+        <input type="text" name="code" value="" required>
+        <br>
+        <input type="submit" value="Shorten URL" class="form_button">
+
+    </form>
+
+
+
+    <form action="your_url" method="post" enctype="multipart/form-data">
+        <label for="file">File</label>
+        <input type="file" name="file" value="" required>
+        <br>
+        <label for="code">Shortened Name</label>
+        <input type="text" name="code" value="" required>
+        <br>
+        <input type="submit" value="Shorten URL" class="form_button">
+
+    </form>
+
+    {% if codes %}
+    <h2>Codes you have created</h2>
+    <ul>
+        {% for code in codes %}
+        <a href="{{ url_for('redirect_to_url', code=code) }}"> <!-- Creates link for existing code values-->
+            <li>{{ code }}</li>
+            {% endfor %}
+        </a>
+    </ul>
+    {% endif %}
+    {% endblock %}
+</body>
+
+</html>
+
