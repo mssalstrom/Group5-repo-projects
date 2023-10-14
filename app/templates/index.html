@@ -8,7 +8,6 @@
 
 <body>
     <h1>URL Shortener</h1>
-
     <form action="your_url" method="post">
         <label for="url">Website URL</label>
         <input type="url" name="url" value="" required>
@@ -17,10 +16,7 @@
         <input type="text" name="code" value="" required>
         <br>
         <input type="submit" value="Shorten URL" class="form_button" id="shortenSubmit">
-
     </form>
-
-
 
     <form action="your_url" method="post" enctype="multipart/form-data">
         <label for="file">File</label>
@@ -29,12 +25,12 @@
         <label for="code">Shortened Name</label>
         <input type="text" name="code" value="" id="codeName" required>
         <br>
-        <input type="submit" value="Shorten URL" class="form_button" id="saveImage">
-
+        <input type="submit" value="Shorten Filename" class="form_button" id="saveImage">
     </form>
 
     {% if codes %}
     <h2>Codes you have created</h2>
+    <div style="height:auto;, width: auto; overflow: visible;">
     <ul>
         {% for code in codes %}
         <a href="{{ url_for('redirect_to_url', code=code) }}"> <!-- Creates link for existing code values-->
@@ -43,8 +39,18 @@
         </a>
     </ul>
     {% endif %}
-    {% endblock %}
-</body>
 
+    </div>
+
+
+    <div>
+    <form method="post" name="reset">
+        <input type="submit" value="Refresh Codes" class="form_button" id="resetList">
+    </form>
+    </div>
+
+
+
+   </body>
 </html>
-
+{% endblock %}
