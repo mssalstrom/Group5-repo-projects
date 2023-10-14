@@ -76,6 +76,11 @@ def session_api():
 def reset_url_list():
     if request.form.get('reset') == 'true':
         session.clear()  # Clear the session to reset the URL list
+        
+        # Clear the contents of the 'urls.json' file
+        with open('urls.json', 'w') as url_file:
+            url_file.write("{}")
+
     return redirect(url_for('index'))
 
 # this code is added to run from the pycharm
