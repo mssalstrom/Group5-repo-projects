@@ -24,11 +24,16 @@ h1 {
 header {
     background-color: rgb(7, 84, 148);
     padding: 1.5%;
+    position: relative;
 }
 
 #wtccHeaderImage {
-    position: absolute;
-    right: 0;
+    width: 160px;
+    height: 80px;
+    position: absolute; 
+    top: 50%; 
+    right: 30px; 
+    transform: translateY(-50%);
 }
 
 /* Form styling */
