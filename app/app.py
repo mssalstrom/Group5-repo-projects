@@ -83,6 +83,7 @@ def reset_url_list():
 
     return redirect(url_for('index'))
 
+
 # this code is added to run from the pycharm
 if __name__ == '__main__':
     app.run()
