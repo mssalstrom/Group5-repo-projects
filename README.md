@@ -45,8 +45,16 @@
 
 # Setup
 
-- In your python IDE open the app project
-- Open the file app.py
+### Download Selenium Branch
+1. Open your preferred web browser and go to the Selenium GitHub repository: https://github.com/mssalstrom/Group5-repo-projects/tree/selenium.
+2. On the repository page, click on the green "Code" button located near the top-right corner.
+3. From the dropdown menu, click on "Download ZIP" to download the Selenium branch as a compressed ZIP file.
+4. Once the ZIP file is downloaded, locate it on your computer and extract its contents to a desired location. This will create a folder containing the Selenium branch files.
+
+### Installing Required Dependencies
+1. Open your Python IDE (Integrated Development Environment) and navigate to the folder containing the extracted Selenium branch files.
+2. Open the file app.py
+3. In the terminal or command prompt, run the following command to install the required dependencies:
   
 >In python terminal
 ```cmd
@@ -57,52 +65,45 @@ pip install -r requirements.txt
 ```cmd
 pip install flask
 ```
-### Test Flask installation: 
-launch repl
+### Verify Flask installation: 
 ```cmd
-python
+flask --version
 ```
-```cmd
-import flask
-```
-```cmd
-exit()
-```
-* Expected outcome: there should be no errors following the import command if flask has been installed correctly
+- Expected outcome: *The command should display the version information of Flask, indicating that it has been installed correctly. There should be no errors or warnings.*
 
 ### Installing Selenium: 
->In python terminal
-
 On Windows: 
 ```cmd
 python -m pip install selenium
 ```
-On Mac 
+On Mac:
 ```cmd
 pip3 install selenium
 ```
-### Test Selenium installation: 
-launch repl
+### Verify Selenium Installation: 
+On Windows:
 ```cmd
-python
+python -m pip show selenium
 ```
+On Mac:
 ```cmd
-import selenium
+pip3 show selenium
 ```
-```cmd
-exit()
-```
-* Expected outcome: there should be no errors following the import command if selenium has been installed correctly
+- Expected outcome: *The command should display information about the Selenium package, including the version number, indicating that it has been installed correctly. There should be no errors or warnings.*
 
-- Run the application app.py.
-- In the python terminal you will see " *Running on http://127.0.0.1:5000 "
-- Select the hyperlink to launch the web application
-- If you launch the web application "URL Shortener" you have set up the lab correctly. Review the above steps to install the flask and selenium libraries as needed. 
-  
+### Launch the Flask Web Application
+1. In your Python IDE, open the app.py file.
+2. Run the app.py file using the appropriate command or IDE feature to start the Flask server.
+3. After running the app.py file, switch to the Python terminal or console within your IDE. This is where you will see the server startup message.
+4. In the Python terminal, you should see the message "*Running on http://127.0.0.1:5000".
+5. Open your web browser and enter the following URL in the address bar: http://127.0.0.1:5000.
+6. Press Enter to access the web application.
+7. If the web application "URL Shortener" opens successfully, you have set up the lab correctly. If not, review the above steps to ensure that Flask and Selenium are installed correctly.
+
 # Lab 
 Below are a series of test in the selenium suite of tools that can be used to automate test for a python web application. 
 
--Create a new python file named "seleniumLab.py" in the test directory. 
+- Create a new python file named "seleniumLab.py" in the test directory. 
 
 ### Basics
 1. Using Selenium to test link navigation:  
@@ -133,7 +134,7 @@ driver.get(local_url)
 ```
 
 
-**Expected outcome: browser should navigate to link
+&#160;&#160;&#160;Expected outcome: *browser should navigate to link*
 
 2. Using Selenium to find elements:  
 
