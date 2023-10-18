@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71d48c90-f5fb-4d09-bf63-89114abe3b92" name="Changes" comment="">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/urls.json" beforeDir="false" afterPath="$PROJECT_DIR$/urls.json" afterDir="false" />
+=======
 
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.idea/Flask Practice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/.idea/Group5-repo-projects.iml" afterDir="false" />
@@ -20,6 +23,7 @@
       <change beforePath="$PROJECT_DIR$/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
 
+>>>>>>> 6b596fe0fcef265c80895dcc2be82d43786e2132
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +41,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Education_USA/Dmytro_Wake_Tech/2023/Fall/CSC 256 QA/Group project/Group5-repo-projects&quot;
+=======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -45,14 +56,15 @@
     "last_opened_file_path": "C:/Users/Matt/Downloads"
 =======
     "last_opened_file_path": "C:/Education_USA/Dmytro_Wake_Tech/2023/Fall/CSC 256 QA/Group project/Group5-repo-projects"
+>>>>>>> 6b596fe0fcef265c80895dcc2be82d43786e2132
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "CSS"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;CSS&quot;
     ]
 
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Group5-repo-projects" />

@@ -21,6 +21,7 @@ def your_url():
         if os.path.exists('urls.json'):   # Loads json file if present
             with open('urls.json') as urls_file:
                 urls = json.load(urls_file)
+
         if request.form.get('code') in urls.keys():   # If value exists in json file, redirect to home page.
             flash('That short name already exists. Please select another name.')
             return redirect(url_for('index'))
@@ -35,6 +36,7 @@ def your_url():
         with open('urls.json', 'w') as url_file:  # Opens the urls json file
             json.dump(urls, url_file)
             session[request.form['code']] = True  # Saves code attribute as cookie
+
         return render_template('your_url.html', code=request.form['code'])  # Gets data from the shortened name field
         # and stores it in the code attribute.
     else:
@@ -70,6 +72,16 @@ def page_not_found(error):
 @app.route('/api')   # Creates and API and stores urls.json keys in a list
 def session_api():
     return jsonify(list(session.keys()))
+
+# Resets the URL list
+@app.route('/reset_url_list', methods=['POST'])
+def reset_url_list():
+    if request.form.get('reset') == 'true':
+        session.clear()  # Clear the session to reset the URL list
+        # Clear the contents of the 'urls.json' file
+        with open('urls.json', 'w') as url_file:
+            url_file.write("{}")
+    return redirect(url_for('index'))
 
 
 # this code is added to run from the pycharm
