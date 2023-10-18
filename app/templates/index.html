@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
     {% extends 'base.html' %}
-
+ 
     {% block title %}URL Shortener{% endblock %}
     {% block main %}
-
+ 
 <body>
     <header>
         <h1>URL Shortener</h1>
         <img src="/static/wtccbanner.png" id="wtccHeaderImage">
     </header>
-    
-
+   
+ 
     <form action="your_url" method="post">
         <label for="url">Website URL</label>
         <input type="url" name="url" value="" required>
@@ -21,11 +21,10 @@
         <input type="text" name="code" value="" required>
         <br>
         <input type="submit" value="Shorten URL" class="form_button" id="shortenSubmit">
-
+ 
     </form>
-
-
-
+ 
+ 
     <form action="your_url" method="post" enctype="multipart/form-data">
         <label for="file">File</label>
         <input type="file" name="file" value="" id="fileInput" required>
@@ -34,9 +33,9 @@
         <input type="text" name="code" value="" id="codeName" required>
         <br>
         <input type="submit" value="Shorten URL" class="form_button" id="saveImage">
-
+ 
     </form>
-
+ 
     {% if codes %}
     <h2>Codes you have created</h2>
     <ul>
@@ -53,6 +52,5 @@
     {% endif %}
     {% endblock %}
     </body>
-
+ 
 </html>
-

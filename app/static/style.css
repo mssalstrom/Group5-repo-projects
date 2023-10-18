@@ -1,3 +1,4 @@
+[8:08 PM] Dmytro Holovnia
 /* Page styling */
 body {
     font-family: Arial, sans-serif;
@@ -6,7 +7,7 @@ body {
     margin: 15;
     padding: 0;
 }
-
+ 
 .container {
     max-width: 600px;
     margin: 0 auto;
@@ -15,7 +16,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
+ 
 h1 {
     margin: 10px 0;
     padding-left: 80px;
@@ -23,21 +24,21 @@ h1 {
     color: rgba(0, 0, 0, 0.8); /* Adds 80% opacity (20% transparency) */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
 }
-
+ 
 /* Form styling */
 form {
     margin-top: 15px;
     margin-left: 2rem;
     margin-right: 100px;
 }
-
+ 
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     color: #555;
 }
-
+ 
 input[type="url"],
 input[type="text"]{
     height: 30px;
@@ -55,12 +56,12 @@ input[type="file"] {
    
     border: 1px solid #ccc;
     border-radius: 3px;
-    
-
-
-
+   
+ 
+ 
+ 
 }
-
+ 
 input[type="submit"] {
     background-color: #007bff;
     color: #fff;
@@ -71,49 +72,49 @@ input[type="submit"] {
     transition: background-color 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
-
-
+ 
+ 
 /* List of created codes */
 h2 {
     margin-top: 20px;
     font-size: 16px;
     color: #333;
 }
-
+ 
 ul {
     list-style: none;
     padding: 0;
 }
-
+ 
 li {
     margin-bottom: 10px;
 }
-
+ 
 a {
     text-decoration: none;
     color: #007bff;
     font-weight: bold;
 }
-
+ 
 a:hover {
     text-decoration: underline;
 }
 p {
     font-size: 12px;
 }
-
+ 
 header {
     background-color: rgb(7, 84, 148);
     padding: 1.5%;
     position: relative;
 }
-
+ 
 #wtccHeaderImage {
     width: 160px;
     height: 80px;
-    position: absolute; 
+    position: absolute;
     margin-right: 100px;
-    top: 50%; 
-    right: 30px; 
+    top: 50%;
+    right: 30px;
     transform: translateY(-50%);
 }

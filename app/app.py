@@ -25,28 +25,23 @@ def your_url():
         if request.form.get('code') in urls.keys():   # If value exists in json file, redirect to home page.
             flash('That short name already exists. Please select another name.')
             return redirect(url_for('index'))
-
-        if 'url' in request.form.keys():                                # Goes to all keys in form dictionary and checks for a url.
-            urls[request.form['code']] = {'url': request.form['url']}   # Inside url dictionary for code attribute key.
+        if 'url' in request.form.keys():   # Goes to all keys in form dictionary and
+            # checks for a url Inside url dictionary for code attribute key.
+            urls[request.form['code']] = {'url': request.form['url']}
         else:
             file = request.files['file']
             full_name = request.form['code'] + secure_filename(file.filename)
             file.save(os.path.join(save_file_path, full_name))
             urls[request.form['code']] = {'file': full_name}
-
         with open('urls.json', 'w') as url_file:  # Opens the urls json file
             json.dump(urls, url_file)
             session[request.form['code']] = True  # Saves code attribute as cookie
 
-        if 'reset' in request.form:
-            app.permanent_session_lifetime = 0
-            return redirect(url_for('index'))
         return render_template('your_url.html', code=request.form['code'])  # Gets data from the shortened name field
         # and stores it in the code attribute.
     else:
         return redirect(url_for('index'))   # Redirects the user is they try to access the # /your_url page without
         # first enter data in the / page.
-
 
 
 @app.route('/<string:code>')  # Looks at the string after /your_url/ and stores it as a variable name code.
@@ -57,9 +52,16 @@ def redirect_to_url(code):
             if code in urls.keys():   # If url exist in json file redirect to url
                 if 'url' in urls[code].keys():
                     return redirect(urls[code]['url'])
-                else:   # If file key exists, redict to file for to display on page
+                else:   # If file key exists, redirect to file for to display on page
                     return redirect(url_for('static', filename='user_files/' + urls[code]['file']))
     return abort(404)   # If file or url is not found for redirect displays 404 error
+
+
+# Removes JSON file and clears cookies to reset code list
+@app.route('/', methods=['GET', 'POST'])
+def clear_list():
+    open('urls.json', 'w').close()
+    return render_template('index.html', codes=session.clear())
 
 
 @app.errorhandler(404)   # Error handler for 404 code
@@ -76,14 +78,13 @@ def session_api():
 def reset_url_list():
     if request.form.get('reset') == 'true':
         session.clear()  # Clear the session to reset the URL list
-        
         # Clear the contents of the 'urls.json' file
         with open('urls.json', 'w') as url_file:
             url_file.write("{}")
-
     return redirect(url_for('index'))
 
 
 # this code is added to run from the pycharm
 if __name__ == '__main__':
     app.run(debug=True)
+
