@@ -61,15 +61,28 @@
 pip install -r requirements.txt
 ```
 
+### Verify package installation: 
+```cmd
+flask --version
+```
+On Windows:
+```cmd
+python -m pip show selenium
+```
+On Mac:
+```cmd
+pip3 show selenium
+```
+- Expected outcome: *The command should display the version information of Flask, indicating that it has been installed correctly. There should be no errors or warnings.*
+- If you do encounter errors proceed with the individual installations below, if not skip to the "Basics" section.
+  
 ### Installing Flask: 
 ```cmd
 pip install flask
 ```
-### Verify Flask installation: 
 ```cmd
 flask --version
 ```
-- Expected outcome: *The command should display the version information of Flask, indicating that it has been installed correctly. There should be no errors or warnings.*
 
 ### Installing Selenium: 
 On Windows: 
