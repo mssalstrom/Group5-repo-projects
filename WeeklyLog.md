@@ -27,21 +27,21 @@
 
 # **Weekly log: Sprint 2**
 ## **Completed Task:**
->Functioning web application to begin creating test cases
+>Functioning web application 
 
 ## **Ongoing Task:**
->Determining extent of testing required
+>Determining what features will need to be added to write the BDD lab
 
 ## **Next Steps:**
 >### Developers:
 >
->>Determining complexity of web application including styling
+>>Determining complexity of web application including styling to prep for BDD lab
 >
 >### Testers:
 >
->>Creating Test Cases
+>>Creating Test with Pytest
 >
 >### Document Writers:
 >
->> Creating Selenium Lab assignment and updating Readme.md
+>> Updating selenium lab following meeting with professor
 
