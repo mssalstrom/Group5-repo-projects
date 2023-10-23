@@ -1,33 +1,47 @@
 # **Weekly log: Sprint 1**
 ## **Completed Task:** 
->Completed introductions
+- Completed introductions
 >
->Decided on weekly schedule
+- Decided on weekly schedule
 >
->Completed peer evaluations
+- Completed peer evaluations
+>
+- Assigned contributor roles
+>>Dmytro Holovnia - Developer
+>>
+>>Matthew Salstrom - Developer
+>>
+>> Max Tart - Developer
+>>
+>> Dylan Arone - Tester
+>>
+>> Ian Kepplinger - Tester
+>>
+>> Ever Morales Alverez Tester
+>>
+>> Denitri Douglas - Document Writer
+>>
+>> Keven Hernandez Gaspar - Document Writer
+>>
+>> Eric Dixon - Document Writer
 
 # **Weekly log: Sprint 2**
 ## **Completed Task:**
-
->Defined contributor roles
+>Functioning web application 
 
 ## **Ongoing Task:**
->Task Delegation for individual roles
-
-
+>Determining what features will need to be added to write the BDD lab
 
 ## **Next Steps:**
 >### Developers:
 >
->>Web application
->
->>Selenium Lab
+>>Determining complexity of web application including styling to prep for BDD lab
 >
 >### Testers:
 >
->>Work with Developers to create test for Web application
+>>Creating Test with Pytest
 >
 >### Document Writers:
 >
->>Work with Developers to create document for selenium lab
->
+>> Updating selenium lab following meeting with professor
+
