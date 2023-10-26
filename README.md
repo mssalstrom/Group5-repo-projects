@@ -1,5 +1,6 @@
 
 
+
 <!-- PROJECT SHIELDS -->
 [![Contributors][contributors-shield]][contributors-url]
 ![Commits][commit-shield]
@@ -130,7 +131,7 @@ from selenium.webdriver.common.by import By
 ```
 
 
-- #### Create webdriver object and set window size
+- ## Create webdriver object and set window size
 ```cmd
 driver = webdriver.Edge()
 ```
@@ -141,7 +142,7 @@ driver.set_window_size(800,800)
 local_url = "localhost:5000"
 ```
 
-- #### Launching link: 
+- ## Launching link: 
 ```cmd
 driver.get(local_url)
 ```
@@ -149,7 +150,7 @@ driver.get(local_url)
 
 &#160;&#160;&#160;Expected outcome: *browser should navigate to link*
 
-2. Using Selenium to find elements:  
+2. **Using Selenium to find elements:**  
 
 ```cmd
 url_element = driver.find_element(By.NAME, "url")
@@ -160,7 +161,7 @@ code_element = driver.find_element(By.NAME, "code")
 ```cmd
 submit_button = driver.find_element(By.ID, "shortenSubmit")
 ```
-3. Using Selenium to test website functionality:  
+3. **Using Selenium to test website functionality:**  
 
 - Clear preexisitng text and type python.org into url shortener
 ```cmd
