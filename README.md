@@ -21,6 +21,7 @@
 - [Basics](#Basics)
 - [UnitTest](#UnitTest)
 - [BDD](#BDD)
+- [Behave](#Behave)
 
 
 <!-- ABOUT THE PROJECT -->
@@ -368,7 +369,7 @@ Key aspects of BDD include:
 
 5. **Automated Testing**: BDD encourages the automation of tests based on the specified behavior. These tests help ensure that the software functions as expected throughout the development process.
 
-## Behave
+# Behave
 
 **Behave** is a Python library that facilitates BDD by allowing you to write and execute behavioral tests using Gherkin language specifications. Behave acts as the bridge between plain language specifications (Gherkin) and Python code. It provides the framework to define Gherkin scenarios and the associated Python code that implements the steps of those scenarios.
 
