@@ -58,7 +58,7 @@ def test_url_shortener(driver):
 def test_filename_shortener(driver):
     """Tests if the filename shortener is functioning properly"""
     # Grabs txt file from current folder
-    file_path = os.path.join(os.getcwd(), "File.txt")
+    file_path = os.path.join(os.getcwd(), "../File.txt")
 
     # use selenium to input file in filename shortener
     fileInput = driver.find_element(By.ID, "fileInput")
