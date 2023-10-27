@@ -268,24 +268,31 @@ submit_button.click()
 
 - Wait 10s to verify page
 ```python
+# Introduce a 10-second delay in the script's execution
 time.sleep(10)
 ```
 - Go back to homepage
   
 ```python
+# Navigate the web driver to the local URL specified by 'local_url'
 driver.get(local_url)
 ```
 - Testing file input
 ```python
+# Locate the file input element on the web page with the ID attribute "fileInput"
 fileElement = driver.find_element(By.ID, "fileInput")
+
 ```
 ```python
+# Simulate user interaction by providing a file path to the 'fileElement' input
 fileElement.send_keys(file_path)
 ```
 ```python
+# Locate the web element with the ID "codeName" on the page
 codeNameElement = driver.find_element(By.ID, "codeName")
 ```
 ```python
+# Enter the text "Shortname" into the 'codeNameElement' input
 codeNameElement.send_keys("Shortname")
 ```
 ```python
