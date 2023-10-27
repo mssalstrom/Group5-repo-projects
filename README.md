@@ -121,7 +121,7 @@ python -m pip install selenium
 ```
 On Mac:
 ```python
-# Install the Selenium package using Python 3's package manager (pip3)
+# Install the Selenium package using Python package manager.
 pip3 install selenium
 ```
 ### Verify Selenium Installation: 
