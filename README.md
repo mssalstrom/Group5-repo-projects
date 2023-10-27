@@ -63,24 +63,24 @@ Selenium empowers developers and quality assurance teams to automate the testing
 3. In the terminal or command prompt, run the following command to install the required dependencies:
   
 >In python terminal
-```cmd
+```python
 # Install the required dependencies specified in the 'requirements.txt' file
 pip install -r requirements.txt
 
 ```
 
 ### Verify package installation: 
-```cmd
+```python
 # Check the version of Flask installed
 flask --version
 ```
 On Windows:
-```cmd
+```python
 # Display information about the Selenium package using Python's built-in package manager
 python -m pip show selenium
 ```
 On Mac:
-```cmd
+```python
 # Display information about the Selenium package using Python's package manager (pip3)
 pip3 show selenium
 ```
@@ -88,23 +88,23 @@ pip3 show selenium
 - If you do encounter errors proceed with the individual installations below, if not skip to the "Basics" section.
   
 ### Installing Flask: 
-```cmd
+```python
 # Install the Flask framework using pip
 pip install flask
 ```
-```cmd
+```python
 # Check the version of Flask installed
 flask --version
 ```
 
 ### Installing Selenium: 
 On Windows: 
-```cmd
+```python
 # Install the Selenium package using Python's built-in package manager (pip)
 python -m pip install selenium
 ```
 On Mac:
-```cmd
+```python
 # Install the Selenium package using Python 3's package manager (pip3)
 pip3 install selenium
 ```
