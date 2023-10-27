@@ -16,7 +16,7 @@
 
 # Table of Contents:
 - [Introduction](#Introduction)
-- [Selenium Lab](#Selenium)
+- [Selenium](#Selenium)
 - [Setup](#setup)
 - [Basics](#Basics)
 - [UnitTest](#UnitTest)
@@ -461,7 +461,7 @@ Gherkin syntax follows a structured format that includes features, scenarios, an
 In Python, you typically use a BDD framework like Behave to map Gherkin steps to Python code. Step definitions in Python code provide the actual implementation of the steps, allowing you to automate the testing of the described scenarios. This approach promotes collaboration and ensures that the software behaves as expected based on the Gherkin specifications.
 
 
-# Behave Lab
+# Behave
 
 **Behave** is a Python library that facilitates BDD by allowing you to write and execute behavioral tests using Gherkin language specifications. Behave acts as the bridge between plain language specifications (Gherkin) and Python code. It provides the framework to define Gherkin scenarios and the associated Python code that implements the steps of those scenarios.
 
