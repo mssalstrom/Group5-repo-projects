@@ -122,7 +122,7 @@ Below are a series of test in the selenium suite of tools that can be used to au
 - Create a new python file named "seleniumLab.py" in the test directory. 
 
 ### Basics
-1. Using Selenium to test link navigation:  
+**1. Using Selenium to test link navigation:**
 - Import libraries
 ```cmd
 import os
@@ -133,10 +133,11 @@ from selenium.webdriver.common.by import By
 ```
 
 
-- #### Create webdriver object and set window size
+- #### Create webdriver object
 ```cmd
 driver = webdriver.Edge()
 ```
+- #### Set window size
 ```cmd
 driver.set_window_size(800,800)
 ```
@@ -152,7 +153,7 @@ driver.get(local_url)
 
 &#160;&#160;&#160;Expected outcome: *browser should navigate to link*
 
-2. Using Selenium to find elements:  
+**2. Using Selenium to find elements:**  
 
 ```cmd
 url_element = driver.find_element(By.NAME, "url")
