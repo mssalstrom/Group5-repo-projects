@@ -124,7 +124,7 @@ Below are a series of test in the selenium suite of tools that can be used to au
 ### Basics
 **1. Using Selenium to test link navigation:**
 - Import libraries
-```cmd
+```python
 import os
 import time
 from selenium import webdriver
@@ -134,20 +134,25 @@ from selenium.webdriver.common.by import By
 
 
 - #### Create webdriver object
-```cmd
+```python
+#Create a WebDriver object for the Microsoft Edge browser
 driver = webdriver.Edge()
 ```
 - #### Set window size
-```cmd
-driver.set_window_size(800,800)
+```python
+#Set the window size of the web browser to 800 pixels in width and 800 pixels in height
+driver.set_window_size(800, 800)
 ```
-```cmd
+```python
+# Define the URL of the local web application you want to interact with
 local_url = "localhost:5000"
 ```
 
 - #### Launching link: 
-```cmd
-driver.get(local_url)
+```python
+d# Navigate the web browser to the specified local URL
+driver.get(local_url)  # Expected outcome: browser should navigate to the link
+
 ```
 
 
@@ -155,114 +160,128 @@ driver.get(local_url)
 
 **2. Using Selenium to find elements:**  
 
-```cmd
+```python
+# Locate the HTML element with the "name" attribute set to "url" using Selenium's find_element method
 url_element = driver.find_element(By.NAME, "url")
 ```
-```cmd
+```python
+# Locate the HTML element with the "name" attribute set to "code" using Selenium's find_element method
 code_element = driver.find_element(By.NAME, "code")
 ```
-```cmd
+```python
+# Locate the HTML element with the "ID" attribute set to "shortenSubmit" using Selenium's find_element method
 submit_button = driver.find_element(By.ID, "shortenSubmit")
 ```
-3. Using Selenium to test website functionality:  
+**3. Using Selenium to test website functionality:**  
 
 - Clear preexisitng text and type python.org into url shortener
-```cmd
+```python
+# Clear any preexisting text or input in the "url_element" field
 url_element.clear()
 ```
-```cmd
+```python
+# Enter the URL "https://python.org" into the "url_element" input field
 url_element.send_keys("https://python.org")
 ```
 
 - Clear preexisitng text and type python as shortened url
-```cmd  
+```python  
+# Clear any preexisting text or input in the "code_element" field
 code_element.clear()
 ```
 
-```cmd
+```python
+# Enter the text "python" into the "code_element" input field
 code_element.send_keys("python")
 ```
 - Click submit
 
-```cmd
+```python
+# Simulate a click action on the "submit_button" element
 submit_button.click()
 ```
 
 
 - Wait 10s to verify page
-```cmd
+```python
+# Pause the script's execution for 10 seconds to allow time for the page to load or for verification
 time.sleep(10)
 ```
 - Go back to homepage
 
 - Testing file input 
-```cmd
+```python
+# Navigate the web browser to the "local_url" to return to the homepage or a specific URL
 driver.get(local_url)
 ```
-```cmd
+```python
+# Locate the HTML element with the "ID" attribute set to "fileInput" using Selenium's find_element method
 fileElement = driver.find_element(By.ID, "fileInput")
 ```
-```cmd
+```python
+# Simulate selecting a file by sending the file path to the "fileElement" input field
 fileElement.send_keys(file_path)
 ```
-```cmd
+```python
+# Locate the HTML element with the "ID" attribute set to "codeName" using Selenium's find_element method
 codeNameElement = driver.find_element(By.ID, "codeName")
 ```
-```cmd
+```python
+# Enter the text "Shortname" into the "codeNameElement" input field
 codeNameElement.send_keys("Shortname")
 ```
-```cmd
+```python
 time.sleep(10)
 ```
 
 
 - Retesting with longer URL
 - Clear preexisitng text and type python.org into url shortener
-```cmd
+```python
 url_element.clear()
 ```
-```cmd
+```python
 url_element.send_keys("[https://python.org](https://www.cnn.com/2023/02/09/us/iyw-puppy-bowl-shelters-rescue-groups/index.html)")
 ```
 
 - Clear preexisitng text and type python as shortened url
-```cmd  
+```python  
 code_element.clear()
 ```
 
-```cmd
+```python
 code_element.send_keys("puppyBowl")
 ```
 - Click submit
 
-```cmd
+```python
 submit_button.click()
 ```
 
 
 - Wait 10s to verify page
-```cmd
+```python
 time.sleep(10)
 ```
 - Go back to homepage
   
-```cmd
+```python
 driver.get(local_url)
 ```
 - Testing file input
-```cmd
+```python
 fileElement = driver.find_element(By.ID, "fileInput")
 ```
-```cmd
+```python
 fileElement.send_keys(file_path)
 ```
-```cmd
+```python
 codeNameElement = driver.find_element(By.ID, "codeName")
 ```
-```cmd
+```python
 codeNameElement.send_keys("Shortname")
 ```
-```cmd
+```python
 time.sleep(10)
 ```
 
@@ -278,39 +297,39 @@ from selenium.webdriver.common.by import By
 ```
 - Create a class that inherits the TestCase class
 
-```cmd
+```python
 class urlShortener(unittest.TestCase):
 ```
 - Initialize the webdriver
-```cmd
+```python
     def setUp(self):
         self.driver = webdriver.Edge()
 ```
 - Declare the test case method
-```cmd
+```python
     def test_urlShortener(self):
 ```
 - Set the driver
-```cmd
+```python
         driver = self.driver
 ```
 - Navigate to web application
-```cmd
+```python
         driver.get("localhost:5000")
 ```
 - Assertion to confirm site title
-```cmd
+```python
         self.assertIn("urlShortener", driver.title)
 ```
 - locate elements in page
-```cmd
+```python
         url_element = driver.find_element(By.NAME, "url")
         code_element = driver.find_element(By.NAME, "code")
         submit_button = driver.find_element(By.ID, "shortenSubmit")
 
 ```
 - Send data
-```cmd
+```python
         url_element.clear()
         url_element.send_keys("https://python.org")
         submit_button.click()
@@ -318,16 +337,16 @@ class urlShortener(unittest.TestCase):
         
 ```
 - Wait to verify page
-```cmd
+```python
         time.sleep(10)   
 ```
 - Close driver
-```cmd
+```python
     def tearDown(self):
         self.driver.close()
 ```
 - Execute test
-```cmd
+```python
 if __name__ == "__main__":
     unittest.main()
 ```
