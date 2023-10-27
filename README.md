@@ -232,6 +232,7 @@ codeNameElement = driver.find_element(By.ID, "codeName")
 codeNameElement.send_keys("Shortname")
 ```
 ```python
+# Pause the script's execution for 10 seconds to allow time for the page to load or for verification
 time.sleep(10)
 ```
 
@@ -239,23 +240,28 @@ time.sleep(10)
 - Retesting with longer URL
 - Clear preexisitng text and type python.org into url shortener
 ```python
+# Clear the input field for the URL element
 url_element.clear()
 ```
 ```python
+#Enter a long URL into the URL shortener form
 url_element.send_keys("[https://python.org](https://www.cnn.com/2023/02/09/us/iyw-puppy-bowl-shelters-rescue-groups/index.html)")
 ```
 
 - Clear preexisitng text and type python as shortened url
-```python  
+```python
+# Clear the input field for the URL element  
 code_element.clear()
 ```
 
 ```python
+# Entering the text "puppyBowl" into the code_element
 code_element.send_keys("puppyBowl")
 ```
 - Click submit
 
 ```python
+# Simulate a click action on the "submit_button" element
 submit_button.click()
 ```
 
@@ -283,6 +289,7 @@ codeNameElement = driver.find_element(By.ID, "codeName")
 codeNameElement.send_keys("Shortname")
 ```
 ```python
+# Pause the script's execution for 10 seconds to allow time for the page to load or for verification
 time.sleep(10)
 ```
 
@@ -299,57 +306,83 @@ from selenium.webdriver.common.by import By
 - Create a class that inherits the TestCase class
 
 ```python
+# Define a test case class for URL shortening functionality
 class urlShortener(unittest.TestCase):
 ```
 - Initialize the webdriver
 ```python
     def setUp(self):
+        # Initialize a Microsoft Edge web driver for testing
         self.driver = webdriver.Edge()
 ```
 - Declare the test case method
 ```python
+    # This method tests the URL shortening functionality
+    # and contains the test cases for the URL shortener.
     def test_urlShortener(self):
 ```
 - Set the driver
 ```python
+        # Assign the web driver instance to the 'driver' variable
         driver = self.driver
+
 ```
 - Navigate to web application
 ```python
+        # Define the URL of the local web application you want to interact with
         driver.get("localhost:5000")
 ```
 - Assertion to confirm site title
 ```python
+        # Check if "urlShortener" is present in the title of the current web page
         self.assertIn("urlShortener", driver.title)
+
 ```
 - locate elements in page
 ```python
+        # Locate the element with the name attribute set to "url"
         url_element = driver.find_element(By.NAME, "url")
+
+        # Locate the element with the name attribute set to "code"
         code_element = driver.find_element(By.NAME, "code")
+
+        # Locate the element with the ID attribute set to "shortenSubmit"
         submit_button = driver.find_element(By.ID, "shortenSubmit")
+
 
 ```
 - Send data
 ```python
+        # Clear any existing text in the 'url_element' input field
         url_element.clear()
+        # Enter the URL "https://python.org" into the 'url_element' input field
         url_element.send_keys("https://python.org")
+        # Click the 'submit_button' to initiate the URL shortening process
         submit_button.click()
 
         
 ```
 - Wait to verify page
 ```python
-        time.sleep(10)   
+        # Pause the script execution for 10 seconds
+        time.sleep(10)
+  
 ```
 - Close driver
 ```python
-    def tearDown(self):
-        self.driver.close()
+    # Define the 'tearDown' method for cleaning up after the test case
+def tearDown(self):
+    # Close the web driver instance to release system resources
+    self.driver.close()
+
 ```
 - Execute test
 ```python
+# Check if the current script is the main module being executed
 if __name__ == "__main__":
-    unittest.main()
+    # If the script is the main module, execute the following code
+    unittest.main() # Run the test cases using the unittest test runner
+
 ```
 # BDD
 
