@@ -16,12 +16,13 @@
 
 # Table of Contents:
 - [Introduction](#Introduction)
-- [Selenium](#Selenium)
+- [Selenium Lab](#Selenium)
 - [Setup](#setup)
 - [Basics](#Basics)
 - [UnitTest](#UnitTest)
 - [BDD](#BDD)
-- [Behave](#Behave)
+- [Gherkin](#Gherkin)
+- [Behave Lab](#Behave)
 
 
 <!-- ABOUT THE PROJECT -->
@@ -418,11 +419,54 @@ Key aspects of BDD include:
 
 5. **Automated Testing**: BDD encourages the automation of tests based on the specified behavior. These tests help ensure that the software functions as expected throughout the development process.
 
-# Behave
+Gherkin is a plain-text language that is used to describe the behavior of a software system. It is widely used in the context of Behavior-Driven Development (BDD) and is commonly associated with tools like Cucumber and Behave for Python. Gherkin syntax is designed to be human-readable and easy to understand by non-technical stakeholders. Here's an explanation of Gherkin syntax using Python as an example:
+
+Gherkin syntax follows a structured format that includes features, scenarios, and steps. Here's how it works:
+
+1. **Feature**: A Gherkin feature is a high-level description of a software feature or functionality. It is typically written at the beginning of a Gherkin file and serves as an introduction to what the following scenarios are about. In Python, it might look like this:
+
+   ```gherkin
+   Feature: Login Functionality
+
+   Scenario: User can log in with valid credentials
+       Given the user is on the login page
+       When the user enters valid credentials
+       And clicks the "Login" button
+       Then the user should be logged in
+   ```
+
+2. **Scenario**: A scenario describes a specific example of how the software behaves in a given situation. Scenarios are written beneath the feature and are often used to illustrate different use cases. In Python:
+
+   ```gherkin
+   Scenario: User can log in with valid credentials
+       Given the user is on the login page
+       When the user enters valid credentials
+       And clicks the "Login" button
+       Then the user should be logged in
+   ```
+
+3. **Steps**: Steps are the building blocks of Gherkin scenarios. Each step begins with one of the keywords "Given," "When," or "Then." These keywords specify the context, action, or expected outcome of the step. In Python, you define step definitions in code to match Gherkin steps and map them to actual actions in the software. Here's an example of steps:
+
+   ```gherkin
+   Given the user is on the login page
+   When the user enters valid credentials
+   And clicks the "Login" button
+   Then the user should be logged in
+   ```
+
+   In Python code, you would create step definitions to implement these steps, such as opening a web page, entering data, clicking buttons, and verifying results.
+
+4. **And/But**: "And" and "But" are used to continue the previous step's context, action, or expected outcome. They are used to keep the scenario description concise and more readable.
+
+In Python, you typically use a BDD framework like Behave to map Gherkin steps to Python code. Step definitions in Python code provide the actual implementation of the steps, allowing you to automate the testing of the described scenarios. This approach promotes collaboration and ensures that the software behaves as expected based on the Gherkin specifications.
+
+
+# Behave Lab
 
 **Behave** is a Python library that facilitates BDD by allowing you to write and execute behavioral tests using Gherkin language specifications. Behave acts as the bridge between plain language specifications (Gherkin) and Python code. It provides the framework to define Gherkin scenarios and the associated Python code that implements the steps of those scenarios.
 
-Here are the steps to add Behave tests and Gherkin specifications to test a Flask application using Selenium:
+# 
+### **In the lab below we will use gherkin to implement selenium test on the web application provided in this repo.**
 
 1. **Install Behave**:
    If you haven't already, install Behave using pip:
