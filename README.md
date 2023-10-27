@@ -17,12 +17,12 @@
 # Table of Contents:
 - [Introduction](#Introduction)
 - [Selenium](#Selenium)
-- [Setup](#setup)
-- [Basics](#Basics)
-- [UnitTest](#UnitTest)
+    - [Setup](#setup)
+    - [Basics](#Basics)
+    - [UnitTest](#UnitTest)
 - [BDD](#BDD)
-- [Gherkin](#Gherkin)
-- [Behave](#Behave)
+    - [Gherkin](#Gherkin)
+    - [Behave](#Behave)
 
 
 <!-- ABOUT THE PROJECT -->
