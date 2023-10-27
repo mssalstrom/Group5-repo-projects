@@ -5,6 +5,22 @@
 ![Commits][commit-shield]
 ![pypi-shield]
 
+``` mermaid
+graph TD
+A[User] --> B(Visit Home Page)
+B --> C{Form Submitted?}
+C -- Yes --> D[Shorten URL]
+C -- No --> B
+D --> E{URL or File?}
+E -- URL --> F[Save URL]
+E -- File --> G[Upload File]
+F --> H{Reset Request?}
+G --> H
+H -- Yes --> I[Clear Session]
+H -- No --> I
+I --> B
+```
+
 <br />
 <div align="center">
     <h1 align="center">CSC 256 Group 5 Project Readme</h1>
