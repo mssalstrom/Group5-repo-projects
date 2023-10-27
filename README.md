@@ -22,7 +22,7 @@
 - [UnitTest](#UnitTest)
 - [BDD](#BDD)
 - [Gherkin](#Gherkin)
-- [Behave Lab](#Behave)
+- [Behave](#Behave)
 
 
 <!-- ABOUT THE PROJECT -->
