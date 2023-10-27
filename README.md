@@ -419,6 +419,8 @@ Key aspects of BDD include:
 
 5. **Automated Testing**: BDD encourages the automation of tests based on the specified behavior. These tests help ensure that the software functions as expected throughout the development process.
 
+# Gherkin
+
 Gherkin is a plain-text language that is used to describe the behavior of a software system. It is widely used in the context of Behavior-Driven Development (BDD) and is commonly associated with tools like Cucumber and Behave for Python. Gherkin syntax is designed to be human-readable and easy to understand by non-technical stakeholders. Here's an explanation of Gherkin syntax using Python as an example:
 
 Gherkin syntax follows a structured format that includes features, scenarios, and steps. Here's how it works:
