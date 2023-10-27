@@ -16,10 +16,11 @@
 
 # Table of Contents:
 - [Introduction](#Introduction)
+- [Selenium](#Selenium)
 - [Setup](#setup)
-- [Lab](#Lab)
 - [Basics](#Basics)
 - [UnitTest](#UnitTest)
+- [BDD](#BDD)
 
 
 <!-- ABOUT THE PROJECT -->
@@ -42,6 +43,9 @@
 - Python
 - Selenium
 - Flask
+
+# Selenium
+Selenium empowers developers and quality assurance teams to automate the testing of web applications by using Python scripts to interact with web elements, simulate user interactions, and validate the functionality and user experience of web pages, ensuring that the application works as intended and functions consistently across various browsers and browser versions. It serves as a versatile tool for functional testing, regression testing, and cross-browser testing, enabling efficient and repeatable testing processes integrated into software development workflows.
 
 # Setup
 
@@ -113,7 +117,6 @@ pip3 show selenium
 6. Press Enter to access the web application.
 7. If the web application "URL Shortener" opens successfully, you have set up the lab correctly. If not, review the above steps to ensure that Flask and Selenium are installed correctly.
 
-# Lab 
 Below are a series of test in the selenium suite of tools that can be used to automate test for a python web application. 
 
 - Create a new python file named "seleniumLab.py" in the test directory. 
@@ -327,6 +330,96 @@ class urlShortener(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
+# BDD
+
+## Behavior-Driven Development (BDD)
+
+**Behavior-Driven Development (BDD)** is a software development methodology that focuses on collaboration between technical and non-technical team members to improve the understanding of the desired behavior of a software system. BDD emphasizes using natural language descriptions to express the expected behavior of the system, making it accessible to non-technical stakeholders. It helps in aligning development efforts with business objectives and promotes a shared understanding of the software's features.
+
+Key aspects of BDD include:
+
+1. **Natural Language Specifications**: BDD encourages writing specifications in plain, human-readable language, often using a structured format like Gherkin. This language can be understood by both technical and non-technical team members.
+
+2. **Collaboration**: BDD promotes collaboration between developers, testers, business analysts, and other stakeholders to define, validate, and document requirements.
+
+3. **Examples and Scenarios**: BDD uses concrete examples and scenarios to illustrate the desired behavior of the system, making it easier to understand and test.
+
+4. **Test-Driven Development (TDD)**: BDD often integrates with TDD, with the behavioral specifications serving as high-level tests that guide the development process.
+
+5. **Automated Testing**: BDD encourages the automation of tests based on the specified behavior. These tests help ensure that the software functions as expected throughout the development process.
+
+## Behave
+
+**Behave** is a Python library that facilitates BDD by allowing you to write and execute behavioral tests using Gherkin language specifications. Behave acts as the bridge between plain language specifications (Gherkin) and Python code. It provides the framework to define Gherkin scenarios and the associated Python code that implements the steps of those scenarios.
+
+Here are the steps to add Behave tests and Gherkin specifications to test a Flask application using Selenium:
+
+1. **Install Behave**:
+   If you haven't already, install Behave using pip:
+
+   ```bash
+   pip install behave
+   ```
+
+2. **Create Feature Files**:
+   Feature files are written in Gherkin language and describe the behavior of your application. You can create feature files for different parts of your application. For example, create a `your_app.feature` file in the dedicated folder for your Behave tests.
+
+   ```gherkin
+   Feature: Testing Your Flask Application
+
+   Scenario: Accessing the homepage
+       Given the Flask application is running
+       When I access the homepage
+       Then I should see "Welcome to My Flask App" on the page
+
+   Scenario: Shortening a URL
+       Given I am on the homepage
+       When I enter a long URL and a short code
+       And I submit the form
+       Then I should see a success message
+   ```
+
+3. **Implement Step Definitions**:
+   Step definitions are Python functions that map the Gherkin steps to actions in your application. Create a Python file (e.g., `your_app_steps.py`) in the same folder as your feature files and define step definitions.
+
+   ```python
+   from behave import *
+
+   @given("the Flask application is running")
+   def step_flask_app_running(context):
+       # Implement code to start your Flask application or set up the testing environment
+
+   @when("I access the homepage")
+   def step_access_homepage(context):
+       # Implement code to navigate to the homepage using Selenium
+
+   @then('I should see "{text}" on the page')
+   def step_check_page_text(context, text):
+       # Implement code to check if the specified text is present on the page
+
+   @when("I enter a long URL and a short code")
+   def step_enter_long_url_and_short_code(context):
+       # Implement code to interact with the URL shortening form
+
+   @when("I submit the form")
+   def step_submit_form(context):
+       # Implement code to submit the form using Selenium
+
+   @then("I should see a success message")
+   def step_check_success_message(context):
+       # Implement code to check if a success message is displayed on the page
+   ```
+
+4. **Run Behave Tests**:
+   Open your command prompt or terminal, navigate to the directory where your feature files and step definitions are located, and run the following command:
+
+   ```bash
+   behave
+   ```
+
+   Behave will execute the Gherkin scenarios and map them to the corresponding step definitions, reporting the results of each scenario.
+
+By following these steps, you can incorporate BDD with Behave and Gherkin into your Selenium tests for the Flask application. This approach enhances collaboration, clarifies requirements, and ensures your application behaves as expected based on the defined scenarios.
 
 
 <!-- MARKDOWN LINKS & IMAGES  -->
