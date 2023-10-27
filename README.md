@@ -388,27 +388,43 @@ Here are the steps to add Behave tests and Gherkin specifications to test a Flas
    @given("the Flask application is running")
    def step_flask_app_running(context):
        # Implement code to start your Flask application or set up the testing environment
+       context.driver = webdriver.Edge()
+       context.driver.set_window_size(800, 800)
+
 
    @when("I access the homepage")
    def step_access_homepage(context):
        # Implement code to navigate to the homepage using Selenium
+       context.driver.get("http://localhost:5000")
+
 
    @then('I should see "{text}" on the page')
    def step_check_page_text(context, text):
        # Implement code to check if the specified text is present on the page
+       page_source = context.driver.page_source
+       assert text in page_source
 
    @when("I enter a long URL and a short code")
    def step_enter_long_url_and_short_code(context):
        # Implement code to interact with the URL shortening form
+       url_element = context.driver.find_element(By.NAME, "url")
+       url_element.clear()
+       url_element.send_keys("https://python.org")
 
    @when("I submit the form")
    def step_submit_form(context):
        # Implement code to submit the form using Selenium
+       submit_button = context.driver.find_element(By.ID, "shortenSubmit")
+       submit_button.click()
 
    @then("I should see a success message")
    def step_check_success_message(context):
        # Implement code to check if a success message is displayed on the page
+       success_message_element = context.driver.find_element(By.ID, "successMessage")
+       assert success_message_element.is_displayed()
    ```
+
+   
 
 4. **Run Behave Tests**:
    Open your command prompt or terminal, navigate to the directory where your feature files and step definitions are located, and run the following command:
