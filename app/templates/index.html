@@ -40,10 +40,12 @@
     <h2>Codes you have created</h2>
     <ul>
         {% for code in codes %}
-        <a href="{{ url_for('redirect_to_url', code=code) }}"> <!-- Creates link for existing code values-->
-            <li>{{ code }}</li>
+        <li>
+            <a href="{{ url_for('redirect_to_url', code=code) }}"> <!-- Creates link for existing code values-->
+            {{ code }}
+            </a>
+        </li>
             {% endfor %}
-        </a>
     </ul>
     <form action="/reset_url_list" method="post" style="display: inline;">
         <input type="hidden" name="reset" value="true">
