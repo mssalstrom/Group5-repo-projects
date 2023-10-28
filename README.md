@@ -44,7 +44,7 @@ I --> B
 <!-- ABOUT THE PROJECT -->
 # Introduction
 ### Purpose 
-> This document provides detailed instructions for testing a provided web application using selenium. Selenium is a library and suite of tools used to build test for web applications.
+> This document provides detailed instructions for testing a provided web application using various techniques and libraries. 
 
 ### Contributers 
 - Dmytro Holovnia - Developer
