@@ -236,10 +236,16 @@ time.sleep(10)
 ```
 - Go back to homepage
 
-- Testing file input 
+
 ```python
 # Navigate the web browser to the "local_url" to return to the homepage or a specific URL
 driver.get(local_url)
+```
+- Testing file input
+
+```python
+# Grabs txt file from current folder
+file_path = os.path.join(os.getcwd(), "File.txt")
 ```
 ```python
 # Locate the HTML element with the "ID" attribute set to "fileInput" using Selenium's find_element method
@@ -330,7 +336,7 @@ time.sleep(10)
 Selenin's strength is the ability to automate test. Below is an exmaple of a UnitTest using the selenium library
 - Create a file named UnitTest.py in the test directory
  - Import necessary libraries
-```cmd
+```python
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
