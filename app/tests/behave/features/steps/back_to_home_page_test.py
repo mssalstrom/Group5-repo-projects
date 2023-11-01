@@ -42,7 +42,7 @@ def verify_new_page(context):
 
 
 @when('I click on the link with id "return"')
-def press_return_button(context):
+def press_return_link(context):
     back_link = context.driver.find_element(By.ID, "return")
     back_link.click()
 

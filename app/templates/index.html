@@ -47,11 +47,11 @@
         </li>
             {% endfor %}
     </ul>
-    
-    {% endif %}<form action="/reset_url_list" method="post" style="display: inline;">
+    <form action="/reset_url_list" method="post" style="display: inline;">
         <input type="hidden" name="reset" value="true">
         <button type="submit" class="reset-button">Reset URL List</button>
     </form>
+    {% endif %}
     {% endblock %}
     </body>
  
