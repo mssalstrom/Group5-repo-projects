@@ -7,5 +7,5 @@ Feature: Reset URL List
     Given I am on the URL Shortener page
     When I check if the "Reset URL List" button exists
     And I click the "Reset URL List" button
-    Then the URL list should be cleared
-    And I should be redirected to the home page
+    And the URL list should be cleared
+    Then I should be redirected to the home page
