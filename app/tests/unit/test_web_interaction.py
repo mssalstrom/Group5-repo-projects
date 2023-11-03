@@ -38,8 +38,8 @@ def test_url_shortener(driver):
     code = driver.find_element(By.NAME, "code")
     code.clear()
     code.send_keys(shortened_name)
-    submit = driver.find_element(By.ID, "shortenSubmit")
-    submit.click()
+    URLsubmit = driver.find_element(By.ID, "URLSubmit")
+    URLsubmit.click()
     time.sleep(5)
     # Ensure that the name displayed on the new page is the same as the shortened name
     code_name = driver.find_element(By.TAG_NAME, "h2")
@@ -73,8 +73,8 @@ def test_filename_shortener(driver):
     file_name.send_keys("Test File")
 
     # clicks button and adds file to json
-    saveImageElement = driver.find_element(By.ID, "saveImage")
-    saveImageElement.click()
+    FileSubmitElement = driver.find_element(By.ID, "FileSubmit")
+    FileSubmitElement.click()
 
     # asserts name is correctly entered
     code_name = driver.find_element(By.TAG_NAME, "h2")
