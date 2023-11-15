@@ -44,7 +44,6 @@ I --> B
     - [Download and Setup](#download-and-setup)
     - [Create and Run Postman Tests](#create-and-run-postman-tests)
 - [Request Library](#request-library)
-    - [Overview](#overview)
     - [Installation](#installation)
     - [Lab](#lab)
 - [Postman vs. Request Library](#postman-vs-request-library)
