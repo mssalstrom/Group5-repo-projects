@@ -569,7 +569,7 @@ In Python, you typically use a BDD framework like Behave to map Gherkin steps to
 
 By following these steps, you can incorporate BDD with Behave and Gherkin into your Selenium tests for the Flask application. This approach enhances collaboration, clarifies requirements, and ensures your application behaves as expected based on the defined scenarios.
 
-# Postman Lab
+# Postman
 
 [Postman](https://www.postman.com/) is a collaboration platform for API development that simplifies the process of designing, testing, and documenting APIs. It provides a user-friendly interface for creating and sending HTTP requests, testing API endpoints, and managing collections of requests.
 
