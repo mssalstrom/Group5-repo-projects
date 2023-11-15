@@ -41,11 +41,10 @@ I --> B
     - [Gherkin](#gherkin)
     - [Behave](#behave)
 - [Postman](#postman)
-    - [Download and Setup](#download-and-setup)
-    - [Create and Run Postman Tests](#create-and-run-postman-tests)
-- [Request Library](#request-library)
     - [Installation](#installation)
     - [Lab](#lab)
+- [Request Library](#request-library)
+    - [Request](#Request)    
 - [Postman vs. Request Library](#postman-vs-request-library)
     - [Similarities](#similarities)
     - [Advantages](#advantages)
@@ -751,8 +750,18 @@ DELETE http://localhost:5000/api/delete-session-key/newSessionKey
 ```http
 GET http://localhost:5000/api/get-session-key/nonexistentKey
 ```
+# Request
+### Python `requests` Library:
 
-This lab provides hands-on experience with testing a Flask web application using Postman. Feel free to explore and modify the requests to deepen your understanding of API testing with Postman.
+The `requests` library is a popular HTTP library for making HTTP requests in Python. It simplifies the process of sending HTTP requests and handling responses. Some key features include:
+
+- **Simplicity:** The library provides a simple and straightforward API for sending HTTP requests. It abstracts the complexities of handling various HTTP methods, headers, and parameters.
+
+- **Versatility:** It supports various HTTP methods such as GET, POST, PUT, DELETE, etc. It also allows customization of request headers, parameters, and authentication.
+
+- **Session Handling:** The library supports session handling, allowing you to persist certain parameters, such as cookies, across multiple requests within the same session.
+
+- **JSON Parsing:** It automatically parses JSON responses, making it easy to work with APIs that return JSON data.
 
 ### Python `requests` Library Lab for Testing APIs
 
@@ -827,21 +836,9 @@ This lab provides hands-on experience with testing a Flask web application using
 
    Ensure that your Flask application is running (`python run.py`) while running the tests.
 
-   The script will execute the defined test functions and assert the expected outcomes. Adjust the URLs and test logic based on your application's API endpoints.
+# Postman vs. Request Library 
 
-### Python `requests` Library:
-
-The `requests` library is a popular HTTP library for making HTTP requests in Python. It simplifies the process of sending HTTP requests and handling responses. Some key features include:
-
-- **Simplicity:** The library provides a simple and straightforward API for sending HTTP requests. It abstracts the complexities of handling various HTTP methods, headers, and parameters.
-
-- **Versatility:** It supports various HTTP methods such as GET, POST, PUT, DELETE, etc. It also allows customization of request headers, parameters, and authentication.
-
-- **Session Handling:** The library supports session handling, allowing you to persist certain parameters, such as cookies, across multiple requests within the same session.
-
-- **JSON Parsing:** It automatically parses JSON responses, making it easy to work with APIs that return JSON data.
-
-### Similarities:
+## Similarities:
 
 1. **HTTP Requests:**
    - Both Postman and the `requests` library are tools for sending HTTP requests to web servers.
@@ -855,7 +852,8 @@ The `requests` library is a popular HTTP library for making HTTP requests in Pyt
 4. **Response Handling:**
    - Both provide features for handling and inspecting HTTP responses.
 
-# Advantages of Postman:
+## Advantages:
+### Postman
 
 1. **Graphical Interface:**
    - Postman provides a graphical user interface (GUI), making it user-friendly and accessible for users who may not be comfortable with writing code.
@@ -869,7 +867,7 @@ The `requests` library is a popular HTTP library for making HTTP requests in Pyt
 4. **Environment Variables:**
    - Postman supports the use of environment variables, enabling the configuration of requests for different environments (e.g., development, testing, production).
 
-# Advantages of `requests` Library:
+### `requests` Library:
 
 1. **Scripting and Automation:**
    - The `requests` library is well-suited for scripting and automation within Python scripts. It can be integrated into larger test suites or automation workflows.
@@ -880,7 +878,7 @@ The `requests` library is a popular HTTP library for making HTTP requests in Pyt
 3. **Version Control:**
    - Code written using the `requests` library can be version-controlled along with the application code, providing better traceability and version history.
 
-# Disadvantages:
+## Disadvantages:
 
 1. **Learning Curve:**
    - The `requests` library may have a steeper learning curve for non-developers compared to the graphical interface of Postman.
@@ -891,7 +889,7 @@ The `requests` library is a popular HTTP library for making HTTP requests in Pyt
 3. **Environment Setup:**
    - The `requests` library requires Python and may involve some initial setup, whereas Postman is a standalone application.
 
-# Conclusion:
+## Conclusion:
 
 - **Use Postman When:**
   - Quick manual testing or exploration of APIs is required.
