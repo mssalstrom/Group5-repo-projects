@@ -31,14 +31,25 @@ I --> B
 <!-- TABLE OF CONTENTS -->
 
 # Table of Contents:
-- [Introduction](#Introduction)
-- [Selenium](#Selenium)
+
+- [Introduction](#introduction)
+- [Selenium](#selenium)
     - [Setup](#setup)
-    - [Basics](#Basics)
-    - [UnitTest](#UnitTest)
-- [BDD](#BDD)
-    - [Gherkin](#Gherkin)
-    - [Behave](#Behave)
+    - [Basics](#basics)
+    - [UnitTest](#unittest)
+- [BDD](#bdd)
+    - [Gherkin](#gherkin)
+    - [Behave](#behave)
+- [Postman](#postman)
+    - [Installation](#installation)
+    - [Lab](#lab)
+- [Request Library](#request-library)
+    - [Request](#Request)    
+- [Postman vs. Request Library](#postman-vs-request-library)
+    - [Similarities](#similarities)
+    - [Advantages](#advantages)
+    - [Disadvantages](#disadvantages)
+    - [Conclusion](#conclusion)
 
 
 <!-- ABOUT THE PROJECT -->
@@ -121,7 +132,7 @@ python -m pip install selenium
 ```
 On Mac:
 ```python
-# Install the Selenium package using Python 3's package manager (pip3)
+# Install the Selenium package using Python package manager.
 pip3 install selenium
 ```
 ### Verify Selenium Installation: 
@@ -569,10 +580,334 @@ In Python, you typically use a BDD framework like Behave to map Gherkin steps to
 
 By following these steps, you can incorporate BDD with Behave and Gherkin into your Selenium tests for the Flask application. This approach enhances collaboration, clarifies requirements, and ensures your application behaves as expected based on the defined scenarios.
 
+# Postman
+## Overview
 
+[Postman](https://www.postman.com/) is a collaboration platform for API development that simplifies the process of designing, testing, and documenting APIs. It provides a user-friendly interface for creating and sending HTTP requests, testing API endpoints, and managing collections of requests.
+
+#### Postman Collection Link
+
+[Postman Collection](https://www.postman.com/collections/your-collection-id)
+
+Replace "your-collection-id" with the actual collection ID generated in Postman.
+
+#### Postman Lab Instructions
+
+# Installation 
+
+1. **Download and Install Postman:**
+
+   If you don't have Postman installed, follow these steps to download and install it:
+
+   - Visit the [official Postman download page](https://www.postman.com/downloads/).
+   - Choose the appropriate version based on your operating system (Windows, macOS, or Linux).
+   - Download the installer and run it to install Postman on your machine.
+
+# Lab 
+
+2. **Accessing the Home Page:**
+
+   - Open Postman and import the provided collection.
+     - Click on "Import" in the top-left corner.
+     - Select the "Link" tab.
+     - Paste the collection link: [Postman Collection](https://www.postman.com/collections/your-collection-id).
+     - Click "Continue" and then "Import."
+   - Select the "Access Home Page" request.
+   - Click the "Send" button to make a GET request to the home page.
+   - Verify that the response includes the expected text: "Welcome to My Flask App."
+
+```http
+GET http://localhost:5000/
+```
+
+3. **Shortening a URL:**
+
+   - Select the "Shorten URL" request.
+   - Set the request method to POST.
+   - Set the request URL to the appropriate endpoint for shortening a URL.
+   - In the request body, provide the necessary data:
+      - Set the `code` parameter for the short code (e.g., "postmanTest").
+      - Set the `url` parameter for the URL to be shortened (e.g., "https://www.postman.com").
+   - Click the "Send" button to make the request.
+   - Verify that the response includes the expected success message.
+
+```http
+POST http://localhost:5000/your_url
+Content-Type: application/x-www-form-urlencoded
+
+code=postmanTest&url=https://www.postman.com
+```
+
+4. **Redirecting to Shortened URL:**
+
+   - Select the "Redirect to Shortened URL" request.
+   - Set the request method to GET.
+   - Set the request URL to the appropriate endpoint for redirecting to a shortened URL (e.g., "/postmanTest").
+   - Click the "Send" button to make the request.
+   - Verify that the response redirects to the expected URL.
+
+```http
+GET http://localhost:5000/postmanTest
+```
+
+5. **Error Handling - Nonexistent Short Code:**
+
+   - Select the "Error Handling - Nonexistent Short Code" request.
+   - Set the request method to GET.
+   - Set the request URL to an endpoint with a nonexistent short code (e.g., "/nonexistentCode").
+   - Click the "Send" button to make the request.
+   - Verify that the response includes a 404 status code.
+
+```http
+GET http://localhost:5000/nonexistentCode
+```
+
+6. **Error Handling - Existing Short Code as URL:**
+
+   - Select the "Error Handling - Existing Short Code as URL" request.
+   - Set the request method to GET.
+   - Set the request URL to an endpoint with an existing short code that represents a URL (e.g., "/python").
+   - Click the "Send" button to make the request.
+   - Verify that the response redirects to the expected URL.
+
+```http
+GET http://localhost:5000/python
+```
+
+7. **Error Handling - Existing Short Code as File:**
+
+   - Select the "Error Handling - Existing Short Code as File" request.
+   - Set the request method to GET.
+   - Set the request URL to an endpoint with an existing short code that represents a file (e.g., "/Shortname").
+   - Click the "Send" button to make the request.
+   - Verify that the response redirects to the expected file.
+
+```http
+GET http://localhost:5000/Shortname
+```
+
+8. **Clearing the URL List:**
+
+   - Select the "Clear URL List" request.
+   - Set the request method to POST.
+   - Click the "Send" button to make the request.
+   - Verify that the response indicates successful clearing of the URL list.
+
+```http
+POST http://localhost:5000/
+```
+
+9. **API Endpoint - Get Session Keys:**
+
+   - Select the "API - Get Session Keys" request.
+   - Set the request method to GET.
+   - Click the "Send"
+
+button to make the request.
+   - Verify that the response includes the expected session keys.
+
+```http
+GET http://localhost:5000/api/session-keys
+```
+
+10. **API Endpoint - Add Session Key:**
+
+   - Select the "API - Add Session Key" request.
+   - Set the request method to POST.
+   - Set the request URL to the appropriate endpoint for adding a session key.
+   - In the request body, provide the necessary data:
+      - Set the `key` parameter for the session key (e.g., "newSessionKey").
+   - Click the "Send" button to make the request.
+   - Verify that the response includes the expected success message.
+
+```http
+POST http://localhost:5000/api/add-session-key
+Content-Type: application/x-www-form-urlencoded
+
+key=newSessionKey
+```
+
+11. **API Endpoint - Delete Session Key:**
+
+   - Select the "API - Delete Session Key" request.
+   - Set the request method to DELETE.
+   - Set the request URL to the appropriate endpoint for deleting a session key (e.g., "/api/delete-session-key/newSessionKey").
+   - Click the "Send" button to make the request.
+   - Verify that the response includes the expected success message.
+
+```http
+DELETE http://localhost:5000/api/delete-session-key/newSessionKey
+```
+
+12. **API Endpoint - Error Handling - Nonexistent Session Key:**
+
+   - Select the "API - Error Handling - Nonexistent Session Key" request.
+   - Set the request method to GET.
+   - Set the request URL to an endpoint with a nonexistent session key (e.g., "/api/get-session-key/nonexistentKey").
+   - Click the "Send" button to make the request.
+   - Verify that the response includes a 404 status code.
+
+```http
+GET http://localhost:5000/api/get-session-key/nonexistentKey
+```
+# Request
+### Python `requests` Library:
+
+The `requests` library is a popular HTTP library for making HTTP requests in Python. It simplifies the process of sending HTTP requests and handling responses. Some key features include:
+
+- **Simplicity:** The library provides a simple and straightforward API for sending HTTP requests. It abstracts the complexities of handling various HTTP methods, headers, and parameters.
+
+- **Versatility:** It supports various HTTP methods such as GET, POST, PUT, DELETE, etc. It also allows customization of request headers, parameters, and authentication.
+
+- **Session Handling:** The library supports session handling, allowing you to persist certain parameters, such as cookies, across multiple requests within the same session.
+
+- **JSON Parsing:** It automatically parses JSON responses, making it easy to work with APIs that return JSON data.
+
+### Python `requests` Library Lab for Testing APIs
+
+1. **Install Required Package:**
+
+   Ensure you have the `requests` library installed. If not, install it using:
+
+   ```bash
+   pip install requests
+   ```
+
+2. **Create a Test Script:**
+
+   Create a new Python script (e.g., `api_test.py`) in the same directory as your Flask application.
+
+   ```python
+   import requests
+
+   # Set the base URL for your Flask application
+   base_url = 'http://localhost:5000'
+
+   def test_home_endpoint():
+       response = requests.get(f'{base_url}/')
+       assert response.status_code == 200
+       assert response.text == 'Welcome to My Flask App'
+
+   def test_shorten_url_endpoint():
+       data = {'code': 'test', 'url': 'https://www.example.com'}
+       response = requests.post(f'{base_url}/', data=data)
+       assert response.status_code == 200
+       assert response.text == 'URL shortened successfully'
+
+   def test_redirect_to_url_endpoint():
+       response = requests.get(f'{base_url}/test')
+       assert response.status_code == 302  # Expecting a redirect status code
+
+   def test_api_session_keys_endpoint():
+       response = requests.get(f'{base_url}/api/session-keys')
+       assert response.status_code == 200
+       session_keys = response.json()['session_keys']
+       assert isinstance(session_keys, list)
+
+   def test_api_add_session_key_endpoint():
+       data = {'key': 'new_key'}
+       response = requests.post(f'{base_url}/api/add-session-key', data=data)
+       assert response.status_code == 200
+       assert response.text == 'Session key added successfully'
+
+   def test_api_delete_session_key_endpoint():
+       key_to_delete = 'new_key'
+       response = requests.delete(f'{base_url}/api/delete-session-key/{key_to_delete}')
+       assert response.status_code == 200
+       assert response.text == 'Session key deleted successfully'
+
+   if __name__ == '__main__':
+       # Run your test functions
+       test_home_endpoint()
+       test_shorten_url_endpoint()
+       test_redirect_to_url_endpoint()
+       test_api_session_keys_endpoint()
+       test_api_add_session_key_endpoint()
+       test_api_delete_session_key_endpoint()
+   ```
+
+3. **Run the Test Script:**
+
+   Open your terminal, navigate to the directory containing your Flask application and the new Python script, and run:
+
+   ```bash
+   python api_test.py
+   ```
+
+   Ensure that your Flask application is running (`python run.py`) while running the tests.
+
+# Postman vs. Request Library 
+
+## Similarities:
+
+1. **HTTP Requests:**
+   - Both Postman and the `requests` library are tools for sending HTTP requests to web servers.
+
+2. **HTTP Methods:**
+   - Both support common HTTP methods like GET, POST, PUT, DELETE, etc.
+
+3. **Headers and Parameters:**
+   - Both allow customization of HTTP headers and parameters for requests.
+
+4. **Response Handling:**
+   - Both provide features for handling and inspecting HTTP responses.
+
+## Advantages:
+### Postman
+
+1. **Graphical Interface:**
+   - Postman provides a graphical user interface (GUI), making it user-friendly and accessible for users who may not be comfortable with writing code.
+
+2. **API Documentation:**
+   - Postman can generate API documentation based on requests, making it easy to share and understand the usage of an API.
+
+3. **Collections:**
+   - Postman allows organizing requests into collections, facilitating the management and execution of multiple requests.
+
+4. **Environment Variables:**
+   - Postman supports the use of environment variables, enabling the configuration of requests for different environments (e.g., development, testing, production).
+
+### `requests` Library:
+
+1. **Scripting and Automation:**
+   - The `requests` library is well-suited for scripting and automation within Python scripts. It can be integrated into larger test suites or automation workflows.
+
+2. **Integration with Testing Frameworks:**
+   - It integrates well with testing frameworks like `unittest` or `pytest`, allowing for the creation of comprehensive test suites.
+
+3. **Version Control:**
+   - Code written using the `requests` library can be version-controlled along with the application code, providing better traceability and version history.
+
+## Disadvantages:
+
+1. **Learning Curve:**
+   - The `requests` library may have a steeper learning curve for non-developers compared to the graphical interface of Postman.
+
+2. **GUI vs. Code:**
+   - Postman's GUI may be preferred by users who are more comfortable with visual tools, while developers may find the `requests` library more natural.
+
+3. **Environment Setup:**
+   - The `requests` library requires Python and may involve some initial setup, whereas Postman is a standalone application.
+
+## Conclusion:
+
+- **Use Postman When:**
+  - Quick manual testing or exploration of APIs is required.
+  - Collaboration and sharing of API requests are essential.
+  - A graphical interface is preferred over code.
+
+- **Use `requests` Library When:**
+  - Automation and scripting within Python are required.
+  - Integration with testing frameworks or other Python-based tools is needed.
+  - Requests need to be version-controlled along with the application code.
+
+In summary, the choice between Postman and the `requests` library depends on the specific needs of the user, the context of the task, and the preference for a graphical interface or code-based approach. Both tools serve their purposes effectively in different scenarios.
 <!-- MARKDOWN LINKS & IMAGES  -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/mssalstrom/Group5-repo-projects
 [contributors-url]: https://github.com/mssalstrom/Group5-repo-projects/graphs/contributors
 [commit-shield]: https://img.shields.io/github/last-commit/mssalstrom/Group5-repo-projects
 [pypi-shield]: https://img.shields.io/pypi/pyversions/iconsdk
+
+
+
