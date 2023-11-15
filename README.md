@@ -583,6 +583,7 @@ In Python, you typically use a BDD framework like Behave to map Gherkin steps to
 By following these steps, you can incorporate BDD with Behave and Gherkin into your Selenium tests for the Flask application. This approach enhances collaboration, clarifies requirements, and ensures your application behaves as expected based on the defined scenarios.
 
 # Postman
+## Overview
 
 [Postman](https://www.postman.com/) is a collaboration platform for API development that simplifies the process of designing, testing, and documenting APIs. It provides a user-friendly interface for creating and sending HTTP requests, testing API endpoints, and managing collections of requests.
 
@@ -594,7 +595,7 @@ Replace "your-collection-id" with the actual collection ID generated in Postman.
 
 #### Postman Lab Instructions
 
-**Objective:** Test the Flask web application using Postman.
+# Installation 
 
 1. **Download and Install Postman:**
 
@@ -603,6 +604,8 @@ Replace "your-collection-id" with the actual collection ID generated in Postman.
    - Visit the [official Postman download page](https://www.postman.com/downloads/).
    - Choose the appropriate version based on your operating system (Windows, macOS, or Linux).
    - Download the installer and run it to install Postman on your machine.
+
+# Lab 
 
 2. **Accessing the Home Page:**
 
@@ -853,7 +856,7 @@ The `requests` library is a popular HTTP library for making HTTP requests in Pyt
 4. **Response Handling:**
    - Both provide features for handling and inspecting HTTP responses.
 
-### Advantages of Postman:
+# Advantages of Postman:
 
 1. **Graphical Interface:**
    - Postman provides a graphical user interface (GUI), making it user-friendly and accessible for users who may not be comfortable with writing code.
@@ -867,7 +870,7 @@ The `requests` library is a popular HTTP library for making HTTP requests in Pyt
 4. **Environment Variables:**
    - Postman supports the use of environment variables, enabling the configuration of requests for different environments (e.g., development, testing, production).
 
-### Advantages of `requests` Library:
+# Advantages of `requests` Library:
 
 1. **Scripting and Automation:**
    - The `requests` library is well-suited for scripting and automation within Python scripts. It can be integrated into larger test suites or automation workflows.
@@ -878,7 +881,7 @@ The `requests` library is a popular HTTP library for making HTTP requests in Pyt
 3. **Version Control:**
    - Code written using the `requests` library can be version-controlled along with the application code, providing better traceability and version history.
 
-### Disadvantages:
+# Disadvantages:
 
 1. **Learning Curve:**
    - The `requests` library may have a steeper learning curve for non-developers compared to the graphical interface of Postman.
@@ -889,7 +892,7 @@ The `requests` library is a popular HTTP library for making HTTP requests in Pyt
 3. **Environment Setup:**
    - The `requests` library requires Python and may involve some initial setup, whereas Postman is a standalone application.
 
-### Conclusion:
+# Conclusion:
 
 - **Use Postman When:**
   - Quick manual testing or exploration of APIs is required.
