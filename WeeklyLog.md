@@ -25,6 +25,7 @@
 >>
 >> Eric Dixon - Document Writer
 
+
 # **Weekly log: Sprint 2**
 ## **Completed Task:**
 >Functioning web application 
@@ -45,3 +46,14 @@
 >
 >> Updating selenium lab following meeting with professor
 
+
+# **Weekly log: Sprint 3**
+## **Completed Task:**
+>API Tests Lab Instructions
+
+## **Ongoing Task:**
+>Determining API Tests Lab Scope
+
+## **Next Steps:**
+>Meeting with Professor  
+>Possible Refactoring of API Tests Lab
