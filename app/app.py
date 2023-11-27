@@ -16,27 +16,6 @@ def index():
 
 @app.route('/your_url', methods=['GET', 'POST'])
 def your_url():
-    """
-    Handles GET and POST requests for the '/your_url' endpoint.
-
-    If the request method is POST:
-    - Loads existing URLs from 'urls.json' file.
-    - Checks if the provided short name ('code') already exists; if yes, redirects to the home page.
-    - If 'url' is present in the form, adds a new URL entry.
-    - If 'file' is present in the form, saves the file and adds a new file entry.
-    - Updates 'urls.json' with the modified dictionary.
-    - Sets a session cookie with the short name.
-
-    If the request method is not POST:
-    - Redirects to the home page as the user needs to enter data on the '/' page first.
-
-    Returns:
-        If POST request:
-            Renders 'your_url.html' with the short name ('code') as a parameter.
-        If not a POST request:
-            Redirects to the home page.
-
-    """
     if request.method == 'POST':
         urls = {}
         if os.path.exists('urls.json'):   # Loads json file if present
@@ -67,21 +46,6 @@ def your_url():
 
 @app.route('/<string:code>')  # Looks at the string after /your_url/ and stores it as a variable name code.
 def redirect_to_url(code):
-    """
-    Handles requests to redirect to the URL associated with the provided 'code'.
-
-    Args:
-        code (str): The short name used to look up the corresponding URL or file.
-
-    Returns:
-        If the 'code' is found in 'urls.json' and is associated with a URL:
-            Redirects to the corresponding URL.
-        If the 'code' is found in 'urls.json' and is associated with a file:
-            Redirects to the file for display on the page.
-        If the 'code' is not found in 'urls.json':
-            Aborts with a 404 error, indicating that the URL or file is not found.
-
-    """
     if os.path.exists('urls.json'):  # Checks for the code variable in the urls.json file
         with open('urls.json') as urls_file:
             urls = json.load(urls_file)
@@ -96,64 +60,22 @@ def redirect_to_url(code):
 # Removes JSON file and clears cookies to reset code list
 @app.route('/', methods=['GET', 'POST'])
 def clear_list():
-    """
-    Clears the list of URLs by emptying the 'urls.json' file.
-
-    This function handles both GET and POST requests for the '/' endpoint.
-
-    Returns:
-        Renders 'index.html' template.
-        Clears the session cookie, removing any stored short names ('codes').
-
-    """
     open('urls.json', 'w').close()
     return render_template('index.html', codes=session.clear())
 
 
 @app.errorhandler(404)   # Error handler for 404 code
 def page_not_found(error):
-    """
-      Error handler for 404 status code.
-
-      Args:
-          error (Exception): The exception object representing the 404 error.
-
-      Returns:
-          Renders 'page_not_found.html' template.
-          Sets the HTTP response status code to 404.
-
-      """
     return render_template('page_not_found.html'), 404
 
 
 @app.route('/api')   # Creates and API and stores urls.json keys in a list
 def session_api():
-    """
-     Creates an API endpoint to retrieve the keys stored in the session.
-
-     This function returns a JSON response containing a list of keys stored in the session.
-
-     Returns:
-         A JSON response containing a list of keys from the session.
-
-     """
     return jsonify(list(session.keys()))
-
 
 # Resets the URL list
 @app.route('/reset_url_list', methods=['POST'])
 def reset_url_list():
-    """
-     Resets the URL list by clearing the session and emptying the 'urls.json' file.
-
-     This function handles POST requests to the '/reset_url_list' endpoint.
-     If the 'reset' parameter in the form data is set to 'true', it clears the session
-     and empties the 'urls.json' file.
-
-     Returns:
-         Redirects to the home page ('index') after resetting the URL list.
-
-     """
     if request.form.get('reset') == 'true':
         session.clear()  # Clear the session to reset the URL list
         # Clear the contents of the 'urls.json' file
