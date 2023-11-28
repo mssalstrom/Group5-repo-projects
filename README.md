@@ -277,7 +277,7 @@ time.sleep(10)
   
   
 - Retesting with longer URL  
-- Clear preexisitng text and type python.org into url shortener  
+- Clear pre-exisitng text and type python.org into url shortener  
 ```python  
 # Clear the input field for the URL element  
 url_element.clear()  
