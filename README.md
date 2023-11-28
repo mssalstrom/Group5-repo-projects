@@ -787,8 +787,8 @@ Test-Driven Development (TDD) is a software development approach where tests are
 
 ### Extreme Programming and the Agile Manifesto are the roots of the TDD methodology.
    - Software development is driven by the test process, as the name implies.
-    - It's also a structural technique that gives developers and testers optimal code that turns out to be long-lasting.
-    - Using TDD, developers build brief test cases for each feature based on their preliminary knowledge.
+   - It's also a structural technique that gives developers and testers optimal code that turns out to be long-lasting.
+   - Using TDD, developers build brief test cases for each feature based on their preliminary knowledge.
 
  This technique's main goal is to write new or modified code solely in the event that the tests are unsuccessful. Test script duplication is avoided as a result.
  
