@@ -873,6 +873,104 @@ def is_even(number):
 
 In summary, TDD is a disciplined approach to software development that prioritizes writing tests before code. This practice leads to more reliable, maintainable, and bug-free software through iterative cycles of testing, implementation, and refactoring.
 
+# Introduction to Playwright with Python for Web Testing
+
+Microsoft created Playwright, as an open-source browser automation toolkit and framework. It makes it possible for developers to automate browser interactions, which makes end-to-end testing of online applications easier. Playwright is compatible with most browsers including Firefox, and Chrome.
+
+## Objective
+
+The objective of this lab is to introduce new developers to Playwright with Python, a powerful automation framework for end-to-end testing of web applications.
+
+## Prerequisites
+
+-   Basic understanding of web development concepts (HTML, CSS, JavaScript).
+-   Familiarity with Python programming language.
+-   Python and pip installed on the development machine.
+
+## Lab Steps
+
+### Step 1: Install Playwright for Python
+
+1.  Open a terminal and navigate to your project directory.
+    
+2.  Install Playwright for Python using pip:
+
+	```pip install playwright```
+
+
+
+### Step 2: Create a Basic Playwright Test in Python
+
+1.  Create a new Python script file named `screenshot_test.py` and open it in your preferred code editor.
+    
+2.  Write a simple Playwright test to open a browser, navigate to a webpage, and perform a basic interaction:
+  ```python   
+  #screenshot_test.py
+from playwright.sync_api import sync_playwright
+
+def run_basic_test():
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page()
+        page.goto('https://www.google.com')
+        page.screenshot(path='example.png')
+        browser.close()
+
+run_basic_test()
+```
+
+### Step 3: Run the Playwright Test
+
+1.  Open a terminal and run the Playwright test:
+    
+
+	  ```python screenshot_test.py``` 
+
+This will launch a headless browser, navigate to https://www.google.com, capture a screenshot (saved as `example.png`), and then close the browser.
+
+    
+    
+
+### Step 4: Explore Playwright Documentation for Python
+
+1.  Visit the [Playwright Documentation for Python](https://playwright.dev/docs/intro) to explore the available features and functionalities specifically for Python.
+    
+2.  Experiment with other Playwright functions and methods in your test script.
+    
+
+### Step 5: Write an Interactive Test in Python
+
+1.  Modify the test script to interact with elements on a webpage. For example, interact with a button or fill out a form.
+    
+```python
+from playwright.sync_api import sync_playwright
+
+def run_interactive_test():
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page()
+        page.goto('https://www.saucedemo.com/')
+
+        # Clicking a button
+        page.click('button')
+        # Filling out a form
+        page.fill('input[id="user-name"]', 'standard_user')
+        page.fill('input[id="password"]', 'secret_sauce')
+        page.click('button[name="login-button"]')
+        browser.close()
+
+run_interactive_test()
+```
+
+
+### Step 6: Run the Interactive Test
+
+1.  Open a terminal and run the interactive test:
+
+	```python interactive_test.py``` 
+
+2. Observe the interactions with the webpage and verify that the script clicks the button and fills out the form.
+
 <!-- MARKDOWN LINKS & IMAGES  -->  
   
 [contributors-shield]: https://img.shields.io/github/contributors/mssalstrom/Group5-repo-projects  
