@@ -905,7 +905,7 @@ The objective of this lab is to introduce new developers to Playwright with Pyth
     
 2.  Write a simple Playwright test to open a browser, navigate to a webpage, and perform a basic interaction:
   ```python   
-  #screenshot_test.py
+  #test_examples.py
 from playwright.sync_api import sync_playwright
 
 def run_basic_test():
