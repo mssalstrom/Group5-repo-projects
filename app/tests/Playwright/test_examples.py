@@ -1,5 +1,6 @@
 import pytest
-from playwright.sync_api import sync_playwright, Page, expect
+import re
+from playwright.sync_api import sync_playwright, expect
 
 
 def test_screenshot():
@@ -7,7 +8,7 @@ def test_screenshot():
         browser = p.chromium.launch()
         page = browser.new_page()
         page.goto('https://www.google.com')
-        page.screenshot(path='example.png')
+        page.screenshot(path='test_screenshot.png')
 
 
 def test_web_interaction():
@@ -18,6 +19,7 @@ def test_web_interaction():
         page.fill('input[id="user-name"]', 'standard_user')
         page.fill('input[id="password"]', 'secret_sauce')
         page.click('input[name="login-button"]')
+        expect(page.get_by_text('Products')).to_be_visible()
         browser.close()
 
 
