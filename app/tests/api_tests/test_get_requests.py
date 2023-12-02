@@ -1,6 +1,6 @@
 import pytest
 import requests
-import requests_mock
+
 
 """Pytest Testing for GET Requests Using JSONPlaceholder"""
 
