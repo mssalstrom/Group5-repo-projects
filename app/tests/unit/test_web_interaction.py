@@ -12,13 +12,27 @@ from selenium.webdriver.common.by import By
 # Fixture setup, initialize driver instance and navigate to URL
 @pytest.fixture
 def driver():
+    """
+    Fixture setup, initialize driver instance and navigate to URL
+
+    Returns:
+        instance of selenium webdriver
+    """
     driver = webdriver.Firefox()
     driver.get("http://localhost:5000/")
     return driver
 
 
 def test_validate_page_title(driver):
-    """Test if the URL of the page matches the expected URL"""
+    """
+    Test if the URL of the page matches the expected URL
+
+    Params:
+        driver: an instance of selenium webdriver
+
+    Returns:
+        none
+    """
     expected_title = "URL Shortener"
     try:
         assert driver.title == expected_title, "Page title does not match expected title."
@@ -28,7 +42,15 @@ def test_validate_page_title(driver):
 
 
 def test_url_shortener(driver):
-    """Tests if the URL shortener is functioning properly"""
+    """
+    Tests if the URL shortener is functioning properly
+
+    Params:
+        driver: an instance of selenium webdriver
+
+    Returns:
+        none
+    """
     # Enter URL into URL element
     url = driver.find_element(By.NAME, "url")
     url.clear()
@@ -57,7 +79,15 @@ def test_url_shortener(driver):
 
 
 def test_filename_shortener(driver):
-    """Tests if the filename shortener is functioning properly"""
+    """
+    Tests if the filename shortener is functioning properly
+
+    Params:
+        driver: an instance of selenium webdriver
+
+    Returns:
+        none
+    """
     # Grabs txt file from current folder
     file_path = os.path.join(os.getcwd(), "File.txt")
 
@@ -86,5 +116,13 @@ def test_filename_shortener(driver):
 
 
 def test_clear_codes(driver):
-    """Tests if the clear button functions properly"""
+    """
+    Tests if the clear button functions properly
+
+    Params:
+        driver: an instance of selenium webdriver
+
+    Returns:
+        none
+    """
     pass
