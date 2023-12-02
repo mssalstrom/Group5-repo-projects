@@ -40,3 +40,4 @@ def test_submit_fail():
         expect(page.locator("h3")).to_have_text("Epic sadface: Username is required")
         page.screenshot(path='sumbit_fail.png')
 
+
