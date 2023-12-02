@@ -62,7 +62,7 @@ I --> B
 <!-- ABOUT THE PROJECT -->  
 # Introduction  
 ### Purpose   
-> This document provides detailed instructions for testing a provided web application using selenium. Selenium is a library and suite of tools used to build test for web applications.  
+> This document provides detailed instructions for testing a provided web application using Selenium, BDD testing with Behave, Postman and Python's Request Library, TDD, and Playwright. 
   
 ### Contributers   
 - Dmytro Holovnia - Developer  
@@ -391,7 +391,7 @@ class urlShortener(unittest.TestCase):
 ```  
 - Close driver  
 ```python  
- # Define the 'tearDown' method for cleaning up after the test case def tearDown(self):  
+ # Define the 'tearDown' method for cleaning up after the test casedef tearDown(self):  
  # Close the web driver instance to release system resources self.driver.close()  
 ```  
 - Execute test  
@@ -814,16 +814,28 @@ The TDD process typically follows a cycle known as the Red-Green-Refactor cycle.
 - Start by opening your project directory and creating a ```test_tdd.py``` file. 
 - Add the following code to your ```test_tdd.py``` file:
 ```python
+# Importing the 'is_even' function from the 'even_checker' module
 from even_checker import is_even
+
+# Importing the 'unittest' module for creating test cases
 import unittest
 
+# Creating a test class that inherits from 'unittest.TestCase'
 class TestEvenChecker(unittest.TestCase):
+    
+    # Defining a test method for the 'is_even' function
     def test_is_even(self):
+        # Asserting that is_even(4) returns True (since 4 is an even number)
         self.assertTrue(is_even(4))
+        
+        # Asserting that is_even(7) returns False (since 7 is an odd number)
         self.assertFalse(is_even(7))
 
+# Checking if the script is being run as the main module
 if __name__ == '__main__':
+    # Running the tests defined in the 'TestEvenChecker' class
     unittest.main()
+
 ```
 - Since there is no code for the ```is_even``` function, the test will fail. This is the ```Red``` part of the cycle.
 ### Green: Write the Minimum Code to Pass the Test
@@ -831,7 +843,9 @@ if __name__ == '__main__':
 - Next, write the minimum amount of code necessary to make the test pass.
 - Create a new file in your project directory name ```even_checker.py``` and add the following code:
 ```python
+# Function to check if a given number is even
 def is_even(number):
+    # Return True if the number is evenly divisible by 2 (i.e., it's an even number)
     return number % 2 == 0
 ```
 - Run the ```test_tdd.py``` file and ensure the test has passed.
@@ -844,9 +858,13 @@ def is_even(number):
 - Once the test passes, refactor the code without changing its behavior. This is the ```Refector``` phase of TDD.
 - Modify the ``is_even`` function in the ```even_checker.py``` file:
 ```python
+# Function to check if a given number is even
 def is_even(number):
+    # Check if the input is a number (integer or float)
     if not isinstance(number, (int, float)):
         raise ValueError("Input must be a number")
+    
+    # Return True if the number is even, False otherwise
     return number % 2 == 0
 ```
 - This step ensures that the code remains clean, maintainable, and efficient.
@@ -860,12 +878,28 @@ def is_even(number):
 
 - Start by opening your project directory and adding the following code to your  ```test_tdd.py``` file:
 ```python
+# Importing the necessary module or function from 'my_calculator'
 from my_calculator import add_numbers
 
+# Importing the 'unittest' module for creating test cases
+import unittest
+
+# Creating a test class that inherits from 'unittest.TestCase'
 class TestCalculator(unittest.TestCase):
+    
+    # Defining a test method for the 'add_numbers' function
     def test_add_numbers(self):
+        # Calling the 'add_numbers' function with arguments 2 and 3
         result = add_numbers(2, 3)
+        
+        # Asserting that the result is equal to the expected value (5)
         self.assertEqual(result, 5)
+
+# This script can be executed to run the test defined in the 'TestCalculator' class
+# Example usage:
+# if __name__ == '__main__':
+#     unittest.main()
+
 ```
 - Since there is no code for the ```add_numbers function```, the test will fail.
 ### Green: Write the Minimum Code to Pass the Test
@@ -914,8 +948,9 @@ Run the ```test_tdd.py``` file again, ensuring all tests pass.
 - **Jest (JavaScript), RSpec (Ruby):** Frameworks that support behavior-driven development (BDD) in addition to TDD.
 
 In summary, TDD is a disciplined approach to software development that prioritizes writing tests before code. This practice leads to more reliable, maintainable, and bug-free software through iterative cycles of testing, implementation, and refactoring.
+# Playwright
 
-# Introduction to Playwright with Python for Web Testing
+## Introduction to Playwright with Python for Web Testing
 
 Developed by Microsoft, Playwright is an open-source library for automating browsers.
 It provides a high-level API for automating actions in web browsers such as Chrome, Firefox, and WebKit. 
@@ -933,7 +968,7 @@ The objective of this lab is to introduce new developers to Playwright with Pyth
 
 ## Getting Started
 
-### Step 1: Install Playwright for Python
+**Step 1: Install Playwright for Python**
 
 1.  Open a terminal and navigate to your project directory.
     
@@ -945,7 +980,7 @@ pip install playwright
 
 
 
-### Step 2: Create a Basic Playwright Test in Python
+**Step 2: Create a Basic Playwright Test in Python**
 
 1.  Create a new Python script file named `test_examples.py` and open it in your preferred code editor.
     
@@ -954,16 +989,38 @@ pip install playwright
   #test_examples.py
 from playwright.sync_api import sync_playwright
 
-def test_screenshot():
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        page = browser.new_page()
-        page.goto('https://www.saucedemo.com/')
-        page.screenshot(path='test_screenshot.png')
-        browser.close()
-```
+# Importing the necessary Playwright functions for synchronous operation
+from playwright.sync_api import sync_playwright
 
-### Step 3: Run the Playwright Test
+# Function to capture a screenshot of a web page
+def test_screenshot():
+    # Using 'sync_playwright' to create a synchronous Playwright context
+    with sync_playwright() as p:
+        # Launching a Chromium browser (Replace 'chromium' with your preferred browser)
+        # Options: 'firefox', 'webkit' (for Firefox and WebKit respectively)
+        browser = p.chromium.launch()
+
+        # Creating a new page in the browser
+        page = browser.new_page()
+
+        # Navigating to the specified URL
+        page.goto('https://www.saucedemo.com/')
+
+        # Taking a screenshot and saving it to the specified path
+        page.screenshot(path='test_screenshot.png')
+
+        # Closing the browser
+        browser.close()
+
+# To use a different browser, replace 'chromium' with one of the following options:
+# - 'firefox' for Mozilla Firefox
+# - 'webkit' for WebKit (default on macOS)
+
+# Example usage with Firefox:
+# test_screenshot(browser_type='firefox')
+
+
+**Step 3: Run the Playwright Test**
 
 1.  Open a terminal and navigate to your project directory.
 2.  Run the following command:
@@ -974,26 +1031,54 @@ pytest
 
 This will launch a headless browser, navigate to https://www.saucedemo.com/, capture a screenshot (saved as `test_screenshot.png`), and then close the browser.
 
-### Web Interaction and Assertions
+## Web Interaction and Assertions
 
-#### Step 1: Modify the ```test_examples.py``` to include the Playwright ```expect``` package and add following test:
+**Step 1: Modify the ```test_examples.py``` to include the Playwright ```expect``` package and add following test:**
     
 ```python
+# Importing the necessary Playwright functions for synchronous operation
 from playwright.sync_api import sync_playwright, expect
+
+# Function to test web interactions on a login page
 def test_web_interaction():
+    # Using 'sync_playwright' to create a synchronous Playwright context
     with sync_playwright() as p:
+        # Launching a Chromium browser (Replace 'chromium' with your preferred browser)
+        # Options: 'firefox', 'webkit' (for Firefox and WebKit respectively)
         browser = p.chromium.launch()
+
+        # Creating a new page in the browser
         page = browser.new_page()
+
+        # Navigating to the specified URL
         page.goto('https://www.saucedemo.com/')
+
+        # Filling in the username field with 'standard_user'
         page.fill('input[id="user-name"]', 'standard_user')
+
+        # Filling in the password field with 'secret_sauce'
         page.fill('input[id="password"]', 'secret_sauce')
+
+        # Clicking the login button
         page.click('input[name="login-button"]')
-        expect(page.get_by_text('Swag Labs')).to_be_visible()
+
+        # Expecting the text 'Swag Labs' to be visible on the page
+        expect(page.locator('Swag Labs')).to_be_visible()
+
+        # Closing the browser
         browser.close()
+
+# To use a different browser, replace 'chromium' with one of the following options:
+# - 'firefox' for Mozilla Firefox
+# - 'webkit' for WebKit (default on macOS)
+
+# Example usage with Firefox:
+# test_web_interaction(browser_type='firefox')
+
 ```
 
 
-### Step 2: Run the Web Interactive Test
+**Step 2: Run the Web Interactive Test**
 
 1.  Open a terminal and navigate to your project directory.
 2.  Run the following command:
@@ -1005,23 +1090,37 @@ pytest
 Observe the interactions with the browser. Ensure the test opens the page, logins in using the provided credentials
 , selects the login button and the ***Swag Labs*** header is displayed.
 
-### Response Assertions
+## Response Assertions
 
 Playwright assertions verify certain conditions or expectations during the execution of automated browser tests.
 Assertions help ensure that the web application behaves as expected and that the desired elements and states are present
 on the page.
 
-#### Step 1: Modify the ```test_examples.py``` to include the following test:
+**Step 1: Modify the ```test_examples.py``` to include the following test:**
 
 ```python
+# Importing the necessary Playwright functions for synchronous operation
+from playwright.sync_api import sync_playwright, expect
+
+# Function to test the response of a web page
 def test_response():
+    # Using 'sync_playwright' to create a synchronous Playwright context
     with sync_playwright() as p:
+        # Launching a Chromium browser (Replace 'chromium' with your preferred browser)
+        # Options: 'firefox', 'webkit' (for Firefox and WebKit respectively)
         browser = p.chromium.launch()
+
+        # Creating a new page in the browser
         page = browser.new_page()
+
+        # Making a GET request to the specified URL and capturing the response
         response = page.request.get('https://www.saucedemo.com/')
+
+        # Expecting the response to be successful (HTTP status code 200)
         expect(response).to_be_ok()
+
 ```
-#### Step 2: Run the Response Test
+**Step 2: Run the Response Test**
 
 1.  Open a terminal and navigate to your project directory.
 2.  Run the following command:
@@ -1032,21 +1131,39 @@ pytest
 
 This test will ensure that the response status code is within the ```200-299``` range.
 
-### Assertion with Visible Text
+## Assertion with Visible Text
 
-#### Step 1: Modify the ```test_examples.py``` to include the following test:
+**Step 1: Modify the ```test_examples.py``` to include the following test:**
 ```python
+# Importing the necessary Playwright functions for synchronous operation
+from playwright.sync_api import sync_playwright, expect
+
+# Function to test a failed form submission on a login page
 def test_submit_fail():
+    # Using 'sync_playwright' to create a synchronous Playwright context
     with sync_playwright() as p:
+        # Launching a Chromium browser (Replace 'chromium' with your preferred browser)
+        # Options: 'firefox', 'webkit' (for Firefox and WebKit respectively)
         browser = p.chromium.launch()
+
+        # Creating a new page in the browser
         page = browser.new_page()
+
+        # Navigating to the specified URL
         page.goto('https://www.saucedemo.com/')
+
+        # Clicking the login button without entering credentials
         page.click('input[name="login-button"]')
+
+        # Expecting the page to contain a specified text related to failed submission
         expect(page.locator("h3")).to_have_text("Epic sadface: Username is required")
+
+        # Taking a screenshot of the page after the failed submission
         page.screenshot(path='submit_fail.png')
+
 ```
 
-#### Step 2: Run the Visible Text Test
+**Step 2: Run the Visible Text Test**
 1.  Open a terminal and navigate to your project directory.
 2.  Run the following command:
 
@@ -1058,7 +1175,7 @@ pytest
 This test will assert that a loging attempt without providing a username, will modify the Login button to display
 the text 'Epic sadface: Username is required'
 
-### Explore Playwright Documentation for Python
+## Explore Playwright Documentation for Python
 
 Visit the [Playwright Documentation for Python](https://playwright.dev/docs/intro) to explore the more features 
 and functionalities specifically for Python.
