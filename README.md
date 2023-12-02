@@ -70,7 +70,7 @@ I --> B
 - Max Tart - Developer  
 - Dylan Arone - Tester  
 - Ian Kepplinger - Tester  
-- Ever Morales Alverez Tester  
+- Ever Morales Alverez - Tester  
 - Denitri Douglas - Document Writer  
 - Keven Hernandez Gaspar - Document Writer  
 - Eric Dixon - Document Writer  
