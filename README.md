@@ -65,7 +65,7 @@ I --> B
 ### Purpose   
 > This document provides detailed instructions for testing a provided web application using selenium. Selenium is a library and suite of tools used to build test for web applications.  
   
-### Contributers   
+### Contributors   
 - Dmytro Holovnia - Developer  
 - Matthew Salstrom - Developer  
 - Max Tart - Developer  
@@ -216,7 +216,7 @@ code_element = driver.find_element(By.NAME, "code")
 submit_button = driver.find_element(By.ID, "shortenSubmit")  
 ```  
 **3. Using Selenium to test website functionality:**   
-- Clear preexisitng text and type python.org into url shortener  
+- Clear preexisting text and type python.org into url shortener  
 ```python  
 # Clear any preexisting text or input in the "url_element" field  
 url_element.clear()  
@@ -226,7 +226,7 @@ url_element.clear()
 url_element.send_keys("https://python.org")  
 ```  
   
-- Clear preexisitng text and type python as shortened url  
+- Clear preexisting text and type python as shortened url  
 ```python # Clear any preexisting text or input in the "code_element" field  
 code_element.clear()  
 ```  
@@ -278,7 +278,7 @@ time.sleep(10)
   
   
 - Retesting with longer URL  
-- Clear pre-exisitng text and type python.org into url shortener  
+- Clear pre-existing text and type python.org into url shortener  
 ```python  
 # Clear the input field for the URL element  
 url_element.clear()  
@@ -288,7 +288,7 @@ url_element.clear()
 url_element.send_keys("[https://python.org](https://www.cnn.com/2023/02/09/us/iyw-puppy-bowl-shelters-rescue-groups/index.html)")  
 ```  
   
-- Clear preexisitng text and type python as shortened url  
+- Clear preexisting text and type python as shortened url  
 ```python  
 # Clear the input field for the URL element code_element.clear()  
 ```  
@@ -340,7 +340,7 @@ time.sleep(10)
 ```  
   
 ### UnitTest  
-Selenin's strength is the ability to automate test. Below is an exmaple of a UnitTest using the selenium library  
+Selenium's strength is the ability to automate test. Below is an example of a UnitTest using the selenium library  
 - Create a file named UnitTest.py in the test directory  
  - Import necessary libraries  
 ```cmd  
@@ -1096,7 +1096,7 @@ I --> B
 ### Purpose   
 > This document provides detailed instructions for testing a provided web application using selenium. Selenium is a library and suite of tools used to build test for web applications.  
   
-### Contributers   
+### Contributors   
 - Dmytro Holovnia - Developer  
 - Matthew Salstrom - Developer  
 - Max Tart - Developer  
@@ -1247,7 +1247,7 @@ code_element = driver.find_element(By.NAME, "code")
 submit_button = driver.find_element(By.ID, "shortenSubmit")  
 ```  
 **3. Using Selenium to test website functionality:**   
-- Clear preexisitng text and type python.org into url shortener  
+- Clear preexisting text and type python.org into url shortener  
 ```python  
 # Clear any preexisting text or input in the "url_element" field  
 url_element.clear()  
@@ -1257,7 +1257,7 @@ url_element.clear()
 url_element.send_keys("https://python.org")  
 ```  
   
-- Clear preexisitng text and type python as shortened url  
+- Clear preexisting text and type python as shortened url  
 ```python # Clear any preexisting text or input in the "code_element" field  
 code_element.clear()  
 ```  
@@ -1309,7 +1309,7 @@ time.sleep(10)
   
   
 - Retesting with longer URL  
-- Clear pre-exisitng text and type python.org into url shortener  
+- Clear pre-existing text and type python.org into url shortener  
 ```python  
 # Clear the input field for the URL element  
 url_element.clear()  
@@ -1319,7 +1319,7 @@ url_element.clear()
 url_element.send_keys("[https://python.org](https://www.cnn.com/2023/02/09/us/iyw-puppy-bowl-shelters-rescue-groups/index.html)")  
 ```  
   
-- Clear preexisitng text and type python as shortened url  
+- Clear preexisting text and type python as shortened url  
 ```python  
 # Clear the input field for the URL element code_element.clear()  
 ```  
@@ -1371,7 +1371,7 @@ time.sleep(10)
 ```  
   
 ### UnitTest  
-Selenin's strength is the ability to automate test. Below is an exmaple of a UnitTest using the selenium library  
+Selenium's strength is the ability to automate test. Below is an example of a UnitTest using the selenium library  
 - Create a file named UnitTest.py in the test directory  
  - Import necessary libraries  
 ```cmd  
