@@ -1172,7 +1172,7 @@ pytest
 ```
 	
 
-This test will assert that a loging attempt without providing a username, will modify the Login button to display
+This test will assert that a login attempt without providing a username, will modify the Login button to display
 the text 'Epic sadface: Username is required'
 
 ## Explore Playwright Documentation for Python
