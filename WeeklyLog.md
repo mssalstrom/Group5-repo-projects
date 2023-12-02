@@ -44,4 +44,18 @@
 >### Document Writers:
 >
 >> Updating selenium lab following meeting with professor
+>
+# **Weekly log: Sprint 4**
+## **Completed Task:**
+>Playwright and TTD labs completed
+>Docstrings added to program
+>Pytest completed 
+
+## **Ongoing Task:**
+>Presentation
+
+## **Next Steps:**
+>### All members:
+>
+>>Particpate in presentation
 
