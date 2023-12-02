@@ -5,6 +5,7 @@ import json
 
 """Pytest Testing for POST/PUT/PATCH/DELETE Requests Using JSONPlaceholder"""
 
+
 @pytest.fixture
 def json_data():
     """
