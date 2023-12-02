@@ -391,7 +391,7 @@ class urlShortener(unittest.TestCase):
 ```  
 - Close driver  
 ```python  
- # Define the 'tearDown' method for cleaning up after the test casedef tearDown(self):  
+ # Define the 'tearDown' method for cleaning up after the test case def tearDown(self):  
  # Close the web driver instance to release system resources self.driver.close()  
 ```  
 - Execute test  
@@ -1043,7 +1043,7 @@ def test_submit_fail():
         page.goto('https://www.saucedemo.com/')
         page.click('input[name="login-button"]')
         expect(page.locator("h3")).to_have_text("Epic sadface: Username is required")
-        page.screenshot(path='sumbit_fail.png')
+        page.screenshot(path='submit_fail.png')
 ```
 
 #### Step 2: Run the Visible Text Test
