@@ -889,19 +889,21 @@ In summary, TDD is a disciplined approach to software development that prioritiz
 
 ## Introduction to Playwright with Python for Web Testing
 
-Microsoft created Playwright, as an open-source browser automation toolkit and framework. It makes it possible for developers to automate browser interactions, which makes end-to-end testing of online applications easier. Playwright is compatible with most browsers including Firefox, and Chrome.
-
+Developed by Microsoft, Playwright is an open-source library for automating browsers.
+It provides a high-level API for automating actions in web browsers such as Chrome, Firefox, and WebKit. 
+Playwright is designed to be fast, reliable, and capable of automating complex scenarios, making it suitable 
+for end-to-end testing, browser automation, and web scraping.
 ## Objective
 
 The objective of this lab is to introduce new developers to Playwright with Python, a powerful automation framework for end-to-end testing of web applications.
 
 ## Prerequisites
 
--   Basic understanding of web development concepts (HTML, CSS, JavaScript).
+-   Basic understanding of web development concepts like HTML and CSS.
 -   Familiarity with Python programming language.
 -   Python and pip installed on the development machine.
 
-## Lab Steps
+## Getting Started
 
 ### Step 1: Install Playwright for Python
 
@@ -909,81 +911,131 @@ The objective of this lab is to introduce new developers to Playwright with Pyth
     
 2.  Install Playwright for Python using pip:
 
-	```pip install playwright```
+```bash
+pip install playwright
+```
 
 
 
 ### Step 2: Create a Basic Playwright Test in Python
 
-1.  Create a new Python script file named `screenshot_test.py` and open it in your preferred code editor.
+1.  Create a new Python script file named `test_examples.py` and open it in your preferred code editor.
     
-2.  Write a simple Playwright test to open a browser, navigate to a webpage, and perform a basic interaction:
+2.  Write a simple Playwright test to open a browser, navigate to a webpage, and capture a screenshot:
   ```python   
-  #screenshot_test.py
+  #test_examples.py
 from playwright.sync_api import sync_playwright
 
-def run_basic_test():
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        page = browser.new_page()
-        page.goto('https://www.google.com')
-        page.screenshot(path='example.png')
-        browser.close()
-
-run_basic_test()
-```
-
-### Step 3: Run the Playwright Test
-
-1.  Open a terminal and run the Playwright test:
-    
-
-	  ```python screenshot_test.py``` 
-
-This will launch a headless browser, navigate to https://www.google.com, capture a screenshot (saved as `example.png`), and then close the browser.
-
-    
-    
-
-### Step 4: Explore Playwright Documentation for Python
-
-1.  Visit the [Playwright Documentation for Python](https://playwright.dev/docs/intro) to explore the available features and functionalities specifically for Python.
-    
-2.  Experiment with other Playwright functions and methods in your test script.
-    
-
-### Step 5: Write an Interactive Test in Python
-
-1.  Modify the test script to interact with elements on a webpage. For example, interact with a button or fill out a form.
-    
-```python
-from playwright.sync_api import sync_playwright
-
-def run_interactive_test():
+def test_screenshot():
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page()
         page.goto('https://www.saucedemo.com/')
+        page.screenshot(path='test_screenshot.png')
+        browser.close()
+```
 
-        # Clicking a button
-        page.click('button')
-        # Filling out a form
+### Step 3: Run the Playwright Test
+
+1.  Open a terminal and navigate to your project directory.
+2.  Run the following command:
+    
+```bash
+pytest
+```
+
+This will launch a headless browser, navigate to https://www.saucedemo.com/, capture a screenshot (saved as `test_screenshot.png`), and then close the browser.
+
+### Web Interaction and Assertions
+
+#### Step 1: Modify the test_examples.py to include the Playwright expect package and add following test:
+    
+```python
+from playwright.sync_api import sync_playwright, expect
+def test_web_interaction():
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page()
+        page.goto('https://www.saucedemo.com/')
         page.fill('input[id="user-name"]', 'standard_user')
         page.fill('input[id="password"]', 'secret_sauce')
-        page.click('button[name="login-button"]')
+        page.click('input[name="login-button"]')
+        expect(page.get_by_text('Swag Labs')).to_be_visible()
         browser.close()
-
-run_interactive_test()
 ```
 
 
-### Step 6: Run the Interactive Test
+### Step 2: Run the Web Interactive Test
 
-1.  Open a terminal and run the interactive test:
+1.  Open a terminal and navigate to your project directory.
+2.  Run the following command:
 
-	```python interactive_test.py``` 
+```bash
+pytest
+```
 
-2. Observe the interactions with the webpage and verify that the script clicks the button and fills out the form.
+Observe the interactions with the browser. Ensure the test opens the page, logins in using the provided credentials
+, selects the log in
+and the Swag Labs header is displayed.
+
+### Response Assertions
+
+Playwright assertions verify certain conditions or expectations during the execution of automated browser tests.
+Assertions help ensure that the web application behaves as expected and that the desired elements and states are present
+on the page.
+
+#### Step 1: Modify the test_examples.py to include the following test:
+
+```python
+def test_response():
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page()
+        response = page.request.get('https://www.saucedemo.com/')
+        expect(response).to_be_ok()
+```
+#### Step 2: Run the Response Test
+
+1.  Open a terminal and navigate to your project directory.
+2.  Run the following command:
+
+```bash
+pytest
+```
+
+This test will ensure that the response status code is within the 200-299 range.
+
+### Assertion with Visible Text
+
+#### Step 1: Modify the test_examples.py to include the following test:
+```python
+def test_submit_fail():
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page()
+        page.goto('https://www.saucedemo.com/')
+        page.click('input[name="login-button"]')
+        expect(page.locator("h3")).to_have_text("Epic sadface: Username is required")
+        page.screenshot(path='sumbit_fail.png')
+```
+
+#### Step 2: Run the Visible Text Test
+1.  Open a terminal and navigate to your project directory.
+2.  Run the following command:
+
+```bash
+pytest
+```
+	
+
+This test will assert that a loging attempt without providing a username, will modify the Login button to display
+the text 'Epic sadface: Username is required'
+
+### Explore Playwright Documentation for Python
+
+Visit the [Playwright Documentation for Python](https://playwright.dev/docs/intro) to explore the more features 
+and functionalities specifically for Python.
+Experiment with other Playwright functions and methods in your text_examples.py file.
 
 <!-- MARKDOWN LINKS & IMAGES  -->  
   
