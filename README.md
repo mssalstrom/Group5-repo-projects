@@ -57,6 +57,9 @@ I --> B
   - [Frameworks](#frameworks)  
   - [Best Practices](#best-practices)
 - [Playwright](#playwright)
+  - [Introduction](#introduction-to-playwright-with-python-for-web-testing)
+  - [Getting Started](#getting-started)
+  - [Explore](#explore-playwright-documentation-for-python)
 
   
   
@@ -1819,11 +1822,10 @@ Test-Driven Development (TDD) is a software development approach where tests are
 
 ### Extreme Programming and the Agile Manifesto are the roots of the TDD methodology.
    - Software development is driven by the test process, as the name implies.
-   - It's also a structural technique that gives developers and testers optimal code that turns out to be long-lasting.
+   - It's also a structural technique that gives developers and testers optimal, long-lasting code.
    - Using TDD, developers build brief test cases for each feature based on their preliminary knowledge.
 
- This technique's main goal is to write new or modified code solely in the event that the tests are unsuccessful. Test script duplication is avoided as a result.
- 
+This technique's main goal is to write new or modified code solely in the event that the tests are unsuccessful. Test script duplication is avoided as a result.
 The TDD process typically follows a cycle known as the Red-Green-Refactor cycle. 
 
 ## TDD Workflow:
@@ -1848,8 +1850,8 @@ The TDD process typically follows a cycle known as the Red-Green-Refactor cycle.
 
 ### Red: Write a Failing Test
 
-- Start by writing a test that describes a feature or improvement you want to implement.
-- Since there is no code yet, this test will fail. This is the "red" part of the cycle.
+- Start by opening your project directory and creating a ```test_tdd.py``` file. 
+- Add the following code to your ```test_tdd.py``` file:
 ```python
 from even_checker import is_even
 import unittest
@@ -1862,27 +1864,74 @@ class TestEvenChecker(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 ```
+- Since there is no code for the ```is_even function```, this test will fail. This is the ```Red``` part of the cycle.
 ### Green: Write the Minimum Code to Pass the Test
 
-- Write the minimum amount of code necessary to make the test pass.
-- The goal is to make the test succeed, not to implement the entire feature.
-- This is the "green" part of the cycle, indicating success.
+- Next, write the minimum amount of code necessary to make the test pass.
+- Create a new file in your project directory name even_checker.py and add the following code:
 ```python
 def is_even(number):
     return number % 2 == 0
 ```
+- Run the ```test_tdd.py``` file and ensure the test has passed.
+- The goal is to make the test succeed, not to implement the entire feature.
+- This is the ```Green``` part of the cycle, indicating success.
+
 
 ### Refactor: Improve Code Without Changing Its Behavior
 
-- Once the test passes, refactor the code without changing its behavior.
-- This step ensures that the code remains clean, maintainable, and efficient.
-- The tests act as a safety net, catching any regressions introduced during refactoring.
+- Once the test passes, refactor the code without changing its behavior. This is the ```Refector``` phase of TDD.
+- Modify the ``is_even`` function within the ```even_checker.py``` file:
 ```python
 def is_even(number):
     if not isinstance(number, (int, float)):
         raise ValueError("Input must be a number")
     return number % 2 == 0
 ```
+- This step ensures that the code remains clean, maintainable, and efficient.
+- The tests act as a safety net, catching any regressions introduced during refactoring.
+
+### Red-Green-Refactor Cycle - Example 2
+
+## Red-Green-Refactor Cycle:
+
+### Red: Write a Failing Test 
+
+- Start by opening your project directory and adding the following code to your  ```test_tdd.py``` file:
+```python
+from my_calculator import add_numbers
+
+class TestCalculator(unittest.TestCase):
+    def test_add_numbers(self):
+        result = add_numbers(2, 3)
+        self.assertEqual(result, 5)
+```
+- Since there is no code for the ```add_numbers function```, the test will fail.
+### Green: Write the Minimum Code to Pass the Test
+
+- Next, write the minimum amount of code necessary to make the new test pass.
+- Create a new file in your project directory name ```my_calculator.py``` and add the following code:
+```python
+def add_numbers(a, b):
+    return a + b
+```
+
+- Run the ```test_tdd.py``` file and ensure the test has passed.
+- The goal is to make the test succeed, not to implement the entire feature.
+- This is the ```Green``` part of the cycle, indicating success.
+
+
+### Refactor: Improve Code Without Changing Its Behavior
+
+- Once the test passes, refactor the code without changing its behavior. This is the ```Refactor``` phase of TDD.
+- Modify the ``add_numbers`` function within the ```my_calculator.py``` file:
+
+```python
+def add_numbers(a: int, b: int) -> int:
+    return a + b
+```
+
+Run the ```test_tdd.py``` file again and ensure all tests pass.
 
 ## Advantages of TDD:
 
