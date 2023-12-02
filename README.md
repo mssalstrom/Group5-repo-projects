@@ -897,7 +897,9 @@ The objective of this lab is to introduce new developers to Playwright with Pyth
     
 2.  Install Playwright for Python using pip:
 
-	```pip install playwright```
+```bash
+pip install playwright
+```
 
 
 
@@ -924,8 +926,9 @@ def test_screenshot():
 1.  Open a terminal and navigate to your project directory.
 2.  Run the following command:
     
-
-	  pytest
+```bash
+pytest
+```
 
 This will launch a headless browser, navigate to https://www.saucedemo.com/, capture a screenshot (saved as `test_screenshot.png`), and then close the browser.
 
@@ -953,8 +956,9 @@ def test_web_interaction():
 1.  Open a terminal and navigate to your project directory.
 2.  Run the following command:
 
-
-	  pytest
+```bash
+pytest
+```
 
 Observe the interactions with the browser. Ensure the test opens the page, logins in using the provided credentials
 , selects the log in
@@ -981,8 +985,9 @@ def test_response():
 1.  Open a terminal and navigate to your project directory.
 2.  Run the following command:
 
-
-	  pytest
+```bash
+pytest
+```
 
 This test will ensure that the response status code is within the 200-299 range.
 
@@ -1004,8 +1009,10 @@ def test_submit_fail():
 1.  Open a terminal and navigate to your project directory.
 2.  Run the following command:
 
-
-	  pytest
+```bash
+pytest
+```
+	
 
 This test will assert that a loging attempt without providing a username, will modify the Login button to display
 the text 'Epic sadface: Username is required'
