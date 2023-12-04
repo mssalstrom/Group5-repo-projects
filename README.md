@@ -1018,7 +1018,7 @@ def test_screenshot():
 
 # Example usage with Firefox:
 # test_screenshot(browser_type='firefox')
-
+```
 
 **Step 3: Run the Playwright Test**
 
