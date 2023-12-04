@@ -85,10 +85,10 @@ Selenium empowers developers and quality assurance teams to automate the testing
 # Setup  
   
 ### Download Selenium Branch  
-1. Open your preferred web browser and go to the Selenium GitHub repository: https://github.com/mssalstrom/Group5-repo-projects/tree/selenium.  
+1. Open your preferred web browser and go to the GitHub repository: https://github.com/mssalstrom/Group5-repo-projects.  
 2. On the repository page, click on the green "Code" button located near the top-right corner.  
-3. From the dropdown menu, click on "Download ZIP" to download the Selenium branch as a compressed ZIP file.  
-4. Once the ZIP file is downloaded, locate it on your computer and extract its contents to a desired location. This will create a folder containing the Selenium branch files.  
+3. From the dropdown menu, click on "Download ZIP" to download the main branch as a compressed ZIP file.  
+4. Once the ZIP file is downloaded, locate it on your computer and extract its contents to a desired location. This will create a folder containing the main branch files.  
   
 ### Installing Required Dependencies  
 1. Open your Python IDE (Integrated Development Environment) and navigate to the folder containing the extracted Selenium branch files.  
@@ -1172,7 +1172,7 @@ pytest
 ```
 	
 
-This test will assert that a loging attempt without providing a username, will modify the Login button to display
+This test will assert that a login attempt without providing a username, will modify the Login button to display
 the text 'Epic sadface: Username is required'
 
 ## Explore Playwright Documentation for Python
