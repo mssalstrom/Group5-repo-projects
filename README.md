@@ -35,7 +35,7 @@ I --> B
 - [Selenium](#selenium)  
   - [Setup](#setup)  
   - [Launch Applicaiton](#launch-application)
-  - [Selenium Lab](#lab)  
+  - [Selenium Lab](#selenium-lab)  
   - [UnitTest](#unittest)  
 - [BDD](#bdd)  
   - [Gherkin](#gherkin)  
