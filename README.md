@@ -492,6 +492,8 @@ By following these steps, you can incorporate BDD with Behave and Gherkin into y
   
 # Postman Lab Instructions
 
+# Postman Lab Instructions
+
 ## Installation
 
 1. **Download and Install Postman:**
@@ -510,6 +512,16 @@ By following these steps, you can incorporate BDD with Behave and Gherkin into y
     - Set the request URL to `[{{baseURL}}]/api/users?page=2`.
     - Click the "Send" button to make a GET request to list users.
     - Verify that the response is as expected.
+
+6. **Create a Variable:**
+    - After creating your collection and requests, it's time to set up a variable.
+    - Click on the "Collections" tab in the top-left corner.
+    - Select your newly created collection.
+    - Click on the "Variables" tab within the collection.
+    - Create a variable named `baseURL`.
+    - Set the initial value to `https://reqres.in`.
+    - Click "Save" to confirm the variable creation.
+    - Your variable, `baseURL`, is now created and set to the initial value.
 
 3. **Creating a User:**
     - In your collection, create a request named "Create User."
@@ -547,6 +559,7 @@ By following these steps, you can incorporate BDD with Behave and Gherkin into y
     - Verify that the response indicates a successful deletion.
 
 These steps guide you through creating, testing, and modifying requests within a Postman collection. Each step corresponds to a specific action, such as creating a new request, setting request details, sending the request, and verifying the response. The goal is to familiarize yourself with the process of interacting with an API using Postman and understanding the outcomes of different types of requests.
+
 
 # Request  
 ### Python `requests` Library:  
