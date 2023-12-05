@@ -513,15 +513,18 @@ The following lab focuses on creating, updating, and deleting users while emphas
    - After creating your collection, it's time to set up a variable.
    - Select your newly created collection.
    - Click on the "Variables" tab within the collection.
-   - Create a variable named `baseURL`.
-   - Set the initial value to `https://reqres.in`.
-   - Click "Save" to confirm the variable creation.
-   - Your variable, `baseURL`, is now created and set to the initial value.
+   - **Understanding Variables:**
+     - Variables in Postman act as placeholders for dynamic values.
+     - They enhance flexibility and reusability in requests.
+     - Create a variable named `baseURL`.
+     - Set the initial value to `https://reqres.in`.
+     - Click "Save" to confirm the variable creation.
+     - Your variable, `baseURL`, is now created and set to the initial value.
 
 3. **Create a GET request:**
    - In your new collection, create a request named "List Users."
    - Set the request method to GET.
-   - Set the request URL to `[{{baseURL}}]/api/users?page=2`.
+   - Set the request URL to `{{baseURL}}/api/users?page=2`.
    - Click the "Send" button to make a GET request to list users.
    - Verify that the response is as expected.
 
@@ -561,7 +564,7 @@ The following lab focuses on creating, updating, and deleting users while emphas
    - Click the "Send" button to delete the user.
    - You should receive a 204 status code indicating success. Please note that the website does not actually delete the user, but the request will still work.
 
-These steps guide you through creating, testing, and modifying requests within a Postman collection. Each step corresponds to a specific action, such as creating a new request, setting request details, sending the request, and verifying the response. Ensure to use the provided user ID for the update and delete requests to interact with specific user data.
+These steps guide you through creating, testing, and modifying requests within a Postman collection. Each step corresponds to a specific action, such as creating a new request, setting request details, sending the request, and verifying the response. Ensure to use the provided user ID for the update and delete requests to interact with specific user data. The use of `{{baseURL}}` demonstrates the use of variables in Postman, allowing for dynamic and flexible request URLs.
 
 
 # Request  
