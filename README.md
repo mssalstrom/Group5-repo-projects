@@ -496,70 +496,68 @@ The following lab focuses on creating, updating, and deleting users while emphas
 ## Installation
 
 1. **Download and Install Postman:**
-    - Visit the [official Postman download page](https://www.postman.com/downloads/).
-    - Choose the appropriate version based on your operating system (Windows, macOS, or Linux).
-    - Download the installer and run it to install Postman on your machine.
+   - Visit the [official Postman download page](https://www.postman.com/downloads/).
+   - Choose the appropriate version based on your operating system (Windows, macOS, or Linux).
+   - Download the installer and run it to install Postman on your machine.
 
 ## Lab
 
 2. **Create a Collection and Variable:**
-
-    - Open Postman, which you should have installed in step 1.
-    - Click on "Collections" in the top-left corner.
-    - Click "New Collection" and provide a name for your collection.
-    - After creating your collection, it's time to set up a variable.
-    - Select your newly created collection.
-    - Click on the "Variables" tab within the collection.
-    - Create a variable named `baseURL`.
-    - Set the initial value to `https://reqres.in`.
-    - Click "Save" to confirm the variable creation.
-    - Your variable, `baseURL`, is now created and set to the initial value.
+   - Open Postman, which you should have installed in step 1.
+   - Click on "Collections" in the top-left corner.
+   - Click "New Collection" and provide a name for your collection.
+   - After creating your collection, it's time to set up a variable.
+   - Select your newly created collection.
+   - Click on the "Variables" tab within the collection.
+   - Create a variable named `baseURL`.
+   - Set the initial value to `https://reqres.in`.
+   - Click "Save" to confirm the variable creation.
+   - Your variable, `baseURL`, is now created and set to the initial value.
 
 3. **Create a GET request:**
-
-    - In your new collection, create a request named "List Users."
-    - Set the request method to GET.
-    - Set the request URL to `[{{baseURL}}]/api/users?page=2`.
-    - Click the "Send" button to make a GET request to list users.
-    - Verify that the response is as expected.
+   - In your new collection, create a request named "List Users."
+   - Set the request method to GET.
+   - Set the request URL to `[{{baseURL}}]/api/users?page=2`.
+   - Click the "Send" button to make a GET request to list users.
+   - Verify that the response is as expected.
 
 4. **Creating a User:**
-    - In your collection, create a request named "Create User."
-    - Set the request method to POST.
-    - Set the request URL to `{{baseURL}}/api/users`.
-    - In the request body, set the mode to "raw" and provide the JSON:
-        ```json
-        {
-            "name": "morpheus",
-            "job": "leader"
-        }
-        ```
-    - Click the "Send" button to create a new user.
-    - Verify that the response includes the expected details.
+   - In your collection, create a request named "Create User."
+   - Set the request method to POST.
+   - Set the request URL to `{{baseURL}}/api/users`.
+   - In the request body, set the mode to "raw" and provide the JSON:
+     ```json
+     {
+         "name": "morpheus",
+         "job": "leader"
+     }
+     ```
+   - Click the "Send" button to create a new user.
+   - Note the user ID provided in the response.
+   - Use this user ID for subsequent requests.
 
 5. **Updating a User:**
-    - In your collection, create a request named "Update User."
-    - Set the request method to PATCH.
-    - Set the request URL to `{{baseURL}}/api/users/183`.
-    - In the request body, set the mode to "raw" and provide the JSON:
-        ```json
-        {
-            "name": "morpheus",
-            "job": "zion resident"
-        }
-        ```
-    - Click the "Send" button to update the user.
-    - Verify that the response includes the expected details.
+   - In your collection, create a request named "Update User."
+   - Set the request method to PATCH.
+   - Set the request URL to `{{baseURL}}/api/users/{userID}`, replacing `{userID}` with the actual user ID obtained in the create user response.
+   - In the request body, set the mode to "raw" and provide the JSON:
+     ```json
+     {
+         "name": "morpheus",
+         "job": "zion resident"
+     }
+     ```
+   - Click the "Send" button to update the user.
+   - Verify that the response includes the expected details.
 
 6. **Deleting a User:**
-    - In your collection, create a request named "Delete User."
-    - Set the request method to DELETE.
-    - Set the request URL to `{{baseURL}}/api/users/2`.
-    - Click the "Send" button to delete the user.
-    - You should receive a 204 status code indicating success. Please note that the website does not actually delete the user, but the request will still work.
+   - In your collection, create a request named "Delete User."
+   - Set the request method to DELETE.
+   - Set the request URL to `{{baseURL}}/api/users/{userID}`, replacing `{userID}` with the actual user ID obtained in the create user response.
+   - Click the "Send" button to delete the user.
+   - You should receive a 204 status code indicating success. Please note that the website does not actually delete the user, but the request will still work.
 
-These steps guide you through creating, testing, and modifying requests within a Postman collection. Each step corresponds to a specific action, such as creating a new request, setting request details, sending the request, and verifying the response. The goal is to familiarize yourself with the process of interacting with an API using Postman and understanding the outcomes of different types of requests.
-
+These steps guide you through creating, testing, and modifying requests within a Postman collection. Each step corresponds to a specific action, such as creating a new request, setting request details, sending the request, and verifying the response. Ensure to use the provided user ID for the update and delete requests to interact with specific user data.
 
 
 # Request  
