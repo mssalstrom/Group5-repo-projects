@@ -489,10 +489,8 @@ By following these steps, you can incorporate BDD with Behave and Gherkin into y
   
 # Postman  
 ## Overview  
-  
-# Postman Lab Instructions
 
-# Postman Lab Instructions
+The following lab focuses on creating, updating, and deleting users while emphasizing the importance of variables for dynamic value management.
 
 ## Installation
 
