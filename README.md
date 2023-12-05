@@ -502,166 +502,161 @@ By following these steps, you can incorporate BDD with Behave and Gherkin into y
 #### Postman Collection Link  
   
 [Postman Collection](https://www.postman.com/collections/your-collection-id)  
-  
-Replace "your-collection-id" with the actual collection ID generated in Postman.  
-  
-#### Postman Lab Instructions  
-  
-# Installation   
-  
-1. **Download and Install Postman:**  
-  
-  If you don't have Postman installed, follow these steps to download and install it:  
-  
-   - Visit the [official Postman download page](https://www.postman.com/downloads/).  
-   - Choose the appropriate version based on your operating system (Windows, macOS, or Linux).  
-   - Download the installer and run it to install Postman on your machine.  
-  
-# Lab   
-  
-2. **Accessing the Home Page:**  
-  
- - Open Postman and import the provided collection.  
-     - Click on "Import" in the top-left corner.  
-     - Select the "Link" tab.  
-     - Paste the collection link: [Postman Collection](https://www.postman.com/collections/your-collection-id).  
-     - Click "Continue" and then "Import."  
-   - Select the "Access Home Page" request.  
-   - Click the "Send" button to make a GET request to the home page.  
-   - Verify that the response includes the expected text: "Welcome to My Flask App."  
-  
-```http  
-GET http://localhost:5000/  
-```  
-  
-3. **Shortening a URL:**  
-  
- - Select the "Shorten URL" request.  
-   - Set the request method to POST.  
-   - Set the request URL to the appropriate endpoint for shortening a URL.  
-   - In the request body, provide the necessary data:  
-     - Set the `code` parameter for the short code (e.g., "postmanTest").  
-     - Set the `url` parameter for the URL to be shortened (e.g., "https://www.postman.com").  
-   - Click the "Send" button to make the request.  
-   - Verify that the response includes the expected success message.  
-  
-```http  
-POST http://localhost:5000/your_url  
-Content-Type: application/x-www-form-urlencoded  
-code=postmanTest&url=https://www.postman.com  
-```  
-  
-4. **Redirecting to Shortened URL:**  
-  
- - Select the "Redirect to Shortened URL" request.  
-   - Set the request method to GET.  
-   - Set the request URL to the appropriate endpoint for redirecting to a shortened URL (e.g., "/postmanTest").  
-   - Click the "Send" button to make the request.  
-   - Verify that the response redirects to the expected URL.  
-  
-```http  
-GET http://localhost:5000/postmanTest  
-```  
-  
-5. **Error Handling - Nonexistent Short Code:**  
-  
- - Select the "Error Handling - Nonexistent Short Code" request.  
-   - Set the request method to GET.  
-   - Set the request URL to an endpoint with a nonexistent short code (e.g., "/nonexistentCode").  
-   - Click the "Send" button to make the request.  
-   - Verify that the response includes a 404 status code.  
-  
-```http  
-GET http://localhost:5000/nonexistentCode  
-```  
-  
-6. **Error Handling - Existing Short Code as URL:**  
-  
- - Select the "Error Handling - Existing Short Code as URL" request.  
-   - Set the request method to GET.  
-   - Set the request URL to an endpoint with an existing short code that represents a URL (e.g., "/python").  
-   - Click the "Send" button to make the request.  
-   - Verify that the response redirects to the expected URL.  
-  
-```http  
-GET http://localhost:5000/python  
-```  
-  
-7. **Error Handling - Existing Short Code as File:**  
-  
- - Select the "Error Handling - Existing Short Code as File" request.  
-   - Set the request method to GET.  
-   - Set the request URL to an endpoint with an existing short code that represents a file (e.g., "/Shortname").  
-   - Click the "Send" button to make the request.  
-   - Verify that the response redirects to the expected file.  
-  
-```http  
-GET http://localhost:5000/Shortname  
-```  
-  
-8. **Clearing the URL List:**  
-  
- - Select the "Clear URL List" request.  
-   - Set the request method to POST.  
-   - Click the "Send" button to make the request.  
-   - Verify that the response indicates successful clearing of the URL list.  
-  
-```http  
-POST http://localhost:5000/  
-```  
-  
-9. **API Endpoint - Get Session Keys:**  
-  
- - Select the "API - Get Session Keys" request.  
-   - Set the request method to GET.  
-   - Click the "Send"  
-  
-button to make the request.  
- - Verify that the response includes the expected session keys.  
-  
-```http  
-GET http://localhost:5000/api/session-keys  
-```  
-  
-10. **API Endpoint - Add Session Key:**  
-  
- - Select the "API - Add Session Key" request.  
- - Set the request method to POST.  
- - Set the request URL to the appropriate endpoint for adding a session key.  
- - In the request body, provide the necessary data:  
-     - Set the `key` parameter for the session key (e.g., "newSessionKey").  
- - Click the "Send" button to make the request.  
- - Verify that the response includes the expected success message.  
-  
-```http  
-POST http://localhost:5000/api/add-session-key  
-Content-Type: application/x-www-form-urlencoded  
-key=newSessionKey  
-```  
-  
-11. **API Endpoint - Delete Session Key:**  
-  
- - Select the "API - Delete Session Key" request.  
- - Set the request method to DELETE.  
- - Set the request URL to the appropriate endpoint for deleting a session key (e.g., "/api/delete-session-key/newSessionKey").  
- - Click the "Send" button to make the request.  
- - Verify that the response includes the expected success message.  
-  
-```http  
-DELETE http://localhost:5000/api/delete-session-key/newSessionKey  
-```  
-  
-12. **API Endpoint - Error Handling - Nonexistent Session Key:**  
-  
- - Select the "API - Error Handling - Nonexistent Session Key" request.  
- - Set the request method to GET.  
- - Set the request URL to an endpoint with a nonexistent session key (e.g., "/api/get-session-key/nonexistentKey").  
- - Click the "Send" button to make the request.  
- - Verify that the response includes a 404 status code.  
-  
-```http  
-GET http://localhost:5000/api/get-session-key/nonexistentKey  
-```  
+  #### Postman Lab Instructions
+
+# Installation
+
+1. **Download and Install Postman:**
+
+    If you don't have Postman installed, follow these steps to download and install it:
+
+   - Visit the [official Postman download page](https://www.postman.com/downloads/).
+   - Choose the appropriate version based on your operating system (Windows, macOS, or Linux).
+   - Download the installer and run it to install Postman on your machine.
+
+# Lab
+
+2. **Accessing the Home Page:**
+
+    - Open Postman and create your own collection.
+    - Click on "Collections" in the top-left corner.
+    - Click "New Collection" and provide a name for your collection.
+    - In your new collection, create a request named "Access Home Page."
+    - Set the request method to GET.
+    - Set the request URL to `http://localhost:5000/`.
+    - Click the "Send" button to make a GET request to the home page.
+    - Verify that the response includes the expected text: "Welcome to My Flask App."
+
+```http
+GET http://localhost:5000/
+```
+
+3. **Shortening a URL:**
+
+    - In your collection, create a request named "Shorten URL."
+    - Set the request method to POST.
+    - Set the request URL to the appropriate endpoint for shortening a URL.
+    - In the request body, provide the necessary data:
+        - Set the `code` parameter for the short code (e.g., "postmanTest").
+        - Set the `url` parameter for the URL to be shortened (e.g., "https://www.postman.com").
+    - Click the "Send" button to make the request.
+    - Verify that the response includes the expected success message.
+
+```http
+POST http://localhost:5000/your_url
+Content-Type: application/x-www-form-urlencoded
+code=postmanTest&url=https://www.postman.com
+```
+
+4. **Redirecting to Shortened URL:**
+
+    - In your collection, create a request named "Redirect to Shortened URL."
+    - Set the request method to GET.
+    - Set the request URL to the appropriate endpoint for redirecting to a shortened URL (e.g., "/postmanTest").
+    - Click the "Send" button to make the request.
+    - Verify that the response redirects to the expected URL.
+
+```http
+GET http://localhost:5000/postmanTest
+```
+
+5. **Error Handling - Nonexistent Short Code:**
+
+    - In your collection, create a request named "Error Handling - Nonexistent Short Code."
+    - Set the request method to GET.
+    - Set the request URL to an endpoint with a nonexistent short code (e.g., "/nonexistentCode").
+    - Click the "Send" button to make the request.
+    - Verify that the response includes a 404 status code.
+
+```http
+GET http://localhost:5000/nonexistentCode
+```
+
+6. **Error Handling - Existing Short Code as URL:**
+
+    - In your collection, create a request named "Error Handling - Existing Short Code as URL."
+    - Set the request method to GET.
+    - Set the request URL to an endpoint with an existing short code that represents a URL (e.g., "/python").
+    - Click the "Send" button to make the request.
+    - Verify that the response redirects to the expected URL.
+
+```http
+GET http://localhost:5000/python
+```
+
+7. **Error Handling - Existing Short Code as File:**
+
+    - In your collection, create a request named "Error Handling - Existing Short Code as File."
+    - Set the request method to GET.
+    - Set the request URL to an endpoint with an existing short code that represents a file (e.g., "/Shortname").
+    - Click the "Send" button to make the request.
+    - Verify that the response redirects to the expected file.
+
+```http
+GET http://localhost:5000/Shortname
+```
+
+8. **Clearing the URL List:**
+
+    - In your collection, create a request named "Clear URL List."
+    - Set the request method to POST.
+    - Click the "Send" button to make the request.
+    - Verify that the response indicates successful clearing of the URL list.
+
+```http
+POST http://localhost:5000/
+```
+
+9. **API Endpoint - Get Session Keys:**
+
+    - In your collection, create a request named "API - Get Session Keys."
+    - Set the request method to GET.
+    - Click the "Send" button to make the request.
+    - Verify that the response includes the expected session keys.
+
+```http
+GET http://localhost:5000/api/session-keys
+```
+
+10. **API Endpoint - Add Session Key:**
+
+    - In your collection, create a request named "API - Add Session Key."
+    - Set the request method to POST.
+    - Set the request URL to the appropriate endpoint for adding a session key.
+    - In the request body, provide the necessary data:
+        - Set the `key` parameter for the session key (e.g., "newSessionKey").
+    - Click the "Send" button to make the request.
+    - Verify that the response includes the expected success message.
+
+```http
+POST http://localhost:5000/api/add-session-key
+Content-Type: application/x-www-form-urlencoded
+key=newSessionKey
+```
+
+11. **API Endpoint - Delete Session Key:**
+
+    - In your collection, create a request named "API - Delete Session Key."
+    - Set the request method to DELETE.
+    - Set the request URL to the appropriate endpoint for deleting a session key (e.g., "/api/delete-session-key/newSessionKey").
+    - Click the "Send" button to make the request.
+    - Verify that the response includes the expected success message.
+
+```http
+DELETE http://localhost:5000/api/delete-session-key/newSessionKey
+```
+
+12. **API Endpoint - Error Handling - Nonexistent Session Key:**
+
+    - In your collection, create a request named "API - Error Handling - Nonexistent Session Key."
+    - Set the request method to GET.
+    - Set the request URL to an endpoint with a nonexistent session key (e.g., "/api/get-session-key/nonexistentKey").
+    - Click the "Send" button to make the request.
+    - Verify that the response includes a 404 status code.
+
+```http
+GET http://localhost:5000/api/get-session-key/nonexistentKey
+```
 # Request  
 ### Python `requests` Library:  
   
