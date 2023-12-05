@@ -83,6 +83,7 @@ I --> B
 - Postman
 - Request
 - Playwright  
+
   
 # Selenium  
 Selenium empowers developers and quality assurance teams to automate the testing of web applications by using Python scripts to interact with web elements, simulate user interactions, and validate the functionality and user experience of web pages, ensuring that the application works as intended and functions consistently across various browsers and browser versions. It serves as a versatile tool for functional testing, regression testing, and cross-browser testing, enabling efficient and repeatable testing processes integrated into software development workflows.  
@@ -100,11 +101,10 @@ Selenium empowers developers and quality assurance teams to automate the testing
 2. Open the file app.py  
 3. In the terminal or command prompt, run the following command to install the required dependencies:  
     
->In python terminal  
+### In python terminal:  
 ```python  
 # Install the required dependencies specified in the 'requirements.txt' file  
 pip install -r requirements.txt  
-  
 ```  
   
 ### Verify package installation:   
@@ -123,7 +123,7 @@ On Mac:
 pip3 show selenium  
 ```  
 - Expected outcome: *The command should display the version information of Flask, indicating that it has been installed correctly. There should be no errors or warnings.*  
-- If you do encounter errors proceed with the individual installations below, if not skip to the "Basics" section.  
+- If you do encounter errors proceed with the individual installations below, if not skip to the "Launch the Flask Web Application" section.  
     
 ### Installing Flask:
 ```python  
@@ -230,7 +230,7 @@ url_element.clear()
 url_element.send_keys("https://python.org")  
 ```  
   
-- Clear preexisitng text and type python as shortened url  
+- Clear preexisting text and type python as shortened url  
 ```python # Clear any preexisting text or input in the "code_element" field  
 code_element.clear()  
 ```  
@@ -290,12 +290,7 @@ url_element.clear()
 ```python  
 #Enter a long URL into the URL shortener form  
 url_element.send_keys("[https://python.org](https://www.cnn.com/2023/02/09/us/iyw-puppy-bowl-shelters-rescue-groups/index.html)")  
-```  
-  
-- Clear preexisitng text and type python as shortened url  
-```python  
-# Clear the input field for the URL element code_element.clear()  
-```  
+```
   
 ```python  
 # Entering the text "puppyBowl" into the code_element  
@@ -323,8 +318,7 @@ driver.get(local_url)
 - Testing file input  
 ```python  
 # Locate the file input element on the web page with the ID attribute "fileInput"  
-fileElement = driver.find_element(By.ID, "fileInput")  
-  
+fileElement = driver.find_element(By.ID, "fileInput")
 ```  
 ```python  
 # Simulate user interaction by providing a file path to the 'fileElement' input  
@@ -342,6 +336,70 @@ codeNameElement.send_keys("Shortname")
 # Pause the script's execution for 10 seconds to allow time for the page to load or for verification  
 time.sleep(10)  
 ```  
+  
+### UnitTest  
+Selenium's strength is the ability to automate test. Below is an example of a UnitTest using the selenium library  
+- Create a file named UnitTest.py in the test directory  
+ - Import necessary libraries  
+```cmd  
+import unittest  
+from selenium import webdriver  
+from selenium.webdriver.common.keys import Keys  
+from selenium.webdriver.common.by import By  
+```  
+- Create a class that inherits the TestCase class  
+  
+```python  
+# Define a test case class for URL shortening functionality  
+class urlShortener(unittest.TestCase):
+```  
+- Initialize the webdriver
+```cmd
+def setUp(self):
+     self.driver = webdriver.Edge()
+```
+- Declare the test case method
+```cmd
+def test_urlShortener(self):
+```
+- Set the driver
+```cmd
+driver = self.driver
+```
+- Navigate to web application
+```cmd
+driver.get("localhost:5000")
+```
+- Assertion to confirm site title
+```cmd
+self.assertIn("urlShortener", driver.title)
+```
+- locate elements in page
+```cmd
+url_element = driver.find_element(By.NAME, "url")
+code_element = driver.find_element(By.NAME, "code")
+submit_button = driver.find_element(By.ID, "shortenSubmit")
+```
+- Send data
+```cmd
+url_element.clear()
+url_element.send_keys("https://python.org")
+submit_button.click()      
+```
+- Wait to verify page
+```cmd
+time.sleep(10)   
+```
+- Close driver
+```cmd
+def tearDown(self):
+    self.driver.close()
+```
+- Execute test
+```cmd
+if __name__ == "__main__":
+    unittest.main()
+```
 # UnitTest
 
 ```python 
@@ -494,6 +552,31 @@ By following these steps, you can incorporate BDD with Behave and Gherkin into y
 # Postman  
 ## Overview  
 
+  
+[Postman](https://www.postman.com/) is a collaboration platform for API development that simplifies the process of designing, testing, and documenting APIs. It provides a user-friendly interface for creating and sending HTTP requests, testing API endpoints, and managing collections of requests.  
+  
+#### Postman Collection Link  
+  
+[Postman Collection](https://www.postman.com/collections/your-collection-id)  
+  
+Replace "your-collection-id" with the actual collection ID generated in Postman.  
+  
+#### Postman Lab Instructions  
+  
+# Installation   
+  
+1. **Download and Install Postman:**  
+  
+  If you don't have Postman installed, follow these steps to download and install it:  
+  
+   - Visit the [official Postman download page](https://www.postman.com/downloads/).  
+   - Choose the appropriate version based on your operating system (Windows, macOS, or Linux).  
+   - Download the installer and run it to install Postman on your machine.  
+  
+## Lab
+ 
+
+
 The following lab focuses on creating, updating, and deleting users while emphasizing the importance of variables for dynamic value management.
 
 Postman is a popular API development tool, you can use Python in conjunction with Postman for API testing and automation.
@@ -535,15 +618,19 @@ In this context, using Python with Postman typically involves writing scripts to
    - Set the request method to POST.
    - Set the request URL to `{{baseURL}}/api/users`.
    - In the request body, set the mode to "raw" and provide the JSON:
+
+```json
      ```json
      {
          "name": "morpheus",
          "job": "leader"
      }
-     ```
+```
+
    - Click the "Send" button to create a new user.
    - Note the user ID provided in the response.
    - Use this user ID for subsequent requests.
+  
 
 5. **Updating a User:**
    - In your collection, create a request named "Update User."
@@ -565,9 +652,13 @@ In this context, using Python with Postman typically involves writing scripts to
    - Set the request URL to `{{baseURL}}/api/users/{userID}`, replacing `{userID}` with the actual user ID obtained in the create user response.
    - Click the "Send" button to delete the user.
    - You should receive a 204 status code indicating success. Please note that the website does not actually delete the user, but the request will still work.
+ 
+These steps guide you through creating, testing, and modifying requests within a Postman collection. Each step corresponds to a specific action, such as creating a new request, setting request details, sending the request, and verifying the response. Ensure to use the provided user ID for the update and delete requests to interact with specific user data. The use of `{{baseURL}}` demonstrates the use of variables in Postman, allowing for dynamic and flexible request URLs.
+```http  
+GET http://localhost:5000/api/get-session-key/nonexistentKey  
+```  
 
 These steps guide you through creating, testing, and modifying requests within a Postman collection. Each step corresponds to a specific action, such as creating a new request, setting request details, sending the request, and verifying the response. Ensure to use the provided user ID for the update and delete requests to interact with specific user data. The use of `{{baseURL}}` demonstrates the use of variables in Postman, allowing for dynamic and flexible request URLs.
-
 
 # Request  
 ### Python `requests` Library:  
@@ -588,14 +679,14 @@ The `requests` library is a popular HTTP library for making HTTP requests in Pyt
   
   Ensure you have the `requests` library installed. If not, install it using:  
   
-   ```bash  
-  pip install requests 
-  ```  
+```bash  
+pip install requests 
+ ```  
 2. **Create a Test Script:**  
   
   Create a new Python script (e.g., `api_test.py`) in the same directory as your Flask application.  
   
-   ```python  
+```python  
   import requests  
   
  # Set the base URL for your Flask application base_url = 'http://localhost:5000'  
@@ -879,10 +970,11 @@ The objective of this lab is to introduce new developers to Playwright with Pyth
 
 1.  Open a terminal and navigate to your project directory.
     
-2.  Install Playwright for Python using pip:
+2.  Install Playwright for Python using the following commands:
 
 ```bash
 pip install playwright
+playwright install
 ```
 
 
@@ -925,7 +1017,7 @@ def test_screenshot():
 
 # Example usage with Firefox:
 # test_screenshot(browser_type='firefox')
-
+```
 
 **Step 3: Run the Playwright Test**
 
