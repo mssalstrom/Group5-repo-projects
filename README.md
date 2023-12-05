@@ -34,7 +34,8 @@ I --> B
 - [Introduction](#introduction)  
 - [Selenium](#selenium)  
   - [Setup](#setup)  
-  - [Basics](#basics)  
+  - [Launch Applicaiton](launch-application)
+  - [Selenium Lab](selenium-lab)  
   - [UnitTest](#unittest)  
 - [BDD](#bdd)  
   - [Gherkin](#gherkin)  
@@ -152,7 +153,7 @@ pip3 show selenium
 ```  
 - Expected outcome: *The command should display information about the Selenium package, including the version number, indicating that it has been installed correctly. There should be no errors or warnings.*  
   
-### Launch the Flask Web Application  
+# Launch Applicaiton
 1. In your Python IDE, open the app.py file.  
 2. Run the app.py file using the appropriate command or IDE feature to start the Flask server.  
 3. After running the app.py file, switch to the Python terminal or console within your IDE. This is where you will see the server startup message.  
@@ -165,7 +166,7 @@ Below are a series of test in the selenium suite of tools that can be used to au
   
 - Create a new python file named "seleniumLab.py" in the test directory.   
   
-### Basics  
+# Selenium Lab 
 **1. Using Selenium to test link navigation:**  
 - Import libraries  
 ```python  
@@ -179,12 +180,12 @@ from selenium.webdriver.common.by import By
   
 - #### Create webdriver object  
 ```python  
-#Create a WebDriver object for the Microsoft Edge browser  
+# Create a WebDriver object for the Microsoft Edge browser  
 driver = webdriver.Edge()  
 ```  
 - #### Set window size  
 ```python  
-#Set the window size of the web browser to 800 pixels in width and 800 pixels in height  
+# Set the window size of the web browser to 800 pixels in width and 800 pixels in height  
 driver.set_window_size(800, 800)  
 ```  
 ```python  
@@ -194,7 +195,7 @@ local_url = "localhost:5000"
   
 - #### Launching link:   
 ```python  
-d# Navigate the web browser to the specified local URL  
+# Navigate the web browser to the specified local URL  
 driver.get(local_url)  # Expected outcome: browser should navigate to the link  
   
 ```  
@@ -501,7 +502,7 @@ The following lab focuses on creating, updating, and deleting users while emphas
 
 ## Lab
 
-2. **Accessing the Home Page:**
+2. **Create a Collection:**
     - Open Postman, which you should have installed in step 1.
     - Click on "Collections" in the top-left corner.
     - Click "New Collection" and provide a name for your collection.
@@ -511,7 +512,7 @@ The following lab focuses on creating, updating, and deleting users while emphas
     - Click the "Send" button to make a GET request to list users.
     - Verify that the response is as expected.
 
-6. **Create a Variable:**
+3. **Create a Variable:**
     - After creating your collection and requests, it's time to set up a variable.
     - Click on the "Collections" tab in the top-left corner.
     - Select your newly created collection.
@@ -521,7 +522,7 @@ The following lab focuses on creating, updating, and deleting users while emphas
     - Click "Save" to confirm the variable creation.
     - Your variable, `baseURL`, is now created and set to the initial value.
 
-3. **Creating a User:**
+4. **Creating a User:**
     - In your collection, create a request named "Create User."
     - Set the request method to POST.
     - Set the request URL to `{{baseURL}}/api/users`.
@@ -535,7 +536,7 @@ The following lab focuses on creating, updating, and deleting users while emphas
     - Click the "Send" button to create a new user.
     - Verify that the response includes the expected details.
 
-4. **Updating a User:**
+5. **Updating a User:**
     - In your collection, create a request named "Update User."
     - Set the request method to PATCH.
     - Set the request URL to `{{baseURL}}/api/users/183`.
@@ -549,14 +550,15 @@ The following lab focuses on creating, updating, and deleting users while emphas
     - Click the "Send" button to update the user.
     - Verify that the response includes the expected details.
 
-5. **Deleting a User:**
+6. **Deleting a User:**
     - In your collection, create a request named "Delete User."
     - Set the request method to DELETE.
     - Set the request URL to `{{baseURL}}/api/users/2`.
     - Click the "Send" button to delete the user.
-    - Verify that the response indicates a successful deletion.
+    - You should receive a 204 status code indicating success. Please note that the website does not actually delete the user, but the request will still work.
 
 These steps guide you through creating, testing, and modifying requests within a Postman collection. Each step corresponds to a specific action, such as creating a new request, setting request details, sending the request, and verifying the response. The goal is to familiarize yourself with the process of interacting with an API using Postman and understanding the outcomes of different types of requests.
+
 
 
 # Request  
