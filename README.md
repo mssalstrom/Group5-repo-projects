@@ -156,8 +156,7 @@ On Mac:
 pip3 show selenium  
 ```  
 - Expected outcome: *The command should display information about the Selenium package, including the version number, indicating that it has been installed correctly. There should be no errors or warnings.*  
-  
-# Launch Applicaiton
+# Launch Application
 1. In your Python IDE, open the app.py file.  
 2. Run the app.py file using the appropriate command or IDE feature to start the Flask server.  
 3. After running the app.py file, switch to the Python terminal or console within your IDE. This is where you will see the server startup message.  
