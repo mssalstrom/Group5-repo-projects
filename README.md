@@ -497,6 +497,9 @@ By following these steps, you can incorporate BDD with Behave and Gherkin into y
 
 The following lab focuses on creating, updating, and deleting users while emphasizing the importance of variables for dynamic value management.
 
+Postman is a popular API development tool, you can use Python in conjunction with Postman for API testing and automation.
+In this context, using Python with Postman typically involves writing scripts to automate API requests and tests. The Postman tool allows you to create and organize API requests visually, and with the Postman API, you can trigger these requests using Python scripts. This automation can be useful for testing APIs, running collections of requests, and integrating API testing into a project.
+
 ## Installation
 
 1. **Download and Install Postman:**
