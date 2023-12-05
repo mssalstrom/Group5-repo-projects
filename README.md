@@ -64,7 +64,7 @@ I --> B
 ### Purpose   
 > This document provides detailed instructions for testing a provided web application using Selenium, BDD testing with Behave, Postman and Python's Request Library, TDD, and Playwright. 
   
-### Contributers   
+### Contributors   
 - Dmytro Holovnia - Developer  
 - Matthew Salstrom - Developer  
 - Max Tart - Developer  
@@ -77,7 +77,11 @@ I --> B
       
 ### Tools Used: - Python  
 - Selenium  
-- Flask  
+- Flask
+- Pytest
+- Behave
+- Postman
+- Playwright
   
 # Selenium  
 Selenium empowers developers and quality assurance teams to automate the testing of web applications by using Python scripts to interact with web elements, simulate user interactions, and validate the functionality and user experience of web pages, ensuring that the application works as intended and functions consistently across various browsers and browser versions. It serves as a versatile tool for functional testing, regression testing, and cross-browser testing, enabling efficient and repeatable testing processes integrated into software development workflows.  
@@ -95,11 +99,10 @@ Selenium empowers developers and quality assurance teams to automate the testing
 2. Open the file app.py  
 3. In the terminal or command prompt, run the following command to install the required dependencies:  
     
->In python terminal  
+### In python terminal:  
 ```python  
 # Install the required dependencies specified in the 'requirements.txt' file  
 pip install -r requirements.txt  
-  
 ```  
   
 ### Verify package installation:   
@@ -118,7 +121,7 @@ On Mac:
 pip3 show selenium  
 ```  
 - Expected outcome: *The command should display the version information of Flask, indicating that it has been installed correctly. There should be no errors or warnings.*  
-- If you do encounter errors proceed with the individual installations below, if not skip to the "Basics" section.  
+- If you do encounter errors proceed with the individual installations below, if not skip to the "Launch the Flask Web Application" section.  
     
 ### Installing Flask:
 ```python  
@@ -179,12 +182,12 @@ from selenium.webdriver.common.by import By
   
 - #### Create webdriver object  
 ```python  
-#Create a WebDriver object for the Microsoft Edge browser  
+# Create a WebDriver object for the Microsoft Edge browser  
 driver = webdriver.Edge()  
 ```  
 - #### Set window size  
 ```python  
-#Set the window size of the web browser to 800 pixels in width and 800 pixels in height  
+# Set the window size of the web browser to 800 pixels in width and 800 pixels in height  
 driver.set_window_size(800, 800)  
 ```  
 ```python  
@@ -194,7 +197,7 @@ local_url = "localhost:5000"
   
 - #### Launching link:   
 ```python  
-d# Navigate the web browser to the specified local URL  
+# Navigate the web browser to the specified local URL  
 driver.get(local_url)  # Expected outcome: browser should navigate to the link  
   
 ```  
@@ -226,7 +229,7 @@ url_element.clear()
 url_element.send_keys("https://python.org")  
 ```  
   
-- Clear preexisitng text and type python as shortened url  
+- Clear preexisting text and type python as shortened url  
 ```python # Clear any preexisting text or input in the "code_element" field  
 code_element.clear()  
 ```  
@@ -286,12 +289,7 @@ url_element.clear()
 ```python  
 #Enter a long URL into the URL shortener form  
 url_element.send_keys("[https://python.org](https://www.cnn.com/2023/02/09/us/iyw-puppy-bowl-shelters-rescue-groups/index.html)")  
-```  
-  
-- Clear preexisitng text and type python as shortened url  
-```python  
-# Clear the input field for the URL element code_element.clear()  
-```  
+```
   
 ```python  
 # Entering the text "puppyBowl" into the code_element  
@@ -319,8 +317,7 @@ driver.get(local_url)
 - Testing file input  
 ```python  
 # Locate the file input element on the web page with the ID attribute "fileInput"  
-fileElement = driver.find_element(By.ID, "fileInput")  
-  
+fileElement = driver.find_element(By.ID, "fileInput")
 ```  
 ```python  
 # Simulate user interaction by providing a file path to the 'fileElement' input  
@@ -340,7 +337,7 @@ time.sleep(10)
 ```  
   
 ### UnitTest  
-Selenin's strength is the ability to automate test. Below is an exmaple of a UnitTest using the selenium library  
+Selenium's strength is the ability to automate test. Below is an example of a UnitTest using the selenium library  
 - Create a file named UnitTest.py in the test directory  
  - Import necessary libraries  
 ```cmd  
@@ -353,53 +350,55 @@ from selenium.webdriver.common.by import By
   
 ```python  
 # Define a test case class for URL shortening functionality  
-class urlShortener(unittest.TestCase):  
+class urlShortener(unittest.TestCase):
 ```  
-- Initialize the webdriver  
-```python  
- def setUp(self): # Initialize a Microsoft Edge web driver for testing self.driver = webdriver.Edge()  
-```  
-- Declare the test case method  
-```python  
- # This method tests the URL shortening functionality # and contains the test cases for the URL shortener. def test_urlShortener(self):  
-```  
-- Set the driver  
-```python  
- # Assign the web driver instance to the 'driver' variable driver = self.driver  
-```  
-- Navigate to web application  
-```python  
- # Define the URL of the local web application you want to interact with driver.get("localhost:5000")  
-```  
-- Assertion to confirm site title  
-```python  
- # Check if "urlShortener" is present in the title of the current web page self.assertIn("urlShortener", driver.title)  
-```  
-- locate elements in page  
-```python  
- # Locate the element with the name attribute set to "url" url_element = driver.find_element(By.NAME, "url")  
- # Locate the element with the name attribute set to "code" code_element = driver.find_element(By.NAME, "code")  
- # Locate the element with the ID attribute set to "shortenSubmit" submit_button = driver.find_element(By.ID, "shortenSubmit")
-```  
-- Send data  
-```python  
- # Clear any existing text in the 'url_element' input field url_element.clear() # Enter the URL "https://python.org" into the 'url_element' input field url_element.send_keys("https://python.org") # Click the 'submit_button' to initiate the URL shortening process submit_button.click()
-```  
-- Wait to verify page  
-```python  
- # Pause the script execution for 10 seconds time.sleep(10)    
-```  
-- Close driver  
-```python  
- # Define the 'tearDown' method for cleaning up after the test casedef tearDown(self):  
- # Close the web driver instance to release system resources self.driver.close()  
-```  
-- Execute test  
-```python  
-# Check if the current script is the main module being executed  
-if __name__ == "__main__":  
- # If the script is the main module, execute the following code unittest.main() # Run the test cases using the unittest test runner  
-```  
+- Initialize the webdriver
+```cmd
+def setUp(self):
+     self.driver = webdriver.Edge()
+```
+- Declare the test case method
+```cmd
+def test_urlShortener(self):
+```
+- Set the driver
+```cmd
+driver = self.driver
+```
+- Navigate to web application
+```cmd
+driver.get("localhost:5000")
+```
+- Assertion to confirm site title
+```cmd
+self.assertIn("urlShortener", driver.title)
+```
+- locate elements in page
+```cmd
+url_element = driver.find_element(By.NAME, "url")
+code_element = driver.find_element(By.NAME, "code")
+submit_button = driver.find_element(By.ID, "shortenSubmit")
+```
+- Send data
+```cmd
+url_element.clear()
+url_element.send_keys("https://python.org")
+submit_button.click()      
+```
+- Wait to verify page
+```cmd
+time.sleep(10)   
+```
+- Close driver
+```cmd
+def tearDown(self):
+    self.driver.close()
+```
+- Execute test
+```cmd
+if __name__ == "__main__":
+    unittest.main()
+```
 # BDD  
   
 ## Behavior-Driven Development (BDD)  
@@ -517,148 +516,67 @@ Replace "your-collection-id" with the actual collection ID generated in Postman.
    - Choose the appropriate version based on your operating system (Windows, macOS, or Linux).  
    - Download the installer and run it to install Postman on your machine.  
   
-# Lab   
-  
-2. **Accessing the Home Page:**  
-  
- - Open Postman and import the provided collection.  
-     - Click on "Import" in the top-left corner.  
-     - Select the "Link" tab.  
-     - Paste the collection link: [Postman Collection](https://www.postman.com/collections/your-collection-id).  
-     - Click "Continue" and then "Import."  
-   - Select the "Access Home Page" request.  
-   - Click the "Send" button to make a GET request to the home page.  
-   - Verify that the response includes the expected text: "Welcome to My Flask App."  
-  
-```http  
-GET http://localhost:5000/  
-```  
-  
-3. **Shortening a URL:**  
-  
- - Select the "Shorten URL" request.  
-   - Set the request method to POST.  
-   - Set the request URL to the appropriate endpoint for shortening a URL.  
-   - In the request body, provide the necessary data:  
-     - Set the `code` parameter for the short code (e.g., "postmanTest").  
-     - Set the `url` parameter for the URL to be shortened (e.g., "https://www.postman.com").  
-   - Click the "Send" button to make the request.  
-   - Verify that the response includes the expected success message.  
-  
-```http  
-POST http://localhost:5000/your_url  
-Content-Type: application/x-www-form-urlencoded  
-code=postmanTest&url=https://www.postman.com  
-```  
-  
-4. **Redirecting to Shortened URL:**  
-  
- - Select the "Redirect to Shortened URL" request.  
-   - Set the request method to GET.  
-   - Set the request URL to the appropriate endpoint for redirecting to a shortened URL (e.g., "/postmanTest").  
-   - Click the "Send" button to make the request.  
-   - Verify that the response redirects to the expected URL.  
-  
-```http  
-GET http://localhost:5000/postmanTest  
-```  
-  
-5. **Error Handling - Nonexistent Short Code:**  
-  
- - Select the "Error Handling - Nonexistent Short Code" request.  
-   - Set the request method to GET.  
-   - Set the request URL to an endpoint with a nonexistent short code (e.g., "/nonexistentCode").  
-   - Click the "Send" button to make the request.  
-   - Verify that the response includes a 404 status code.  
-  
-```http  
-GET http://localhost:5000/nonexistentCode  
-```  
-  
-6. **Error Handling - Existing Short Code as URL:**  
-  
- - Select the "Error Handling - Existing Short Code as URL" request.  
-   - Set the request method to GET.  
-   - Set the request URL to an endpoint with an existing short code that represents a URL (e.g., "/python").  
-   - Click the "Send" button to make the request.  
-   - Verify that the response redirects to the expected URL.  
-  
-```http  
-GET http://localhost:5000/python  
-```  
-  
-7. **Error Handling - Existing Short Code as File:**  
-  
- - Select the "Error Handling - Existing Short Code as File" request.  
-   - Set the request method to GET.  
-   - Set the request URL to an endpoint with an existing short code that represents a file (e.g., "/Shortname").  
-   - Click the "Send" button to make the request.  
-   - Verify that the response redirects to the expected file.  
-  
-```http  
-GET http://localhost:5000/Shortname  
-```  
-  
-8. **Clearing the URL List:**  
-  
- - Select the "Clear URL List" request.  
-   - Set the request method to POST.  
-   - Click the "Send" button to make the request.  
-   - Verify that the response indicates successful clearing of the URL list.  
-  
-```http  
-POST http://localhost:5000/  
-```  
-  
-9. **API Endpoint - Get Session Keys:**  
-  
- - Select the "API - Get Session Keys" request.  
-   - Set the request method to GET.  
-   - Click the "Send"  
-  
-button to make the request.  
- - Verify that the response includes the expected session keys.  
-  
-```http  
-GET http://localhost:5000/api/session-keys  
-```  
-  
-10. **API Endpoint - Add Session Key:**  
-  
- - Select the "API - Add Session Key" request.  
- - Set the request method to POST.  
- - Set the request URL to the appropriate endpoint for adding a session key.  
- - In the request body, provide the necessary data:  
-     - Set the `key` parameter for the session key (e.g., "newSessionKey").  
- - Click the "Send" button to make the request.  
- - Verify that the response includes the expected success message.  
-  
-```http  
-POST http://localhost:5000/api/add-session-key  
-Content-Type: application/x-www-form-urlencoded  
-key=newSessionKey  
-```  
-  
-11. **API Endpoint - Delete Session Key:**  
-  
- - Select the "API - Delete Session Key" request.  
- - Set the request method to DELETE.  
- - Set the request URL to the appropriate endpoint for deleting a session key (e.g., "/api/delete-session-key/newSessionKey").  
- - Click the "Send" button to make the request.  
- - Verify that the response includes the expected success message.  
-  
-```http  
-DELETE http://localhost:5000/api/delete-session-key/newSessionKey  
-```  
-  
-12. **API Endpoint - Error Handling - Nonexistent Session Key:**  
-  
- - Select the "API - Error Handling - Nonexistent Session Key" request.  
- - Set the request method to GET.  
- - Set the request URL to an endpoint with a nonexistent session key (e.g., "/api/get-session-key/nonexistentKey").  
- - Click the "Send" button to make the request.  
- - Verify that the response includes a 404 status code.  
-  
+## Lab
+ 
+2. **Create a Collection and Variable:**
+   - Open Postman, which you should have installed in step 1.
+   - Click on "Collections" in the top-left corner.
+   - Click "New Collection" and provide a name for your collection.
+   - After creating your collection, it's time to set up a variable.
+   - Select your newly created collection.
+   - Click on the "Variables" tab within the collection.
+   - **Understanding Variables:**
+     - Variables in Postman act as placeholders for dynamic values.
+     - They enhance flexibility and reusability in requests.
+     - Create a variable named `baseURL`.
+     - Set the initial value to `https://reqres.in`.
+     - Click "Save" to confirm the variable creation.
+     - Your variable, `baseURL`, is now created and set to the initial value.
+ 
+3. **Create a GET request:**
+   - In your new collection, create a request named "List Users."
+   - Set the request method to GET.
+   - Set the request URL to `{{baseURL}}/api/users?page=2`.
+   - Click the "Send" button to make a GET request to list users.
+   - Verify that the response is as expected.
+ 
+4. **Creating a User:**
+   - In your collection, create a request named "Create User."
+   - Set the request method to POST.
+   - Set the request URL to `{{baseURL}}/api/users`.
+   - In the request body, set the mode to "raw" and provide the JSON:
+```json
+     {
+         "name": "morpheus",
+         "job": "leader"
+     }
+```
+   - Click the "Send" button to create a new user.
+   - Note the user ID provided in the response.
+   - Use this user ID for subsequent requests.
+ 
+5. **Updating a User:**
+   - In your collection, create a request named "Update User."
+   - Set the request method to PATCH.
+   - Set the request URL to `{{baseURL}}/api/users/{userID}`, replacing `{userID}` with the actual user ID obtained in the create user response.
+   - In the request body, set the mode to "raw" and provide the JSON:
+     ```json
+     {
+         "name": "morpheus",
+         "job": "zion resident"
+     }
+     ```
+   - Click the "Send" button to update the user.
+   - Verify that the response includes the expected details.
+ 
+6. **Deleting a User:**
+   - In your collection, create a request named "Delete User."
+   - Set the request method to DELETE.
+   - Set the request URL to `{{baseURL}}/api/users/{userID}`, replacing `{userID}` with the actual user ID obtained in the create user response.
+   - Click the "Send" button to delete the user.
+   - You should receive a 204 status code indicating success. Please note that the website does not actually delete the user, but the request will still work.
+ 
+These steps guide you through creating, testing, and modifying requests within a Postman collection. Each step corresponds to a specific action, such as creating a new request, setting request details, sending the request, and verifying the response. Ensure to use the provided user ID for the update and delete requests to interact with specific user data. The use of `{{baseURL}}` demonstrates the use of variables in Postman, allowing for dynamic and flexible request URLs.
 ```http  
 GET http://localhost:5000/api/get-session-key/nonexistentKey  
 ```  
@@ -681,14 +599,14 @@ The `requests` library is a popular HTTP library for making HTTP requests in Pyt
   
   Ensure you have the `requests` library installed. If not, install it using:  
   
-   ```bash  
-  pip install requests 
-  ```  
+```bash  
+pip install requests 
+ ```  
 2. **Create a Test Script:**  
   
   Create a new Python script (e.g., `api_test.py`) in the same directory as your Flask application.  
   
-   ```python  
+```python  
   import requests  
   
  # Set the base URL for your Flask application base_url = 'http://localhost:5000'  
@@ -972,10 +890,11 @@ The objective of this lab is to introduce new developers to Playwright with Pyth
 
 1.  Open a terminal and navigate to your project directory.
     
-2.  Install Playwright for Python using pip:
+2.  Install Playwright for Python using the following commands:
 
 ```bash
 pip install playwright
+playwright install
 ```
 
 

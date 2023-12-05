@@ -37,7 +37,7 @@ def test_web_interaction():
         # Clicking the login button
         page.click('input[name="login-button"]')
         # Expecting the text 'Swag Labs' to be visible on the page
-        expect(page.locator('Swag Labs')).to_be_visible()
+        expect(page.get_by_text('Swag Labs')).to_be_visible()
         # Closing the browser
         browser.close()
 
@@ -71,6 +71,6 @@ def test_submit_fail():
         # Expecting the page to contain a specified text related to failed submission
         expect(page.locator("h3")).to_have_text("Epic sadface: Username is required")
         # Taking a screenshot of the page after the failed submission
-        page.screenshot(path='submit_fail.png')
+
 
 

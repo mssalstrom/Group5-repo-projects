@@ -31,6 +31,25 @@
 ### **Document Writers:**
 - Collaboratively updating the Selenium lab based on insights gained from a recent meeting with the professor, incorporating feedback and improvements.
 
+# **Weekly Log: Sprint 3**
+## **Completed Task:**
+- Successfully developed the API Tests lab.
+
+## **Ongoing Task:**
+- Actively engaging in opening discussion pertaining to our secondary lab. Starting TDD lab.
+
+## **Next Steps:**
+Begin writing TDD lab and lock down secondary lab choice.
+
+### **Developers:**
+- Begin discussing and developing TDD test.
+
+### **Testers:**
+- Continue testing the previous labs against the lab instructions.
+
+### **Document Writers:**
+- Resolving issues, and continued updating of logs and documentation.
+
 # **Weekly Log: Sprint 4**
 ## **Completed Tasks:**
 - Successfully completed the TDD and Playwright labs, showcasing a commitment to rigorous testing practices.
