@@ -598,14 +598,35 @@ The `requests` library is a popular HTTP library for making HTTP requests in Pyt
    ```python  
   import requests  
   
- # Set the base URL for your Flask application base_url = 'http://localhost:5000'  
- def test_home_endpoint(): response = requests.get(f'{base_url}/') assert response.status_code == 200 assert response.text == 'Welcome to My Flask App'  
- def test_shorten_url_endpoint(): data = {'code': 'test', 'url': 'https://www.example.com'} response = requests.post(f'{base_url}/', data=data) assert response.status_code == 200 assert response.text == 'URL shortened successfully'  
- def test_redirect_to_url_endpoint(): response = requests.get(f'{base_url}/test') assert response.status_code == 302  # Expecting a redirect status code  
- def test_api_session_keys_endpoint(): response = requests.get(f'{base_url}/api/session-keys') assert response.status_code == 200 session_keys = response.json()['session_keys'] assert isinstance(session_keys, list)  
- def test_api_add_session_key_endpoint(): data = {'key': 'new_key'} response = requests.post(f'{base_url}/api/add-session-key', data=data) assert response.status_code == 200 assert response.text == 'Session key added successfully'  
- def test_api_delete_session_key_endpoint(): key_to_delete = 'new_key' response = requests.delete(f'{base_url}/api/delete-session-key/{key_to_delete}') assert response.status_code == 200 assert response.text == 'Session key deleted successfully'  
- if __name__ == '__main__': # Run your test functions test_home_endpoint() test_shorten_url_endpoint() test_redirect_to_url_endpoint() test_api_session_keys_endpoint() test_api_add_session_key_endpoint() test_api_delete_session_key_endpoint()  
+ # Set the base URL for your Flask application
+
+base_url = 'http://localhost:5000'  
+ def test_home_endpoint():
+	response = requests.get(f'{base_url}/') assert response.status_code == 200 assert response.text == 'Welcome to My Flask App'
+
+ def test_shorten_url_endpoint():
+	data = {'code': 'test', 'url': 'https://www.example.com'} response = requests.post(f'{base_url}/', data=data) assert response.status_code == 200 assert response.text == 'URL shortened successfully'
+
+ def test_redirect_to_url_endpoint():
+	response = requests.get(f'{base_url}/test') assert response.status_code == 302  # Expecting a redirect status code
+
+ def test_api_session_keys_endpoint():
+	response = requests.get(f'{base_url}/api/session-keys') assert response.status_code == 200 session_keys = response.json()['session_keys'] assert isinstance(session_keys, list)
+
+ def test_api_add_session_key_endpoint():
+	data = {'key': 'new_key'} response = requests.post(f'{base_url}/api/add-session-key', data=data) assert response.status_code == 200 assert response.text == 'Session key added successfully'
+ 
+ def test_api_delete_session_key_endpoint():
+	key_to_delete = 'new_key' response = requests.delete(f'{base_url}/api/delete-session-key/{key_to_delete}') assert response.status_code == 200 assert response.text == 'Session key deleted successfully'
+
+ if __name__ == '__main__':
+# Run your test functions
+	test_home_endpoint()
+	test_shorten_url_endpoint()
+	test_redirect_to_url_endpoint()
+	test_api_session_keys_endpoint()
+	test_api_add_session_key_endpoint()
+	test_api_delete_session_key_endpoint()  
  ```  
 3. **Run the Test Script:**  
   
