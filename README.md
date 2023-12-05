@@ -502,25 +502,26 @@ The following lab focuses on creating, updating, and deleting users while emphas
 
 ## Lab
 
-2. **Create a Collection:**
+2. **Create a Collection and Variable:**
+
     - Open Postman, which you should have installed in step 1.
     - Click on "Collections" in the top-left corner.
     - Click "New Collection" and provide a name for your collection.
-    - In your new collection, create a request named "List Users."
-    - Set the request method to GET.
-    - Set the request URL to `[{{baseURL}}]/api/users?page=2`.
-    - Click the "Send" button to make a GET request to list users.
-    - Verify that the response is as expected.
-
-3. **Create a Variable:**
-    - After creating your collection and requests, it's time to set up a variable.
-    - Click on the "Collections" tab in the top-left corner.
+    - After creating your collection, it's time to set up a variable.
     - Select your newly created collection.
     - Click on the "Variables" tab within the collection.
     - Create a variable named `baseURL`.
     - Set the initial value to `https://reqres.in`.
     - Click "Save" to confirm the variable creation.
     - Your variable, `baseURL`, is now created and set to the initial value.
+
+3. **Create a GET request:**
+
+    - In your new collection, create a request named "List Users."
+    - Set the request method to GET.
+    - Set the request URL to `[{{baseURL}}]/api/users?page=2`.
+    - Click the "Send" button to make a GET request to list users.
+    - Verify that the response is as expected.
 
 4. **Creating a User:**
     - In your collection, create a request named "Create User."
