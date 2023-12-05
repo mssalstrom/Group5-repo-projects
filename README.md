@@ -65,7 +65,7 @@ I --> B
 ### Purpose   
 > This document provides detailed instructions for testing a provided web application using Selenium, BDD testing with Behave, Postman and Python's Request Library, TDD, and Playwright. 
   
-### Contributers   
+### Contributors   
 - Dmytro Holovnia - Developer  
 - Matthew Salstrom - Developer  
 - Max Tart - Developer  
