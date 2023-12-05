@@ -77,7 +77,11 @@ I --> B
       
 ### Tools Used: - Python  
 - Selenium  
-- Flask  
+- Flask
+- Behave
+- Postman
+- Request
+- Playwright
   
 # Selenium  
 Selenium empowers developers and quality assurance teams to automate the testing of web applications by using Python scripts to interact with web elements, simulate user interactions, and validate the functionality and user experience of web pages, ensuring that the application works as intended and functions consistently across various browsers and browser versions. It serves as a versatile tool for functional testing, regression testing, and cross-browser testing, enabling efficient and repeatable testing processes integrated into software development workflows.  
