@@ -29,7 +29,7 @@ I --> B
   
 <!-- TABLE OF CONTENTS -->  
   
-# Table of Contents:  
+## Table of Contents:  
   
 - [Introduction](#introduction)  
 - [Selenium](#selenium)  
